@@ -105,4 +105,7 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
+links: publish
+	cd $(OUTPUTDIR); for p in *; do cp -a "$$p" ../..; git add ../../"$$p"; done
+
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
