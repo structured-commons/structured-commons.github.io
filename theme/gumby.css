@@ -25,9 +25,11 @@ html {
   line-height: 1;
 }
 
+/*
 ol, ul {
   list-style: none;
 }
+*/
 
 table {
   border-collapse: collapse;
@@ -253,9 +255,11 @@ ul, ol {
   margin-bottom: 0.273em;
 }
 
+/*
 ul {
   list-style: none outside;
 }
+*/
 
 ol {
   list-style: decimal;
@@ -291,7 +295,7 @@ ul.large li {
 }
 
 dl dt {
-  font-weight: bold;
+  // font-weight: bold;
   font-size: 16px;
   font-size: 1rem;
 }
