@@ -1,0 +1,202 @@
+:SCEP: 1
+:Title: The Structured Commons Enhancement Proposal Process
+:Author: Structured Commons Technical Steering Committee
+:Status: Active
+:Type: Process
+:Created: 2014-06-15
+
+What is a SCEP
+==============
+
+SCEP stands for Structured Commons Enhancement Proposal.  A SCEP is a
+design document providing information to the Structured Commons
+community, or describing a new feature for the Structured Commons
+methods and protocols. The SCEP should provide a concise technical
+specification of the feature and a rationale for the feature.
+
+We intend SCEPs to be the primary mechanisms for proposing new
+features, for collecting community input on an issue, and for
+documenting the design decisions that have gone into Structured Commons. The SCEP
+author is responsible for building consensus within the community and
+documenting dissenting opinions.
+
+Because the SCEPs are maintained as reStructured text files in a
+versioned repository, their revision history is the historical record
+of the feature proposal [1]_. The list of all defined SCEPs is
+maintained as SCEP 0 [#SCEP-0]_.
+
+
+SCEP Types
+==========
+
+There are three kinds of SCEP:
+
+  #. A Standards Track SCEP describes an extension to one of the
+     Structured Commons protocols, or a change in the behavior of one
+     of the actors in these protocols.
+
+  #. An Informational SCEP describes a Structured Commons design issue, or
+     provides general guidelines or information to the Structured Commons
+     community, but does not propose an extension. Informational SCEPs
+     do not necessarily represent a Structured Commons community consensus or
+     recommendation, so users and implementors are free to ignore
+     Informational SCEPs or follow their advice.
+
+  #. A Process SCEP describes a process surrounding the Structured Commons, or
+     proposes a change to (or an event in) a process. Process SCEPs are
+     like Standards Track SCEPs but apply to areas other than the
+     Structured Commons protocols.  They are more than recommendations, and
+     users are typically not free to ignore them. Examples include
+     release schedules, procedures, guidelines, changes to the
+     decision-making process, and changes to the tools or environment
+     used in Structured Commons development.
+
+SCEP Work Flow
+==============
+
+The SCEP editors assign SCEP numbers and change their status.
+Please send all SCEP-related email to <editors@structured-commons.org>.
+
+The SCEP process begins with a new idea for the Structured Commons
+protocols. It is highly recommended that a single SCEP contain a single
+key proposal. The SCEP editor reserves the right to reject SCEP
+proposals if they appear unfocussed or overly broad. If in doubt,
+split your SCEP into muliple SCEPs.
+
+Each SCEP must have a champion -- someone who writes the SCEP using
+the style and format described below, shepherds the discussions in the
+appropriate forums, and attempts to build community consensus around
+the idea. The SCEP champion should first post a description of the
+idea to the SCEPs mailing list at:
+http://lists.structured-commons.org/mailman/listinfo/sc-discuss
+
+If the champion believes the idea warrants a SCEP then the champion
+emails the SCEP editor <editors@structured-commons.org> with a proposed title
+and a draft of the SCEP. This draft must be written in SCEP style as
+described below.
+
+If the SCEP editor approves, he assigns the SCEP a number, labels it
+as Standards Track, Informational, or Process, gives it status
+"Draft", and creates and checks-in the initial draft of the SCEP to
+the subversion repository. The SCEP editor will not unreasonably deny
+a SCEP. Reasons for denying SCEP status include duplication of effort,
+being technically unsound, not providing proper motivation or not
+addressing backwards compatibility. The Structured Commons Technical
+Steering Committee can be consulted during the approval phase, and is
+the final arbiter of the draft's SCEP-ability.
+
+If a pre-SCEP is rejected, the author may elect to take the pre-SCEP to
+the SCEP forum seeking feedback and consesnsus from the community at large.
+A proposal may be re-submitted after it has been revised.
+
+The champion is then responsible for marshaling community support for
+it. As updates are necessary, the SCEP author can check in new
+versions if they have commit permissions on the SCEP repository, or
+can email new SCEP versions to the SCEP editors for committing.
+
+Standards Track SCEPs consist of two parts, a design document and a
+reference implementation. The reference implementation need not be
+complete when a SCEP is submitted to the editors.  However Standards
+Track SCEPs must include an implementation with publicy available code
+before it can be considered Final.
+
+SCEP champions are responsible for collecting community feedback on a
+SCEP before submitting it for review. A SCEP that has not been
+discussed in the Structured Commons mailing lists will not be
+accepted. However, wherever possible, long open-ended discussions in
+the mailing list should be avoided. Strategies to keep the discussions
+efficient include: setting up a separate SIG forum for the topic,
+having the SCEP author accept private comments in the early design
+phases, setting up a wiki page, etc. SCEP authors should use their
+discretion here.
+
+Once the authors have completed a SCEP, they must inform the SCEP
+editors that it is ready for review. SCEPs are reviewed by the
+Technical Steering Committee, who may accept or reject a SCEP or send
+it back to the author(s) for revision. For a SCEP that is
+pre-determined to be acceptable (e.g., it is an obvious win as-is
+and/or its implementation already exists in one or more popular
+BitTorrent clients) the Technical Steering Committee may also initiate
+a SCEP review, first notifying the SCEP author(s) and giving them a
+chance to make revisions.
+
+For a SCEP to be accepted it must meet certain minimum criteria. It
+must be a clear and complete description of the proposed
+enhancement. The enhancement must represent a net improvement. The
+proposed implementation, if applicable, must be functional and have
+been tested in a live environment.  Supporting results from
+analyses, testbed experiments and event-based simulations are also
+recommended where appropriate.  A Standards Track document should
+include the rationale behind a proposal and may briefly summarize
+analytical, simulation, or experimental results where necessary to
+illustrate or motivate the enhancement.  However, detailed analytical,
+simulation, and experiment results, especially comparing different
+approaches to the same problem should be omitted from Standards Track
+SCEPs and instead cited from a published paper or a separate
+Informational SCEP.
+
+Once a SCEP has been accepted, the reference implementation must be
+completed. When the reference implementation is complete and accepted
+by the BDFL, the status will be changed to "Final".
+
+A SCEP can also be assigned status "Deferred". The SCEP author or editor
+can assign the SCEP this status when no progress is being made on the
+SCEP. Once a SCEP is deferred, the SCEP editor can re-assign it to draft
+status.
+
+A SCEP can also be "Rejected". Perhaps after all is said and done it
+was not a good idea. It is still important to have a record of this
+fact.
+
+SCEPs can also be replaced by a different SCEP, rendering the original
+obsolete. This is intended for Informational SCEPs, where e.g. version 2 of
+an API can replace version 1.
+
+
+Intellectual Property and Structured Commons Standards
+======================================================
+
+Any idea submitted in a SCEP will not be considered for standardization
+if the idea is not in the public domain.  Before a SCEP can be
+considered Final, all people (including the SCEP authors) or entities
+with a claim on the intellectual property expressed in a SCEP must
+assign in writing all intellectual property expressed in the SCEP to
+the public domain.  If the SCEP authors lack the power to assign
+intellectual property rights then they must disclose this fact before
+the SCEP can be considered Final.
+
+Furthermore SCEP authors should not knowingly propose anything in their
+SCEPs that infringes on the intellectual property rights of others.
+
+This policy statement should not be construed as meaning that SCEP
+authors are required to assign software implementations of any
+particular idea to the public domain.  BitTorrent implementors may
+retain all rights to their implementations.
+
+
+History
+=======
+
+This document was derived heavily from PEP-0001 [2]_.  In many places
+text was simply copied and modified.  Although the PEP-0001 text
+was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they
+are not responsible for its use in the Structured Commons Enhancement Process,
+and should not be bothered with technical questions specific to
+Structured Commons or the SCEP process.  Please direct all comments to the
+SCEP editors <editors@structured-commons.org> or the mailing list
+at: http://lists.structured-commons.org/mailman/listinfo/sc-discuss
+
+References
+----------
+
+.. [1] https://github.com/structured-commons/structured-commons.github.io/tree/master/src/content/pages/sceps
+
+.. [2] http://www.python.org/dev/peps/pep-0001/
+
+.. [#SCEP-0] SCEP0000. Index of Structured Commons Enhancement Proposals.
+   (http://www.structured-commons.org/scep0000.html)
+
+Copyright
+=========
+
+This document has been placed in the public domain.

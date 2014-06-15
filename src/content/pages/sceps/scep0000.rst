@@ -1,0 +1,60 @@
+:SCEP: 0
+:Title: Index of Structured Commons Enhancement Proposals
+:Author: Structured Commons Technical Steering Committee
+:Status: Active
+:Type: Informational
+:Created: 2014-06-15
+
+Introduction
+============
+
+The Structured Commmons Forum coordinates the development of the
+Structured Commons standards, methods, protocols and reference
+implementations. The Structured Commons development
+process is modelled after the Python Enhancement Proposal (PEP) process [1]_.
+
+This document indexes all Structured Commons Enhancement Proposals
+(SCEPs). When a new proposal is submitted, one of the structured-commons.org
+editors assigns a SCEP number and updates this index
+appropriately. Each document has a number that never changes and the
+history of the document is maintained in git [2]_.
+
+.. role:: raw-html(raw)
+   :format: html
+
+Final and Active Process SCEPs
+------------------------------
+
+======     ===================
+Num        Title
+======     ===================
+|0|        Index of Structured Commons Enhancement Proposals
+|1|        The Structured Commons Enhancement Proposal Process
+|2|        Sample reStructured Text SCEP Template
+======     ===================
+
+
+Draft SCEPs
+-----------
+
+The following SCEPs are under consideration for standardization.
+
+======     ===================
+Num        Title
+======     ===================
+|100|      Structured Commons Model Overview
+======     ===================
+
+
+
+
+References
+----------
+
+.. [1] http://www.python.org/dev/peps/
+.. [2] https://github.com/structured-commons/structured-commons.github.io/tree/master/src/content/pages/sceps
+
+.. |0| replace:: :raw-html:`<a href="scep0000.html">0</a>`
+.. |1| replace:: :raw-html:`<a href="scep0001.html">1</a>`
+.. |2| replace:: :raw-html:`<a href="scep0002.html">2</a>`
+.. |100| replace:: :raw-html:`<a href="scep0100.html">100</a>`
