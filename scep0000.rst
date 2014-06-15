@@ -43,6 +43,7 @@ The following SCEPs are under consideration for standardization.
 Num        Title
 ======     ===================
 |100|      Structured Commons Model Overview
+|101|      Structured Commons Object Model and Fingerprints
 ======     ===================
 
 
@@ -58,3 +59,4 @@ References
 .. |1| replace:: :raw-html:`<a href="scep0001.html">1</a>`
 .. |2| replace:: :raw-html:`<a href="scep0002.html">2</a>`
 .. |100| replace:: :raw-html:`<a href="scep0100.html">100</a>`
+.. |101| replace:: :raw-html:`<a href="scep0101.html">101</a>`
