@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0101 - Structured Commons Object Model and&nbsp;Fingerprints </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0101 – SCEP0101 - Structured Commons Object Model and&nbsp;Fingerprints</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">101</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Structured Commons Object Model and&nbsp;Fingerprints</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">b80cd3d141788fb135d7a70af58f7b67a23d3e0f</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 01:43:45  (Mon, 16 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-21</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0101.rst">scep0101.rst</a> (<tt>fp:9lbcUgQYhNDzxxmaAyQKVW8c4nY_QX4og_y9-fej-ATAlA</tt>)</td></tr>
+    </tbody></table>
+
+    <p>This <span class="caps">SCEP</span> describes the lowest level of the Structured
+Commons model and infrastructure: how document
+and digital objects are structured and&nbsp;fingerprinted.</p>
+<div class="section" id="object-model">
+<h2>Object&nbsp;model</h2>
+<p>An Aca2 <em>object</em> is&nbsp;either:</p>
+<ul class="simple">
+<li>a <em>file</em>, ie. an array of bytes (which may be empty and/or contain <span class="caps">NUL</span> bytes);&nbsp;or</li>
+<li>a <em>dictionary</em> that maps <em>names</em> to either objects (inclusion) or
+fingerprints (symbolic&nbsp;reference).</li>
+</ul>
+<p>A name is an array of Unicode <a class="footnote-reference" href="#uni" id="id1">[2]</a> characters (code&nbsp;points):</p>
+<ul class="simple">
+<li>which must not be&nbsp;empty;</li>
+<li>which must not contain characters codes in the range&nbsp;0-31.</li>
+</ul>
+<div class="section" id="contains-and-refers-to">
+<h3><span class="dquo">&#8220;</span>Contains&#8221; and &#8220;Refers&nbsp;to&#8221;</h3>
+<p>Other SCEPs and Structured Commons materials and technology can
+use the following&nbsp;terminology:</p>
+<ul>
+<li><p class="first">An object A is said to <em>contain</em> an object B if either of the
+following is&nbsp;true:</p>
+<ul class="simple">
+<li>A is a dictionary with B as an immediate leaf;&nbsp;or</li>
+<li>A is a dictionary and any of its leaves &#8220;contains&#8221;&nbsp;B.</li>
+</ul>
+</li>
+<li><p class="first">An object A is said to <em>refer to</em> an object B if either of the
+following is&nbsp;true:</p>
+<ul class="simple">
+<li>A &#8220;contains&#8221; B;&nbsp;or</li>
+<li>A is a dictionary with B&#8217;s fingerprint as an immediate leaf;&nbsp;or</li>
+<li>A is a dictionary and any of its object members &#8220;refers to&#8221;&nbsp;B.</li>
+</ul>
+<p>By extension, an object A is said to refer to a fingerprint F if it
+refers to an object B whose fingerprint is&nbsp;F.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="fingerprints">
+<h2>Fingerprints</h2>
+<p>Object <em>fingerprints</em> are fixed size 32-byte arrays computed from
+any object as&nbsp;follows:</p>
+<ol class="arabic">
+<li><p class="first">serialize the object onto an array of bytes as&nbsp;follows:</p>
+<dl class="docutils">
+<dt>for a file&nbsp;object:</dt>
+<dd><p class="first last">first the byte code 115 (&#8220;s&#8221;), followed by the object length in
+big endian <span class="caps">ASCII</span> <a class="footnote-reference" href="#ascii" id="id2">[1]</a> decimal (codes 48-57), followed by a <span class="caps">NUL</span> byte,
+followed by the object&#8217;s byte&nbsp;data.</p>
+</dd>
+<dt>for a directory&nbsp;object:</dt>
+<dd><ul class="first last simple">
+<li>first the byte code 116 (&#8220;t&#8221;), follow by the decimal length of
+the representation described hereafter, followed by a <span class="caps">NUL</span> byte,
+followed&nbsp;by:</li>
+<li>the byte representation of the dictionary&#8217;s contents, formed by
+concatenating, for each name in the directory sorted in
+lexicographic order: a character indicating the type of entity
+linked to (either <tt class="docutils literal">s</tt> or <tt class="docutils literal">t</tt> for regular objects, or <tt class="docutils literal">l</tt>
+for a fingerprint reference), followed by a colon (byte code 58),
+followed by the name <span class="caps">UTF</span>-8 <a class="footnote-reference" href="#utf" id="id3">[3]</a> encoded, followed by a <span class="caps">NUL</span> byte,
+followed by the binary fingerprint of the linked&nbsp;object.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">compute the <span class="caps">SHA</span>-256 <a class="footnote-reference" href="#sha" id="id4">[4]</a> checksum of the serialization in #1. The
+fingerprint is the <span class="caps">SHA</span>-256&nbsp;checksum.</p>
+</li>
+</ol>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">Although fingerprints can be represented as an array of
+bytes, they &#8220;are&#8221; not objects on their own.  A fingerprint and a
+file object containing the fingerprint&#8217;s byte representation are
+separate entities within this&nbsp;specification.</p>
+</div>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">For rereference, the fingerprint of the empty file object is
+b39a4820-77f7da28-95347fde-04604c5e-d95784c6-bb748df0-f4a06bbc-767ebf53;
+and the fingerprint of the empty dictionary object is&nbsp;0d7f33e1-3e14f31b-3195494a-c7d21f1d-88ee5ade-c4d392ab-1a3fe336-ab9df24b.</p>
+</div>
+<div class="section" id="textual-and-binary-representation-of-fingerprints">
+<h3>Textual and binary representation of&nbsp;fingerprints</h3>
+<p>There are different possible representations for a fingerprint,
+suitable for different&nbsp;contexts:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="41%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Format / Encoding</th>
+<th class="head">Target use</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>binary</td>
+<td>32 bytes (256 bits), no encoding</td>
+<td>Binary storage, network protocols</td>
+</tr>
+<tr><td>compact</td>
+<td>46 characters, Base64 + checksum</td>
+<td>Print and hypertext media</td>
+</tr>
+<tr><td>long</td>
+<td>55 characters, Base32 + checksum</td>
+<td>Mouth-to-ear, analog phone/radio</td>
+</tr>
+<tr><td>hex</td>
+<td>64 characters, hexadecimal</td>
+<td>Databases w/o proper support for binary</td>
+</tr>
+</tbody>
+</table>
+<p>The <em>binary</em> representation is formed by the 32 bytes output by the
+hashing algorithm, unchanged; the <em>hex</em> representation is the same
+value printed in&nbsp;hexadecimal.</p>
+<p>Both the <em>compact</em> and <em>long</em> representations are intended for use by
+people: they contain a checksum so that accidental character
+transpositions, substitutions, insertions or deletions during the
+human-to-human transmission of fingerprints can be detected
+automatically. See <a class="reference internal" href="#computing-and-verifying-fingerprint-checksums">Computing and verifying fingerprint checksums</a> below
+for&nbsp;details.</p>
+<p>Implementations may choose either lowercase or upper case digits for
+hex and long; as well as adding hyphens in the middle of a hex or long
+representation to ease reading by&nbsp;humans.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">The hex, long and compact representations are not unique,
+due to a possible ambiguity of upper vs. lowercase letter digits
+for hex and long, and the padding in final position for long and
+compact. Fingerprints <span class="caps">MUST</span> be normalized (eg. to binary
+representation) prior to&nbsp;comparison.</p>
+</div>
+<div class="section" id="computing-and-verifying-fingerprint-checksums">
+<h4>Computing and verifying fingerprint&nbsp;checksums</h4>
+<p>To compute the compact or long representation, proceed as&nbsp;follows:</p>
+<ol class="arabic simple">
+<li>compute/obtain the binary fingerprint as an array of 32&nbsp;bytes;</li>
+<li>prepare two accumulators A and B, initialized to&nbsp;0;</li>
+<li>for each byte in the binary fingerprint taken in sequence, add the
+byte&#8217;s value to A modulo 255, then add the value of A to B modulo
+255 <a class="footnote-reference" href="#fletcher" id="id5">[5]</a>;</li>
+<li>append the value of A then B to the byte&nbsp;array;</li>
+<li>compute the Base32 (long) or Base64 (compact) encoding <a class="footnote-reference" href="#base" id="id6">[6]</a> of the
+byte array, using the &#8220;<span class="caps">URL</span> and filesystem safe alphabet&#8221; for&nbsp;Base64;</li>
+<li>remove the Base32/64 padding character(s) (=) from the end of the&nbsp;result.</li>
+</ol>
+<p>To verify that a compact or long representation is valid, proceed as&nbsp;follows:</p>
+<ol class="arabic simple">
+<li>add the necessary Base32/64 padding character(s) at the end of the&nbsp;fingerprint;</li>
+<li>decode the byte array using the standard Base32/64 algorithm, and
+the &#8220;<span class="caps">URL</span> and filesystem safe alphabet&#8221; for&nbsp;Base64;</li>
+<li>check that the A and B sum for the first 32 bytes are equal to the
+33rd and 34th bytes&nbsp;respectively.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="representation-methods">
+<h2>Representation&nbsp;methods</h2>
+<p>Each object may have multiple syntactic representations. The mapping
+from semantic to syntactic representation and back again is identified
+by the name of a <em>representation method</em>.</p>
+<p>Any representation method must follow the following <em>common
+requirements</em>:</p>
+<ul class="simple">
+<li>the representation of any finite object must be&nbsp;finite;</li>
+<li>the representation must be reversible, and the method must provide
+both a finite-time and finite-space algorithm to translate a
+semantic object to its representation and another for the inverse&nbsp;translation;</li>
+<li>the algorithms must be publicly specified with at least one public
+and open source&nbsp;implementation.</li>
+</ul>
+<p>New methods can be added over time via new method names; it is
+expected that Structured Common tools will support common archival
+formats as representation methods (eg. <tt class="docutils literal">tgz</tt>, <tt class="docutils literal">tbz</tt>, <tt class="docutils literal">zip</tt>,
+etc), as long as public, open implementations are guaranteed to remain
+available in the&nbsp;future.</p>
+</div>
+<div class="section" id="example-reference-implementation">
+<h2>Example/reference&nbsp;implementation</h2>
+<p>Example code in Python is provided&nbsp;separately:</p>
+<p><a class="reference external" href="https://github.com/structured-commons/tools">https://github.com/structured-commons/tools</a></p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="ascii" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/ASCII">https://en.wikipedia.org/wiki/<span class="caps">ASCII</span></a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="uni" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Unicode">https://en.wikipedia.org/wiki/Unicode</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="utf" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/UTF-8">https://en.wikipedia.org/wiki/<span class="caps">UTF</span>-8</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="sha" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/SHA-2">https://en.wikipedia.org/wiki/<span class="caps">SHA</span>-2</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="fletcher" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Fletcher, <span class="caps">J. G.</span>&#8220;An Arithmetic Checksum for Serial
+Transmissions&#8221;. 1982. <span class="caps">IEEE</span> Trans. Comm., <span class="caps">COM</span>-30(1):247–252.
+(<a class="reference external" href="https://en.wikipedia.org/wiki/Fletcher%27s_checksum">https://en.wikipedia.org/wiki/Fletcher%27s_checksum</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="base" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><a class="reference external" href="https://tools.ietf.org/html/rfc4648">https://tools.ietf.org/html/rfc4648</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>
