@@ -60,3 +60,8 @@ for i in popen('find content/static ! -type d'):
     rel = static.split('/', 1)[1]
     STATIC_PATHS.append(static)
     EXTRA_PATH_METADATA[static] = { 'path' : rel, 'status' : 'hidden' }
+for i in popen('find content/pages/sceps ! -type d'):
+    n = i.rstrip()
+    static = n.split('/', 1)[1]
+    STATIC_PATHS.append(static)
+    EXTRA_PATH_METADATA[static] = { 'path' : n.split('/')[-1], 'status' : 'hidden' }
