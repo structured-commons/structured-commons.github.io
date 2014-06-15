@@ -4,8 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Structured Commons'
 SITENAME = u'Structured Commons'
-#SITEURL = 'http://www.structured-commons.org'
-SITEURL = 'http://localhost:8080'
+SITEURL = 'http://www.structured-commons.org'
 
 TIMEZONE = 'Europe/Amsterdam'
 
@@ -16,7 +15,7 @@ THEME = u'gum-sc'
 DEFAULT_LANG = u'en'
 
 PLUGIN_PATH = 'plugins'
-PLUGINS = ['html_rst_directive','filetime_from_git']
+PLUGINS = ['html_rst_directive','specs']
 DIRECT_TEMPLATES = ['archives']
 
 # Pages

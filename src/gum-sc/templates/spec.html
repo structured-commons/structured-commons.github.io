@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ SITENAME }} :: {{ page.slug|upper }} - {{ page.title }} {%endblock%}
+{% block content %}
+
+    <!--<h1>{{ page.slug|upper }} – {{ page.title }}</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">{{ page.scep }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">{{ page.title }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">{{ page.gitrev }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">{{ page.updated }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">{{ page.author }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">{{ page.scep_status }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">{{ page.type }}</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">{{ page.created }}</td></tr>
+    </tbody></table>
+
+    {{ page.content }}
+{% endblock %}
