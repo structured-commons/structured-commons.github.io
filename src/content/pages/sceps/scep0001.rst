@@ -115,10 +115,9 @@ editors that it is ready for review. SCEPs are reviewed by the
 Technical Steering Committee, who may accept or reject a SCEP or send
 it back to the author(s) for revision. For a SCEP that is
 pre-determined to be acceptable (e.g., it is an obvious win as-is
-and/or its implementation already exists in one or more popular
-BitTorrent clients) the Technical Steering Committee may also initiate
-a SCEP review, first notifying the SCEP author(s) and giving them a
-chance to make revisions.
+and/or its implementation already exists) the Technical Steering
+Committee may also initiate a SCEP review, first notifying the SCEP
+author(s) and giving them a chance to make revisions.
 
 For a SCEP to be accepted it must meet certain minimum criteria. It
 must be a clear and complete description of the proposed
@@ -170,7 +169,7 @@ SCEPs that infringes on the intellectual property rights of others.
 
 This policy statement should not be construed as meaning that SCEP
 authors are required to assign software implementations of any
-particular idea to the public domain.  BitTorrent implementors may
+particular idea to the public domain. Structured Commons implementors may
 retain all rights to their implementations.
 
 
