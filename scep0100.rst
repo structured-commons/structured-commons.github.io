@@ -1,0 +1,163 @@
+:SCEP: 100
+:Title: Structured Commons Model Overview
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Informational
+:Created: 2014-05-20
+
+Background
+==========
+
+Structured Commons is an alternate model for scholars to register,
+disseminate, filter and preserve scientific knowledge.
+
+Structured Commons was first described in an article presented at the
+TRUST workshop in 2014 [#TRUST14]_ and a separate high-level technical
+report [#A2QA]_.
+
+This document (SCEP0100) describes the Structured Commons model
+at a high-level.
+
+Overview
+========
+
+The Structured Commons model is designed to decouple the manipulation
+of digital objects locally in computers (matters of *data
+representation*), the network of objects references (matters of
+*citation*), and the dissemination of object contents (matters of
+*distribution*).
+
+This is done by layering abstractions:
+
+1. Object model and fingerprints (lowest)
+2. Citations and certificates of existence
+3. Object access and distribution
+
+From a user's perspective, a "published Structured Commons document" consists of these entities:
+
+- one document *object* and its associated *fingerprint* (level 1);
+- zero or more *certificates of existence* and one or more *document handles* for citations (level 2);
+- zero or more *download handles* for access (level 3).
+
+**Level 1: Object model and fingerprints**
+   An *object* is the "body" of a publication, eg. a PDF file,
+   directory containing TeX document sources, data set, etc.  Objects
+   are *semantic* (symbolic), defined independently from where they
+   are observed and how they are stored (representation/syntax).
+
+   The layout of objects in a file system or a program's memory is
+   defined by its *representation*; multiple representations for the same
+   object are possible.
+
+   Any user can futher compute the unique *fingerprint* from the
+   semantic value of an object/document, using a secure hash function.
+
+**Level 2: Citations and certificates of existence**
+   Users then refer to documents and cite documents in new
+   work using a *document handle*, composed of:
+
+   - its object fingerprint,
+   - advisory metadata about the author list and document title,
+   - optionally, one or more (links to) timestamped *certificates of
+     existence* (CoE).
+
+   Document handles inform users of a document's existence and, if
+   coupled with a CoE, that the document existed no later than the
+   certified date and time.
+
+**Level 3: Object access and distribution**
+   To access or retrieve a document from its handle, a user
+   contacts the *data store network* (DS) as follows:
+
+   1. the user issues a request to the DS for the object fingerprint;
+   2. the DS replies with one or more *download handle* (SCDH), a
+      (small) text string that identifies a retrieval method;
+   3. then either:
+
+      3a. the user further interacts with the DS:
+
+          i. issues a request to the DS for the download handle;
+          ii. receives download parameters from the DS;
+          iii. further proceeds as per step 3b below, or
+          iv. issues a request to the DS for the object data according to the download parameters.
+
+      3b. the user uses a 3rd party network (eg. Bittorrent) to
+      retrieve the document using the SCDH or download
+      parameters.
+
+   In a first implementation, Structured Commons may reuse Bittorrent as
+   distribution protocol, and reuse Bittorrent's standard info-hash keys
+   (also known as "BTIH") as SC download handles (SCDHs).
+
+   The mapping of object fingerprints to download handles must be
+   maintained and served by the data store network. However, as
+   download handles are small, it is expected that text databases
+   containing this mapping will be published periodically on public
+   channels, and that users can keep local copies of the download
+   handles (and optionally the download parameters) over time for fast
+   retrieval.
+
+Rationales
+==========
+
+The reason why **document handles and citations use an object fingerprint** instead of
+a download handle directly (ie. *why not make the download handle of a
+document its reference key for inter-work citations?*) is that **download
+handles are not durable in the very long term**:
+
+- using an Internet URL as SCDL may break a citation when the domain
+  name is transferred, the directory tree on the server is changed,
+  the content management system is updated, etc. (also known as the "Link rot" problem [#LR]_)
+
+- using a Bittorrent BTIH as SCDL may break a citation if at some point
+  Structured Commons users decide to switch to another mechanism/protocol
+  than Bittorrent.
+
+The reason why a user first queries a DS for a download hande, and the
+reason why the DS does not reply directly with the data for the
+object, is to promote location-agnosticism: that all DS in the network
+should be able to map fingerprints to download handles even if they do not
+have a local copy of the object.
+
+The reason why retrieval and access can be separated in two steps
+(handle to parameters, then parameters to document) is to enable
+institutional organizations to track where copies of a document are
+stored and how to download them without serving copies of the
+documents themselves. This idea, taken from the Bittorrent protocol,
+is useful in the target application (academic publishing), to enable
+legal redistribution of "older" content where only direct authors and
+licensees have a right to redistribute copies.
+
+References
+==========
+
+.. [#TRUST14] R. Poss, S. Altmeyer, M. Thompson, R. Jelier. Academia 2.0:
+   removing the publisher middle-man while retaining impact. In
+   Proc 1st ACM SIGPLAN Workshop on Reproducible Research
+   Methodologies and New Publication Models in Computer
+   Engineering (TRUST’14), Edinburgh, UK, June 2014.
+   `DOI:10.1145/2618137.2618139`__
+
+.. [#A2QA] R. Poss, S. Altmeyer, M. Thompson, R. Jelier. Aca 2.0:
+   Questions and answers. Technical report `arXiV/1404.7753`__,
+   May 2014.
+
+.. __: http://dx.doi.org/10.1145/2618137.2618139
+.. __: http://arxiv.org/abs/1404.7753
+
+.. [#LR] https://en.wikipedia.org/wiki/Link_rot
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:

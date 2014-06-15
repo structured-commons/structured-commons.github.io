@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0002 - Sample reStructured Text <span class="caps">SCEP</span>&nbsp;Template </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0002 – SCEP0002 - Sample reStructured Text <span class="caps">SCEP</span>&nbsp;Template</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">2</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Sample reStructured Text <span class="caps">SCEP</span>&nbsp;Template</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">83b446373ea74fc652ecafe962c7e61040635a1d</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-15 21:30:48  (Sun, 15 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Structured Commons Technical Steering Committee</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Active</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Process</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-15</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0002.rst">scep0002.rst</a> (<tt>fp:C-Jn1j756N7fIEvxs53mx-79t_bYhSx3CLcRBlM1Hrc8PA</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="abstract">
+<h2>Abstract</h2>
+<p>This <span class="caps">SCEP</span> provides a boilerplate or sample template for creating your
+own reStructuredText SCEPs.  In conjunction with the content guidelines
+in <span class="caps">SCEP</span> 1 <a class="footnote-reference" href="#scep-1" id="id1">[1]</a>, this should make it easy for you to conform your own
+SCEPs to the format outlined&nbsp;below.</p>
+<p>Note: if you are reading this <span class="caps">SCEP</span> via the web, you should first grab
+the text (reStructuredText) source of this <span class="caps">SCEP</span> in order to complete
+the steps below.  <strong><span class="caps">DO</span> <span class="caps">NOT</span> <span class="caps">USE</span> <span class="caps">THE</span> <span class="caps">HTML</span> <span class="caps">FILE</span> <span class="caps">AS</span> <span class="caps">YOUR</span>&nbsp;<span class="caps">TEMPLATE</span>!</strong></p>
+<p>To get the source this (or any) <span class="caps">SCEP</span>, look at the top of the <span class="caps">HTML</span> page
+and click on the &#8220;Source&#8221;&nbsp;link.</p>
+</div>
+<div class="section" id="rationale">
+<h2>Rationale</h2>
+<p><span class="caps">SCEP</span> submissions come in a wide variety of forms, not all adhering
+to the format guidelines set forth below.  Use this template, in
+conjunction with the format guidelines below, to ensure that your
+<span class="caps">SCEP</span> submission won&#8217;t get automatically rejected because of&nbsp;form.</p>
+<p>ReStructuredText is offered as an alternative to plaintext SCEPs, to
+allow <span class="caps">SCEP</span> authors more functionality and expressivity, while
+maintaining easy readability in the source text.  The processed <span class="caps">HTML</span>
+form makes the functionality accessible to readers: live hyperlinks,
+styled text, tables, images, and automatic tables of contents, among
+other&nbsp;advantages.</p>
+</div>
+<div class="section" id="how-to-use-this-template">
+<h2>How to Use This&nbsp;Template</h2>
+<p>To use this template, you must first decide whether your <span class="caps">SCEP</span> is going
+to be an Informational or Standards Track <span class="caps">SCEP</span>.  Most SCEPs are
+Standards Track because they propose a new feature for the Structured Commons
+infrastructure and network protocols.  When in doubt,
+read <span class="caps">SCEP</span> 1 for details or contact the <span class="caps">SCEP</span> editors
+&lt;<a class="reference external" href="mailto:editors&#64;structured-commons.org">editors&#64;structured-commons.org</a>&gt;.</p>
+<p>Once you&#8217;ve decided which type of <span class="caps">SCEP</span> yours is going to be, follow the
+directions&nbsp;below.</p>
+<ul>
+<li><p class="first">Make a copy of this file (<tt class="docutils literal">.rst</tt> file, <strong>not</strong> <span class="caps">HTML</span>!)  and perform
+the following&nbsp;edits.</p>
+</li>
+<li><p class="first">Replace the &#8220;<span class="caps">SCEP</span>: 2&#8221; header with &#8220;<span class="caps">SCEP</span>: <span class="caps">XXX</span>&#8221; since you don&#8217;t yet have
+a <span class="caps">SCEP</span> number&nbsp;assignment.</p>
+</li>
+<li><p class="first">Change the Title header to the title of your&nbsp;<span class="caps">SCEP</span>.</p>
+</li>
+<li><p class="first">Change the Author header to include your name, and optionally your
+email address.  Be sure to follow the format carefully: your name
+must appear first, and it must not be contained in parentheses.
+Your email address may appear second (or it can be omitted) and if
+it appears, it must appear in angle brackets.  It is okay to
+obfuscate your email&nbsp;address.</p>
+</li>
+<li><p class="first">If there is a mailing list for discussion of your new feature, add a
+Discussions-To header right after the Author header.  You should not
+add a Discussions-To header if the mailing list to be used is
+<a class="reference external" href="mailto:sc-discuss&#64;structured-commons.org">sc-discuss&#64;structured-commons.org</a>, or if discussions should be sent to
+you directly.  Most Informational SCEPs don&#8217;t have a Discussions-To&nbsp;header.</p>
+</li>
+<li><p class="first">Change the Status header to&nbsp;&#8220;Draft&#8221;.</p>
+</li>
+<li><p class="first">For Standards Track SCEPs, change the Type header to &#8220;Standards&nbsp;Track&#8221;.</p>
+</li>
+<li><p class="first">For Informational SCEPs, change the Type header to&nbsp;&#8220;Informational&#8221;.</p>
+</li>
+<li><p class="first">For Standards Track SCEPs, if your feature depends on the acceptance
+of some other currently in-development <span class="caps">SCEP</span>, add a Requires header
+right after the Type header.  The value should be the <span class="caps">SCEP</span> number of
+the <span class="caps">SCEP</span> yours depends on.  Don&#8217;t add this header if your dependent
+feature is described in a Final&nbsp;<span class="caps">SCEP</span>.</p>
+</li>
+<li><p class="first">Change the Created header to today&#8217;s date.  Be sure to follow the
+format carefully: it must be in <tt class="docutils literal"><span class="pre">yyyy-mm-dd</span></tt> format.</p>
+</li>
+<li><p class="first">Leave Post-History alone for now; you&#8217;ll add dates to this header
+each time you post your <span class="caps">SCEP</span> to <a class="reference external" href="mailto:sc-discuss&#64;structured-commons.org">sc-discuss&#64;structured-commons.org</a>.  If
+you posted your <span class="caps">SCEP</span> to the lists on August 14, 2001 and September 3,
+2001, the Post-History header would look&nbsp;like:</p>
+<pre class="literal-block">
+Post-History: 2001-08-14, 2001-09-03
+</pre>
+<p>You must manually add new dates and check them in.  If you don&#8217;t
+have check-in privileges, send your changes to the <span class="caps">SCEP</span>&nbsp;editors.</p>
+</li>
+<li><p class="first">Add a Replaces header if your <span class="caps">SCEP</span> obsoletes an earlier <span class="caps">SCEP</span>.  The
+value of this header is the number of the <span class="caps">SCEP</span> that your new <span class="caps">SCEP</span> is
+replacing.  Only add this header if the older <span class="caps">SCEP</span> is in &#8220;final&#8221;
+form, i.e. is either Accepted, Final, or Rejected.  You aren&#8217;t
+replacing an older open <span class="caps">SCEP</span> if you&#8217;re submitting a competing&nbsp;idea.</p>
+</li>
+<li><p class="first">Now write your Abstract, Rationale, and other content for your <span class="caps">SCEP</span>,
+replacing all this gobbledygook with your own text. Be sure to
+adhere to the format guidelines below, specifically on the
+prohibition of tab characters and the indentation&nbsp;requirements.</p>
+</li>
+<li><p class="first">Update your References and Copyright section.  Usually you&#8217;ll place
+your <span class="caps">SCEP</span> into the public domain, in which case just leave the
+Copyright section alone.  Alternatively, you can use the <a class="reference external" href="http://www.opencontent.org/openpub/">Open
+Publication License</a>, but public domain is still strongly&nbsp;preferred.</p>
+</li>
+<li><p class="first">Leave the Emacs stanza at the end of this file alone, including the
+formfeed character (&#8220;^L&#8221;, or <tt class="docutils literal">\f</tt>).</p>
+</li>
+<li><p class="first">Send your <span class="caps">SCEP</span> submission to the <span class="caps">SCEP</span> editors at
+<a class="reference external" href="mailto:editors&#64;structured-commons.org">editors&#64;structured-commons.org</a>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="restructuredtext-scep-formatting-requirements">
+<h2>ReStructuredText <span class="caps">SCEP</span> Formatting&nbsp;Requirements</h2>
+<p>The following is a <span class="caps">SCEP</span>-specific summary of reStructuredText syntax.
+For the sake of simplicity and brevity, much detail is omitted.  For
+more detail, see <a class="reference internal" href="#resources">Resources</a> below.  <a class="reference internal" href="#literal-blocks">Literal blocks</a> (in which no
+markup processing is done) are used for examples throughout, to
+illustrate the plaintext&nbsp;markup.</p>
+<div class="section" id="section-headings">
+<h3>Section&nbsp;Headings</h3>
+<p><span class="caps">SCEP</span> headings must begin in column zero and the initial letter of each
+word must be capitalized as in book titles.  Acronyms should be in all
+capitals.  Section titles must be adorned with an underline, a single
+repeated punctuation character, which begins in column zero and must
+extend at least as far as the right edge of the title text (4
+characters minimum).  First-level section titles are underlined with
+&#8220;=&#8221; (equals signs), second-level section titles with &#8220;-&#8221; (hyphens),
+and third-level section titles with &#8220;&#8217;&#8221; (single quotes or
+apostrophes).  For&nbsp;example:</p>
+<pre class="literal-block">
+First-Level Title
+=================
+
+Second-Level Title
+------------------
+
+Third-Level Title
+'''''''''''''''''
+</pre>
+<p>If there are more than three levels of sections in your <span class="caps">SCEP</span>, you may
+insert overline/underline-adorned titles for the first and second
+levels as&nbsp;follows:</p>
+<pre class="literal-block">
+============================
+First-Level Title (optional)
+============================
+
+-----------------------------
+Second-Level Title (optional)
+-----------------------------
+
+Third-Level Title
+=================
+
+Fourth-Level Title
+------------------
+
+Fifth-Level Title
+'''''''''''''''''
+</pre>
+<p>You shouldn&#8217;t have more than five levels of sections in your <span class="caps">SCEP</span>.  If
+you do, you should consider rewriting&nbsp;it.</p>
+<p>You must use two blank lines between the last line of a section&#8217;s body
+and the next section heading.  If a subsection heading immediately
+follows a section heading, a single blank line in-between is&nbsp;sufficient.</p>
+<p>The body of each section is not normally indented, although some
+constructs do use indentation, as described below.  Blank lines are
+used to separate&nbsp;constructs.</p>
+</div>
+<div class="section" id="paragraphs">
+<h3>Paragraphs</h3>
+<p>Paragraphs are left-aligned text blocks separated by blank lines.
+Paragraphs are not indented unless they are part of an indented
+construct (such as a block quote or a list&nbsp;item).</p>
+</div>
+<div class="section" id="inline-markup">
+<h3>Inline&nbsp;Markup</h3>
+<p>Portions of text within paragraphs and other text blocks may be
+styled.  For&nbsp;example:</p>
+<pre class="literal-block">
+Text may be marked as *emphasized* (single asterisk markup,
+typically shown in italics) or **strongly emphasized** (double
+asterisks, typically boldface).  ``Inline literals`` (using double
+backquotes) are typically rendered in a monospaced typeface.  No
+further markup recognition is done within the double backquotes,
+so they're safe for any kind of code snippets.
+</pre>
+</div>
+<div class="section" id="block-quotes">
+<h3>Block&nbsp;Quotes</h3>
+<p>Block quotes consist of indented body elements.  For&nbsp;example:</p>
+<pre class="literal-block">
+This is a paragraph.
+
+    This is a block quote.
+
+    A block quote may contain many paragraphs.
+</pre>
+<p>Block quotes are used to quote extended passages from other sources.
+Block quotes may be nested inside other body elements.  Use 4 spaces
+per indent&nbsp;level.</p>
+</div>
+<div class="section" id="literal-blocks">
+<h3>Literal&nbsp;Blocks</h3>
+<!-- In the text below, double backquotes are used to denote inline
+literals.  "``::``" is written so that the colons will appear in a
+monospaced font; the backquotes (``) are markup, not part of the
+text.  See "Inline Markup" above.
+
+By the way, this is a comment, described in "Comments" below. -->
+<p>Literal blocks are used for code samples or preformatted <span class="caps">ASCII</span> art. To
+indicate a literal block, preface the indented text block with
+&#8220;<tt class="docutils literal">::</tt>&#8221; (two colons).  The literal block continues until the end of
+the indentation.  Indent the text block by 4 spaces.  For&nbsp;example:</p>
+<pre class="literal-block">
+This is a typical paragraph.  A literal block follows.
+
+::
+
+    for a in [5,4,3,2,1]:   # this is program code, shown as-is
+        print a
+    print &quot;it's...&quot;
+    # a literal block continues until the indentation ends
+</pre>
+<p>The paragraph containing only &#8220;<tt class="docutils literal">::</tt>&#8221; will be completely removed from
+the output; no empty paragraph will remain.  &#8220;<tt class="docutils literal">::</tt>&#8221; is also
+recognized at the end of any paragraph.  If immediately preceded by
+whitespace, both colons will be removed from the output.  When text
+immediately precedes the &#8220;<tt class="docutils literal">::</tt>&#8220;, <em>one</em> colon will be removed from
+the output, leaving only one colon visible (i.e., &#8220;<tt class="docutils literal">::</tt>&#8221; will be
+replaced by &#8220;<tt class="docutils literal">:</tt>&#8220;).  For example, one colon will remain visible&nbsp;here:</p>
+<pre class="literal-block">
+Paragraph::
+
+    Literal block
+</pre>
+</div>
+<div class="section" id="lists">
+<h3>Lists</h3>
+<p>Bullet list items begin with one of &#8220;-&#8220;, &#8220;*&#8221;, or &#8220;+&#8221; (hyphen,
+asterisk, or plus sign), followed by whitespace and the list item
+body.  List item bodies must be left-aligned and indented relative to
+the bullet; the text immediately after the bullet determines the
+indentation.  For&nbsp;example:</p>
+<pre class="literal-block">
+This paragraph is followed by a list.
+
+* This is the first bullet list item.  The blank line above the
+  first list item is required; blank lines between list items
+  (such as below this paragraph) are optional.
+
+* This is the first paragraph in the second item in the list.
+
+  This is the second paragraph in the second item in the list.
+  The blank line above this paragraph is required.  The left edge
+  of this paragraph lines up with the paragraph above, both
+  indented relative to the bullet.
+
+  - This is a sublist.  The bullet lines up with the left edge of
+    the text blocks above.  A sublist is a new list so requires a
+    blank line above and below.
+
+* This is the third item of the main list.
+
+This paragraph is not part of the list.
+</pre>
+<p>Enumerated (numbered) list items are similar, but use an enumerator
+instead of a bullet.  Enumerators are numbers (1, 2, 3, &#8230;), letters
+(A, B, C, &#8230;; uppercase or lowercase), or Roman numerals (i, ii, iii,
+iv, &#8230;; uppercase or lowercase), formatted with a period suffix
+(&#8220;1.&#8221;, &#8220;2.&#8221;), parentheses (&#8220;(1)&#8221;, &#8220;(2)&#8221;), or a right-parenthesis
+suffix (&#8220;1)&#8221;, &#8220;2)&#8221;).  For&nbsp;example:</p>
+<pre class="literal-block">
+1. As with bullet list items, the left edge of paragraphs must
+   align.
+
+2. Each list item may contain multiple paragraphs, sublists, etc.
+
+   This is the second paragraph of the second list item.
+
+   a) Enumerated lists may be nested.
+   b) Blank lines may be omitted between list items.
+</pre>
+<p>Definition lists are written like&nbsp;this:</p>
+<pre class="literal-block">
+what
+    Definition lists associate a term with a definition.
+
+how
+    The term is a one-line phrase, and the definition is one
+    or more paragraphs or body elements, indented relative to
+    the term.
+</pre>
+</div>
+<div class="section" id="tables">
+<h3>Tables</h3>
+<p>Simple tables are easy and compact but you are not required to use
+simple&nbsp;tables:</p>
+<pre class="literal-block">
+=====  =====  =======
+  A      B    A and B
+=====  =====  =======
+False  False  False
+True   False  False
+False  True   False
+True   True   True
+=====  =====  =======
+</pre>
+<p>There must be at least two columns in a table (to differentiate from
+section titles).  Column spans use underlines of hyphens (&#8220;Inputs&#8221;
+spans the first two&nbsp;columns):</p>
+<pre class="literal-block">
+=====  =====  ======
+   Inputs     Output
+------------  ------
+  A      B    A or B
+=====  =====  ======
+False  False  False
+True   False  True
+False  True   True
+True   True   True
+=====  =====  ======
+</pre>
+<p>Text in a first-column cell starts a new row.  No text in the first
+column indicates a continuation line; the rest of the cells may
+consist of multiple lines.  For&nbsp;example:</p>
+<pre class="literal-block">
+=====  =========================
+col 1  col 2
+=====  =========================
+1      Second column of row 1.
+2      Second column of row 2.
+       Second line of paragraph.
+3      - Second column of row 3.
+
+       - Second item in bullet
+         list (row 3, column 2).
+=====  =========================
+</pre>
+</div>
+<div class="section" id="hyperlinks">
+<h3>Hyperlinks</h3>
+<p>When referencing an external web page in the body of a <span class="caps">SCEP</span>, you should
+include the title of the page in the text, with either an inline
+hyperlink reference to the <span class="caps">URL</span> or a footnote reference (see
+<a class="reference internal" href="#footnotes">Footnotes</a> below).  Do not include the <span class="caps">URL</span> in the body text of the&nbsp;<span class="caps">SCEP</span>.</p>
+<p>Hyperlink references use backquotes and a trailing underscore to mark
+up the reference text; backquotes are optional if the reference text
+is a single word.  For&nbsp;example:</p>
+<pre class="literal-block">
+In this paragraph, we refer to the `Structured Commons web site`_.
+</pre>
+<p>An explicit target provides the <span class="caps">URL</span>.  Put targets in a References
+section at the end of the <span class="caps">SCEP</span>, or immediately after the reference.
+Hyperlink targets begin with two periods and a space (the &#8220;explicit
+markup start&#8221;), followed by a leading underscore, the reference text,
+a colon, and the <span class="caps">URL</span> (absolute or&nbsp;relative):</p>
+<pre class="literal-block">
+.. _Structured Commons web site: http://www.structured-commons.org/
+</pre>
+<p>The reference text and the target text must match (although the match
+is case-insensitive and ignores differences in whitespace).  Note that
+the underscore trails the reference text but precedes the target text.
+If you think of the underscore as a right-pointing arrow, it points
+<em>away</em> from the reference and <em>toward</em> the&nbsp;target.</p>
+<p>The same mechanism can be used for internal references.  Every unique
+section title implicitly defines an internal hyperlink target.  We can
+make a link to the Abstract section like&nbsp;this:</p>
+<pre class="literal-block">
+Here is a hyperlink reference to the `Abstract`_ section.  The
+backquotes are optional since the reference text is a single word;
+we can also just write: Abstract_.
+</pre>
+<p>Footnotes containing the URLs from external targets will be generated
+automatically at the end of the References section of the <span class="caps">SCEP</span>, along
+with footnote references linking the reference text to the&nbsp;footnotes.</p>
+</div>
+<div class="section" id="footnotes">
+<h3>Footnotes</h3>
+<p>Footnote references consist of a left square bracket, a number, a
+right square bracket, and a trailing&nbsp;underscore:</p>
+<pre class="literal-block">
+This sentence ends with a footnote reference [1]_.
+</pre>
+<p>Whitespace must precede the footnote reference.  Leave a space between
+the footnote reference and the preceding&nbsp;word.</p>
+<p>When referring to another <span class="caps">SCEP</span>, include the <span class="caps">SCEP</span> number in the body
+text, such as &#8220;<span class="caps">SCEP</span> 1&#8221;.  The title may optionally appear.  Add a
+footnote reference following the title.  For&nbsp;example:</p>
+<pre class="literal-block">
+Refer to SCEP 1 [2]_ for more information.
+</pre>
+<p>Add a footnote that includes the <span class="caps">SCEP</span>&#8217;s title.  It may
+optionally include the explicit <span class="caps">URL</span> on a separate line, but only in
+the References section.  Footnotes begin with &#8220;.. &#8221; (the explicit
+markup start), followed by the footnote marker (no underscores),
+followed by the footnote body.  For&nbsp;example:</p>
+<pre class="literal-block">
+References
+==========
+
+.. [2] SCEP 1, &quot;The Structured Commons Enhancement Proposal Process&quot;
+   (http://www.structured-commons.org/scep0001.html)
+</pre>
+<p>If you decide to provide an explicit <span class="caps">URL</span> for a <span class="caps">SCEP</span>, please use this as
+the <span class="caps">URL</span>&nbsp;template:</p>
+<pre class="literal-block">
+http://www.structured-commons.org/scepXXXX.html
+</pre>
+<p><span class="caps">SCEP</span> numbers in URLs must be padded with zeros from the left, so as to
+be exactly 4 characters wide, however <span class="caps">SCEP</span> numbers in the text are
+never&nbsp;padded.</p>
+<p>During the course of developing your <span class="caps">SCEP</span>, you may have to add, remove,
+and rearrange footnote references, possibly resulting in mismatched
+references, obsolete footnotes, and confusion.  Auto-numbered
+footnotes allow more freedom.  Instead of a number, use a label of the
+form &#8220;#word&#8221;, where &#8220;word&#8221; is a mnemonic consisting of alphanumerics
+plus internal hyphens, underscores, and periods (no whitespace or
+other characters are allowed).  For&nbsp;example:</p>
+<pre class="literal-block">
+Refer to SCEP 1 [#SCEP-1]_ for more information.
+
+References
+==========
+
+.. [#SCEP-1] SCEP 1, &quot;The Structured Commons Enhancement Proposal Process&quot;
+   (http://www.structured-commons.org/scep0001.html)
+</pre>
+<p>Footnotes and footnote references will be numbered automatically, and
+the numbers will always match.  Once a <span class="caps">SCEP</span> is finalized, auto-numbered
+labels should be replaced by numbers for&nbsp;simplicity.</p>
+</div>
+<div class="section" id="images">
+<h3>Images</h3>
+<p>If your <span class="caps">SCEP</span> contains a diagram, you may include it in the processed
+output using the &#8220;image&#8221;&nbsp;directive:</p>
+<pre class="literal-block">
+.. image:: diagram.png
+</pre>
+<p>Any browser-friendly graphics format is possible: .png, .jpeg, .gif,
+.tiff,&nbsp;etc.</p>
+<p>Since this image will not be visible to readers of the <span class="caps">SCEP</span> in source
+text form, you should consider including a description or <span class="caps">ASCII</span> art
+alternative, using a comment&nbsp;(below).</p>
+</div>
+<div class="section" id="comments">
+<h3>Comments</h3>
+<p>A comment block is an indented block of arbitrary text immediately
+following an explicit markup start: two periods and whitespace.  Leave
+the &#8220;..&#8221; on a line by itself to ensure that the comment is not
+misinterpreted as another explicit markup construct.  Comments are not
+visible in the processed document.  For the benefit of those reading
+your <span class="caps">SCEP</span> in source form, please consider including a descriptions of
+or <span class="caps">ASCII</span> art alternatives to any images you include.  For&nbsp;example:</p>
+<pre class="literal-block">
+.. image:: dataflow.png
+
+..
+   Data flows from the input module, through the &quot;black box&quot;
+   module, and finally into (and through) the output module.
+</pre>
+<p>The Emacs stanza at the bottom of this document is inside a&nbsp;comment.</p>
+</div>
+<div class="section" id="escaping-mechanism">
+<h3>Escaping&nbsp;Mechanism</h3>
+<p>reStructuredText uses backslashes (&#8220;<tt class="docutils literal">\</tt>&#8220;) to override the special
+meaning given to markup characters and get the literal characters
+themselves.  To get a literal backslash, use an escaped backslash
+(&#8220;<tt class="docutils literal">&#92;</tt>&#8220;).  There are two contexts in which backslashes have no
+special meaning: <a class="reference internal" href="#literal-blocks">literal blocks</a> and inline literals (see <a class="reference internal" href="#inline-markup">Inline
+Markup</a> above).  In these contexts, no markup recognition is done,
+and a single backslash represents a literal backslash, without having
+to double&nbsp;up.</p>
+<p>If you find that you need to use a backslash in your text, consider
+using inline literals or a literal block&nbsp;instead.</p>
+</div>
+</div>
+<div class="section" id="habits-to-avoid">
+<h2>Habits to&nbsp;Avoid</h2>
+<p>Many programmers who are familiar with TeX often write quotation marks
+like&nbsp;this:</p>
+<pre class="literal-block">
+`single-quoted' or ``double-quoted''
+</pre>
+<p>Backquotes are significant in reStructuredText, so this practice
+should be avoided.  For ordinary text, use ordinary &#8216;single-quotes&#8217; or
+&#8220;double-quotes&#8221;.  For inline literal text (see <a class="reference internal" href="#inline-markup">Inline Markup</a>
+above), use&nbsp;double-backquotes:</p>
+<pre class="literal-block">
+``literal text: in here, anything goes!``
+</pre>
+</div>
+<div class="section" id="resources">
+<h2>Resources</h2>
+<p>Many other constructs and variations are possible.  For more details
+about the reStructuredText markup, in increasing order of
+thoroughness, please&nbsp;see:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/rst/quickstart.html">A ReStructuredText Primer</a>, a gentle&nbsp;introduction.</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/docs/rst/quickref.html">Quick reStructuredText</a>, a users&#8217; quick&nbsp;reference.</li>
+<li><a class="reference external" href="http://docutils.sourceforge.net/spec/rst/reStructuredText.html">reStructuredText Markup Specification</a>, the final&nbsp;authority.</li>
+</ul>
+<p>The processing of reStructuredText SCEPs is done using <a class="reference external" href="http://docutils.sourceforge.net/">Docutils</a>.  If
+you have a question or require assistance with reStructuredText or
+Docutils, please <a class="reference external" href="mailto:docutils-users&#64;lists.sourceforge.net?subject=SCEPs">post a message</a> to the <a class="reference external" href="http://docutils.sf.net/docs/user/mailing-lists.html#docutils-users">Docutils-users mailing
+list</a>.  The <a class="reference external" href="http://docutils.sourceforge.net/">Docutils project web site</a> has more&nbsp;information.</p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="scep-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP0001</span>. The Structured Commons Enhancement Proposal Process.
+(<a class="reference external" href="http://www.structured-commons.org/scep0001.html">http://www.structured-commons.org/scep0001.html</a>)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

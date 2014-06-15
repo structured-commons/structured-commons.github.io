@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0100 - Structured Commons Model&nbsp;Overview </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0100 – SCEP0100 - Structured Commons Model&nbsp;Overview</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">100</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Structured Commons Model&nbsp;Overview</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">83b446373ea74fc652ecafe962c7e61040635a1d</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-15 21:30:48  (Sun, 15 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Informational</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-05-20</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0100.rst">scep0100.rst</a> (<tt>fp:LoQ65pcKnP4X8NpxH-odbILKFSa6OL9tSZA4NlXEvr6Bag</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="background">
+<h2>Background</h2>
+<p>Structured Commons is an alternate model for scholars to register,
+disseminate, filter and preserve scientific&nbsp;knowledge.</p>
+<p>Structured Commons was first described in an article presented at the
+<span class="caps">TRUST</span> workshop in 2014 <a class="footnote-reference" href="#trust14" id="id1">[1]</a> and a separate high-level technical
+report <a class="footnote-reference" href="#a2qa" id="id2">[2]</a>.</p>
+<p>This document (<span class="caps">SCEP0100</span>) describes the Structured Commons model
+at a&nbsp;high-level.</p>
+</div>
+<div class="section" id="overview">
+<h2>Overview</h2>
+<p>The Structured Commons model is designed to decouple the manipulation
+of digital objects locally in computers (matters of <em>data
+representation</em>), the network of objects references (matters of
+<em>citation</em>), and the dissemination of object contents (matters of
+<em>distribution</em>).</p>
+<p>This is done by layering&nbsp;abstractions:</p>
+<ol class="arabic simple">
+<li>Object model and fingerprints&nbsp;(lowest)</li>
+<li>Citations and certificates of&nbsp;existence</li>
+<li>Object access and&nbsp;distribution</li>
+</ol>
+<p>From a user&#8217;s perspective, a &#8220;published Structured Commons document&#8221; consists of these&nbsp;entities:</p>
+<ul class="simple">
+<li>one document <em>object</em> and its associated <em>fingerprint</em> (level&nbsp;1);</li>
+<li>zero or more <em>certificates of existence</em> and one or more <em>document handles</em> for citations (level&nbsp;2);</li>
+<li>zero or more <em>download handles</em> for access (level&nbsp;3).</li>
+</ul>
+<dl class="docutils">
+<dt><strong>Level 1: Object model and&nbsp;fingerprints</strong></dt>
+<dd><p class="first">An <em>object</em> is the &#8220;body&#8221; of a publication, eg. a <span class="caps">PDF</span> file,
+directory containing TeX document sources, data set, etc.  Objects
+are <em>semantic</em> (symbolic), defined independently from where they
+are observed and how they are stored&nbsp;(representation/syntax).</p>
+<p>The layout of objects in a file system or a program&#8217;s memory is
+defined by its <em>representation</em>; multiple representations for the same
+object are&nbsp;possible.</p>
+<p class="last">Any user can futher compute the unique <em>fingerprint</em> from the
+semantic value of an object/document, using a secure hash&nbsp;function.</p>
+</dd>
+<dt><strong>Level 2: Citations and certificates of&nbsp;existence</strong></dt>
+<dd><p class="first">Users then refer to documents and cite documents in new
+work using a <em>document handle</em>, composed&nbsp;of:</p>
+<ul class="simple">
+<li>its object&nbsp;fingerprint,</li>
+<li>advisory metadata about the author list and document&nbsp;title,</li>
+<li>optionally, one or more (links to) timestamped <em>certificates of
+existence</em>&nbsp;(CoE).</li>
+</ul>
+<p class="last">Document handles inform users of a document&#8217;s existence and, if
+coupled with a CoE, that the document existed no later than the
+certified date and&nbsp;time.</p>
+</dd>
+<dt><strong>Level 3: Object access and&nbsp;distribution</strong></dt>
+<dd><p class="first">To access or retrieve a document from its handle, a user
+contacts the <em>data store network</em> (<span class="caps">DS</span>) as&nbsp;follows:</p>
+<ol class="arabic">
+<li><p class="first">the user issues a request to the <span class="caps">DS</span> for the object&nbsp;fingerprint;</p>
+</li>
+<li><p class="first">the <span class="caps">DS</span> replies with one or more <em>download handle</em> (<span class="caps">SCDH</span>), a
+(small) text string that identifies a retrieval&nbsp;method;</p>
+</li>
+<li><p class="first">then&nbsp;either:</p>
+<p>3a. the user further interacts with the&nbsp;<span class="caps">DS</span>:</p>
+<blockquote>
+<ol class="lowerroman simple">
+<li>issues a request to the <span class="caps">DS</span> for the download&nbsp;handle;</li>
+<li>receives download parameters from the&nbsp;<span class="caps">DS</span>;</li>
+<li>further proceeds as per step 3b below,&nbsp;or</li>
+<li>issues a request to the <span class="caps">DS</span> for the object data according to the download&nbsp;parameters.</li>
+</ol>
+</blockquote>
+<p>3b. the user uses a 3rd party network (eg. Bittorrent) to
+retrieve the document using the <span class="caps">SCDH</span> or download&nbsp;parameters.</p>
+</li>
+</ol>
+<p>In a first implementation, Structured Commons may reuse Bittorrent as
+distribution protocol, and reuse Bittorrent&#8217;s standard info-hash keys
+(also known as &#8220;<span class="caps">BTIH</span>&#8221;) as <span class="caps">SC</span> download handles&nbsp;(SCDHs).</p>
+<p class="last">The mapping of object fingerprints to download handles must be
+maintained and served by the data store network. However, as
+download handles are small, it is expected that text databases
+containing this mapping will be published periodically on public
+channels, and that users can keep local copies of the download
+handles (and optionally the download parameters) over time for fast&nbsp;retrieval.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="rationales">
+<h2>Rationales</h2>
+<p>The reason why <strong>document handles and citations use an object fingerprint</strong> instead of
+a download handle directly (ie. <em>why not make the download handle of a
+document its reference key for inter-work citations?</em>) is that <strong>download
+handles are not durable in the very long term</strong>:</p>
+<ul class="simple">
+<li>using an Internet <span class="caps">URL</span> as <span class="caps">SCDL</span> may break a citation when the domain
+name is transferred, the directory tree on the server is changed,
+the content management system is updated, etc. (also known as the &#8220;Link rot&#8221; problem <a class="footnote-reference" href="#lr" id="id3">[3]</a>)</li>
+<li>using a Bittorrent <span class="caps">BTIH</span> as <span class="caps">SCDL</span> may break a citation if at some point
+Structured Commons users decide to switch to another mechanism/protocol
+than&nbsp;Bittorrent.</li>
+</ul>
+<p>The reason why a user first queries a <span class="caps">DS</span> for a download hande, and the
+reason why the <span class="caps">DS</span> does not reply directly with the data for the
+object, is to promote location-agnosticism: that all <span class="caps">DS</span> in the network
+should be able to map fingerprints to download handles even if they do not
+have a local copy of the&nbsp;object.</p>
+<p>The reason why retrieval and access can be separated in two steps
+(handle to parameters, then parameters to document) is to enable
+institutional organizations to track where copies of a document are
+stored and how to download them without serving copies of the
+documents themselves. This idea, taken from the Bittorrent protocol,
+is useful in the target application (academic publishing), to enable
+legal redistribution of &#8220;older&#8221; content where only direct authors and
+licensees have a right to redistribute&nbsp;copies.</p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="trust14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>R. Poss, S. Altmeyer, M. Thompson, R. Jelier. Academia 2.0:
+removing the publisher middle-man while retaining impact. In
+Proc 1st <span class="caps">ACM</span> <span class="caps">SIGPLAN</span> Workshop on Reproducible Research
+Methodologies and New Publication Models in Computer
+Engineering (<span class="caps">TRUST</span>’14), Edinburgh, <span class="caps">UK</span>, June 2014.
+<a class="reference external" href="http://dx.doi.org/10.1145/2618137.2618139"><span class="caps">DOI</span>:10.1145/2618137.2618139</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="a2qa" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>R. Poss, S. Altmeyer, M. Thompson, R. Jelier. Aca 2.0:
+Questions and answers. Technical report <a class="reference external" href="http://arxiv.org/abs/1404.7753">arXiV/1404.7753</a>,
+May 2014.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="lr" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Link_rot">https://en.wikipedia.org/wiki/Link_rot</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

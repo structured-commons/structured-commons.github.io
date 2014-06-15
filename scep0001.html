@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0001 - The Structured Commons Enhancement Proposal&nbsp;Process </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0001 – SCEP0001 - The Structured Commons Enhancement Proposal&nbsp;Process</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">1</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">The Structured Commons Enhancement Proposal&nbsp;Process</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">83b446373ea74fc652ecafe962c7e61040635a1d</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-15 21:30:48  (Sun, 15 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Structured Commons Technical Steering Committee</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Active</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Process</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-15</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0001.rst">scep0001.rst</a> (<tt>fp:SK3qoQ0RV5sKQpcIMoTkIUpMokzQDXf-8PLy9c0nVa3aYg</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="what-is-a-scep">
+<h2>What is a&nbsp;<span class="caps">SCEP</span></h2>
+<p><span class="caps">SCEP</span> stands for Structured Commons Enhancement Proposal.  A <span class="caps">SCEP</span> is a
+design document providing information to the Structured Commons
+community, or describing a new feature for the Structured Commons
+methods and protocols. The <span class="caps">SCEP</span> should provide a concise technical
+specification of the feature and a rationale for the&nbsp;feature.</p>
+<p>We intend SCEPs to be the primary mechanisms for proposing new
+features, for collecting community input on an issue, and for
+documenting the design decisions that have gone into Structured Commons. The <span class="caps">SCEP</span>
+author is responsible for building consensus within the community and
+documenting dissenting&nbsp;opinions.</p>
+<p>Because the SCEPs are maintained as reStructured text files in a
+versioned repository, their revision history is the historical record
+of the feature proposal <a class="footnote-reference" href="#id4" id="id1">[1]</a>. The list of all defined SCEPs is
+maintained as <span class="caps">SCEP</span> 0 <a class="footnote-reference" href="#scep-0" id="id2">[3]</a>.</p>
+</div>
+<div class="section" id="scep-types">
+<h2><span class="caps">SCEP</span>&nbsp;Types</h2>
+<p>There are three kinds of&nbsp;<span class="caps">SCEP</span>:</p>
+<blockquote>
+<ol class="arabic simple">
+<li>A Standards Track <span class="caps">SCEP</span> describes an extension to one of the
+Structured Commons protocols, or a change in the behavior of one
+of the actors in these&nbsp;protocols.</li>
+<li>An Informational <span class="caps">SCEP</span> describes a Structured Commons design issue, or
+provides general guidelines or information to the Structured Commons
+community, but does not propose an extension. Informational SCEPs
+do not necessarily represent a Structured Commons community consensus or
+recommendation, so users and implementors are free to ignore
+Informational SCEPs or follow their&nbsp;advice.</li>
+<li>A Process <span class="caps">SCEP</span> describes a process surrounding the Structured Commons, or
+proposes a change to (or an event in) a process. Process SCEPs are
+like Standards Track SCEPs but apply to areas other than the
+Structured Commons protocols.  They are more than recommendations, and
+users are typically not free to ignore them. Examples include
+release schedules, procedures, guidelines, changes to the
+decision-making process, and changes to the tools or environment
+used in Structured Commons&nbsp;development.</li>
+</ol>
+</blockquote>
+</div>
+<div class="section" id="scep-work-flow">
+<h2><span class="caps">SCEP</span> Work&nbsp;Flow</h2>
+<p>The <span class="caps">SCEP</span> editors assign <span class="caps">SCEP</span> numbers and change their status.
+Please send all <span class="caps">SCEP</span>-related email to &lt;<a class="reference external" href="mailto:editors&#64;structured-commons.org">editors&#64;structured-commons.org</a>&gt;.</p>
+<p>The <span class="caps">SCEP</span> process begins with a new idea for the Structured Commons
+protocols. It is highly recommended that a single <span class="caps">SCEP</span> contain a single
+key proposal. The <span class="caps">SCEP</span> editor reserves the right to reject <span class="caps">SCEP</span>
+proposals if they appear unfocussed or overly broad. If in doubt,
+split your <span class="caps">SCEP</span> into muliple&nbsp;SCEPs.</p>
+<p>Each <span class="caps">SCEP</span> must have a champion &#8212; someone who writes the <span class="caps">SCEP</span> using
+the style and format described below, shepherds the discussions in the
+appropriate forums, and attempts to build community consensus around
+the idea. The <span class="caps">SCEP</span> champion should first post a description of the
+idea to the SCEPs mailing list at:
+<a class="reference external" href="http://lists.structured-commons.org/mailman/listinfo/sc-discuss">http://lists.structured-commons.org/mailman/listinfo/sc-discuss</a></p>
+<p>If the champion believes the idea warrants a <span class="caps">SCEP</span> then the champion
+emails the <span class="caps">SCEP</span> editor &lt;<a class="reference external" href="mailto:editors&#64;structured-commons.org">editors&#64;structured-commons.org</a>&gt; with a proposed title
+and a draft of the <span class="caps">SCEP</span>. This draft must be written in <span class="caps">SCEP</span> style as
+described&nbsp;below.</p>
+<p>If the <span class="caps">SCEP</span> editor approves, he assigns the <span class="caps">SCEP</span> a number, labels it
+as Standards Track, Informational, or Process, gives it status
+&#8220;Draft&#8221;, and creates and checks-in the initial draft of the <span class="caps">SCEP</span> to
+the subversion repository. The <span class="caps">SCEP</span> editor will not unreasonably deny
+a <span class="caps">SCEP</span>. Reasons for denying <span class="caps">SCEP</span> status include duplication of effort,
+being technically unsound, not providing proper motivation or not
+addressing backwards compatibility. The Structured Commons Technical
+Steering Committee can be consulted during the approval phase, and is
+the final arbiter of the draft&#8217;s&nbsp;<span class="caps">SCEP</span>-ability.</p>
+<p>If a pre-<span class="caps">SCEP</span> is rejected, the author may elect to take the pre-<span class="caps">SCEP</span> to
+the <span class="caps">SCEP</span> forum seeking feedback and consesnsus from the community at large.
+A proposal may be re-submitted after it has been&nbsp;revised.</p>
+<p>The champion is then responsible for marshaling community support for
+it. As updates are necessary, the <span class="caps">SCEP</span> author can check in new
+versions if they have commit permissions on the <span class="caps">SCEP</span> repository, or
+can email new <span class="caps">SCEP</span> versions to the <span class="caps">SCEP</span> editors for&nbsp;committing.</p>
+<p>Standards Track SCEPs consist of two parts, a design document and a
+reference implementation. The reference implementation need not be
+complete when a <span class="caps">SCEP</span> is submitted to the editors.  However Standards
+Track SCEPs must include an implementation with publicy available code
+before it can be considered&nbsp;Final.</p>
+<p><span class="caps">SCEP</span> champions are responsible for collecting community feedback on a
+<span class="caps">SCEP</span> before submitting it for review. A <span class="caps">SCEP</span> that has not been
+discussed in the Structured Commons mailing lists will not be
+accepted. However, wherever possible, long open-ended discussions in
+the mailing list should be avoided. Strategies to keep the discussions
+efficient include: setting up a separate <span class="caps">SIG</span> forum for the topic,
+having the <span class="caps">SCEP</span> author accept private comments in the early design
+phases, setting up a wiki page, etc. <span class="caps">SCEP</span> authors should use their
+discretion&nbsp;here.</p>
+<p>Once the authors have completed a <span class="caps">SCEP</span>, they must inform the <span class="caps">SCEP</span>
+editors that it is ready for review. SCEPs are reviewed by the
+Technical Steering Committee, who may accept or reject a <span class="caps">SCEP</span> or send
+it back to the author(s) for revision. For a <span class="caps">SCEP</span> that is
+pre-determined to be acceptable (e.g., it is an obvious win as-is
+and/or its implementation already exists in one or more popular
+BitTorrent clients) the Technical Steering Committee may also initiate
+a <span class="caps">SCEP</span> review, first notifying the <span class="caps">SCEP</span> author(s) and giving them a
+chance to make&nbsp;revisions.</p>
+<p>For a <span class="caps">SCEP</span> to be accepted it must meet certain minimum criteria. It
+must be a clear and complete description of the proposed
+enhancement. The enhancement must represent a net improvement. The
+proposed implementation, if applicable, must be functional and have
+been tested in a live environment.  Supporting results from
+analyses, testbed experiments and event-based simulations are also
+recommended where appropriate.  A Standards Track document should
+include the rationale behind a proposal and may briefly summarize
+analytical, simulation, or experimental results where necessary to
+illustrate or motivate the enhancement.  However, detailed analytical,
+simulation, and experiment results, especially comparing different
+approaches to the same problem should be omitted from Standards Track
+SCEPs and instead cited from a published paper or a separate
+Informational&nbsp;<span class="caps">SCEP</span>.</p>
+<p>Once a <span class="caps">SCEP</span> has been accepted, the reference implementation must be
+completed. When the reference implementation is complete and accepted
+by the <span class="caps">BDFL</span>, the status will be changed to&nbsp;&#8220;Final&#8221;.</p>
+<p>A <span class="caps">SCEP</span> can also be assigned status &#8220;Deferred&#8221;. The <span class="caps">SCEP</span> author or editor
+can assign the <span class="caps">SCEP</span> this status when no progress is being made on the
+<span class="caps">SCEP</span>. Once a <span class="caps">SCEP</span> is deferred, the <span class="caps">SCEP</span> editor can re-assign it to draft&nbsp;status.</p>
+<p>A <span class="caps">SCEP</span> can also be &#8220;Rejected&#8221;. Perhaps after all is said and done it
+was not a good idea. It is still important to have a record of this&nbsp;fact.</p>
+<p>SCEPs can also be replaced by a different <span class="caps">SCEP</span>, rendering the original
+obsolete. This is intended for Informational SCEPs, where e.g. version 2 of
+an <span class="caps">API</span> can replace version&nbsp;1.</p>
+</div>
+<div class="section" id="intellectual-property-and-structured-commons-standards">
+<h2>Intellectual Property and Structured Commons&nbsp;Standards</h2>
+<p>Any idea submitted in a <span class="caps">SCEP</span> will not be considered for standardization
+if the idea is not in the public domain.  Before a <span class="caps">SCEP</span> can be
+considered Final, all people (including the <span class="caps">SCEP</span> authors) or entities
+with a claim on the intellectual property expressed in a <span class="caps">SCEP</span> must
+assign in writing all intellectual property expressed in the <span class="caps">SCEP</span> to
+the public domain.  If the <span class="caps">SCEP</span> authors lack the power to assign
+intellectual property rights then they must disclose this fact before
+the <span class="caps">SCEP</span> can be considered&nbsp;Final.</p>
+<p>Furthermore <span class="caps">SCEP</span> authors should not knowingly propose anything in their
+SCEPs that infringes on the intellectual property rights of&nbsp;others.</p>
+<p>This policy statement should not be construed as meaning that <span class="caps">SCEP</span>
+authors are required to assign software implementations of any
+particular idea to the public domain.  BitTorrent implementors may
+retain all rights to their&nbsp;implementations.</p>
+</div>
+<div class="section" id="history">
+<h2>History</h2>
+<p>This document was derived heavily from <span class="caps">PEP</span>-0001 <a class="footnote-reference" href="#id5" id="id3">[2]</a>.  In many places
+text was simply copied and modified.  Although the <span class="caps">PEP</span>-0001 text
+was written by Barry Warsaw, Jeremy Hylton, and David Goodger, they
+are not responsible for its use in the Structured Commons Enhancement Process,
+and should not be bothered with technical questions specific to
+Structured Commons or the <span class="caps">SCEP</span> process.  Please direct all comments to the
+<span class="caps">SCEP</span> editors &lt;<a class="reference external" href="mailto:editors&#64;structured-commons.org">editors&#64;structured-commons.org</a>&gt; or the mailing list
+at: <a class="reference external" href="http://lists.structured-commons.org/mailman/listinfo/sc-discuss">http://lists.structured-commons.org/mailman/listinfo/sc-discuss</a></p>
+<div class="section" id="references">
+<h3>References</h3>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://github.com/structured-commons/structured-commons.github.io/tree/master/src/content/pages/sceps">https://github.com/structured-commons/structured-commons.github.io/tree/master/src/content/pages/sceps</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id5" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td><a class="reference external" href="http://www.python.org/dev/peps/pep-0001/">http://www.python.org/dev/peps/pep-0001/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="scep-0" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[3]</a></td><td><span class="caps">SCEP0000</span>. Index of Structured Commons Enhancement Proposals.
+(<a class="reference external" href="http://www.structured-commons.org/scep0000.html">http://www.structured-commons.org/scep0000.html</a>)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>
