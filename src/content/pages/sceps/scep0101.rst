@@ -1,0 +1,207 @@
+:SCEP: 101
+:Title: Structured Commons Object Model and Fingerprints
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Standards Track
+:Created: 2014-06-21
+
+This SCEP describes the lowest level of the Structured
+Commons model and infrastructure: how document
+and digital objects are structured and fingerprinted.
+
+Object model
+============
+
+An Aca2 *object* is either:
+
+- a *file*, ie. an array of bytes (which may be empty and/or contain NUL bytes); or
+- a *dictionary* that maps *names* to either objects (inclusion) or
+  fingerprints (symbolic reference).
+
+A name is an array of Unicode [#UNI]_ characters (code points):
+
+- which must not be empty;
+- which must not contain characters codes in the range 0-31.
+
+"Contains" and "Refers to"
+--------------------------
+
+Other SCEPs and Structured Commons materials and technology can
+use the following terminology:
+
+- An object A is said to *contain* an object B if either of the
+  following is true:
+
+  - A is a dictionary with B as an immediate leaf; or
+  - A is a dictionary and any of its leaves "contains" B.
+
+- An object A is said to *refer to* an object B if either of the
+  following is true:
+
+  - A "contains" B; or
+  - A is a dictionary with B's fingerprint as an immediate leaf; or
+  - A is a dictionary and any of its object members "refers to" B.
+
+  By extension, an object A is said to refer to a fingerprint F if it
+  refers to an object B whose fingerprint is F.
+
+Fingerprints
+============
+
+Object *fingerprints* are fixed size 32-byte arrays computed from
+any object as follows:
+
+1. serialize the object onto an array of bytes as follows:
+
+   for a file object:
+     first the byte code 115 ("s"), followed by the object length in
+     big endian ASCII [#ASCII]_ decimal (codes 48-57), followed by a NUL byte,
+     followed by the object's byte data.
+
+   for a directory object:
+     - first the byte code 116 ("t"), follow by the decimal length of
+       the representation described hereafter, followed by a NUL byte,
+       followed by:
+
+     - the byte representation of the dictionary's contents, formed by
+       concatenating, for each name in the directory sorted in
+       lexicographic order: a character indicating the type of entity
+       linked to (either ``s`` or ``t`` for regular objects, or ``l``
+       for a fingerprint reference), followed by a colon (byte code 58),
+       followed by the name UTF-8 [#UTF]_ encoded, followed by a NUL byte,
+       followed by the binary fingerprint of the linked object.
+
+2. compute the SHA-256 [#SHA]_ checksum of the serialization in #1. The
+   fingerprint is the SHA-256 checksum.
+
+.. note:: Although fingerprints can be represented as an array of
+   bytes, they "are" not objects on their own.  A fingerprint and a
+   file object containing the fingerprint's byte representation are
+   separate entities within this specification.
+
+.. note:: For rereference, the fingerprint of the empty file object is
+   b39a4820-77f7da28-95347fde-04604c5e-d95784c6-bb748df0-f4a06bbc-767ebf53;
+   and the fingerprint of the empty dictionary object is
+   0d7f33e1-3e14f31b-3195494a-c7d21f1d-88ee5ade-c4d392ab-1a3fe336-ab9df24b.
+
+Textual and binary representation of fingerprints
+-------------------------------------------------
+
+There are different possible representations for a fingerprint,
+suitable for different contexts:
+
+======= ================================= ========================================
+Name    Format / Encoding                 Target use
+======= ================================= ========================================
+binary  32 bytes (256 bits), no encoding  Binary storage, network protocols
+compact 46 characters, Base64 + checksum  Print and hypertext media
+long    55 characters, Base32 + checksum  Mouth-to-ear, analog phone/radio
+hex     64 characters, hexadecimal        Databases w/o proper support for binary
+======= ================================= ========================================
+
+The *binary* representation is formed by the 32 bytes output by the
+hashing algorithm, unchanged; the *hex* representation is the same
+value printed in hexadecimal.
+
+Both the *compact* and *long* representations are intended for use by
+people: they contain a checksum so that accidental character
+transpositions, substitutions, insertions or deletions during the
+human-to-human transmission of fingerprints can be detected
+automatically. See `Computing and verifying fingerprint checksums`_ below
+for details.
+
+Implementations may choose either lowercase or upper case digits for
+hex and long; as well as adding hyphens in the middle of a hex or long
+representation to ease reading by humans.
+
+.. note::
+   The hex, long and compact representations are not unique,
+   due to a possible ambiguity of upper vs. lowercase letter digits
+   for hex and long, and the padding in final position for long and
+   compact. Fingerprints MUST be normalized (eg. to binary
+   representation) prior to comparison.
+
+Computing and verifying fingerprint checksums
+`````````````````````````````````````````````
+
+To compute the compact or long representation, proceed as follows:
+
+1. compute/obtain the binary fingerprint as an array of 32 bytes;
+2. prepare two accumulators A and B, initialized to 0;
+3. for each byte in the binary fingerprint taken in sequence, add the
+   byte's value to A modulo 255, then add the value of A to B modulo
+   255 [#FLETCHER]_;
+4. append the value of A then B to the byte array;
+5. compute the Base32 (long) or Base64 (compact) encoding [#BASE]_ of the
+   byte array, using the "URL and filesystem safe alphabet" for
+   Base64;
+6. remove the Base32/64 padding character(s) (=) from the end of the result.
+
+To verify that a compact or long representation is valid, proceed as follows:
+
+1. add the necessary Base32/64 padding character(s) at the end of the fingerprint;
+2. decode the byte array using the standard Base32/64 algorithm, and
+   the "URL and filesystem safe alphabet" for Base64;
+3. check that the A and B sum for the first 32 bytes are equal to the
+   33rd and 34th bytes respectively.
+
+
+Representation methods
+======================
+
+Each object may have multiple syntactic representations. The mapping
+from semantic to syntactic representation and back again is identified
+by the name of a *representation method*.
+
+Any representation method must follow the following *common
+requirements*:
+
+- the representation of any finite object must be finite;
+
+- the representation must be reversible, and the method must provide
+  both a finite-time and finite-space algorithm to translate a
+  semantic object to its representation and another for the inverse
+  translation;
+
+- the algorithms must be publicly specified with at least one public
+  and open source implementation.
+
+New methods can be added over time via new method names; it is
+expected that Structured Common tools will support common archival
+formats as representation methods (eg. ``tgz``, ``tbz``, ``zip``,
+etc), as long as public, open implementations are guaranteed to remain
+available in the future.
+
+Example/reference implementation
+================================
+
+Example code in Python is provided separately:
+
+https://github.com/structured-commons/tools
+
+References
+==========
+
+.. [#ASCII] https://en.wikipedia.org/wiki/ASCII
+.. [#UNI] https://en.wikipedia.org/wiki/Unicode
+.. [#UTF] https://en.wikipedia.org/wiki/UTF-8
+.. [#SHA] https://en.wikipedia.org/wiki/SHA-2
+.. [#FLETCHER] Fletcher, J. G. "An Arithmetic Checksum for Serial
+   Transmissions". 1982. IEEE Trans. Comm., COM-30(1):247–252.
+   (https://en.wikipedia.org/wiki/Fletcher%27s_checksum)
+.. [#BASE] https://tools.ietf.org/html/rfc4648
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:
