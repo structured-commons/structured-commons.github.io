@@ -25,6 +25,10 @@ html {
   line-height: 1;
 }
 
+tt {
+  font-family: monospace;
+}
+
 /*
 ol, ul {
   list-style: none;
@@ -5363,11 +5367,13 @@ form fieldset legend {
   font-weight: bold;
   line-height: 20px;
   text-align: center;
-  color: #fff;
+  //color: #fff;
 }
+/*
 .badge a, .label a {
   color: #fff;
 }
+*/
 .badge.primary, .label.primary {
   background: #3085d6;
 }
@@ -6069,6 +6075,7 @@ dl dt {
 }
 
 dl dd {
+  margin-left: 2em;
   margin-bottom: 20px;
 }
 
