@@ -1,0 +1,123 @@
+:SCEP: 103
+:Title: Standard filesystem representation method
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Standards Track
+:Created: 2014-06-16
+
+The Structured Commons object model is defined semantically in SCEP
+101 [#SCEP-101], independently from its particular representation in a
+computer system. Conversely, there may exist multiple valid
+representations for an object.
+
+This SCEP defines the canonical representation of Structured
+Commons objects in a filesystem, with method name "**fs**".
+
+Overview
+========
+
+The ``fs`` representation maps objects to a filesystem (eg. on disk).
+
+Object files are represented by filesystem files.
+
+Object dictionaries are represented by filesystem directories.
+
+Names in dictionaries are translated using UTF-8 [#UTF]_ to file/directory
+names, with an optional percent-encoding [#URLQ]_  to support characters
+that are not acceptable in file names on a particular platform.
+
+For example, the name "helló / world?" can be translated
+"``hell%C3%B3 %2F world?``" on a Unix filesystem or
+to "``hell%C3%B3%20%2F%20world%3F``" for a directory served
+over HTTP.
+
+Dictionary names that map to objects are represented by directory
+entries that point to either files or directories.
+
+Dictionary names that map to fingerprints are represented by a regular
+file containing the binary representation of the fingerprint, with a
+filesystem name that prepends "%00" to the dictionary name
+representation.
+
+.. caution::
+   The names "." and ".." are valid dictionary names
+   in Structured Commons dictionaries, however they are (usually)
+   not valid filesystem entry names. In general,
+   names starting with a "." should always be encoded to a
+   filesystem name starting with "%2E".
+
+Encoding algorithm
+==================
+
+::
+
+ PROCEDURE encode(path, object) BEGIN
+    IF object IS-A FILE-OBJECT THEN
+       SAVE BYTE-DATA(object) TO path
+    ELSE
+       MAKE-DIRECTORY name
+       FOR name IN DICTIONARY-LABELS(object) DO
+          item := DICTIONARY-VALUE(object, name)
+          npath = URL-QUOTE(UTF-8-ENCODE(name))
+          IF item IS-A FINGERPRINT THEN
+             fpath := path + '/%00' + npath
+             SAVE BYTE-DATA(item) TO fpath;
+          ELSE
+             fpath := path + '/' + npath
+             CALL encode(fpath, item)
+          END IF
+       END FOR
+    END IF
+ END PROCEDURE
+
+Decoding algorithm
+==================
+
+::
+
+ FUNCTION decode(path) BEGIN
+    IF IS-REGULAR-FILE(path) THEN
+       data := LOAD-BYTES-FROM(path)
+    ELSE
+       data := MAKE-EMPTY-DICTIONARY()
+       FOR fname IN DIRECTORY-LISTING(path) DO
+          IF fname STARTS-WITH "%00" THEN
+             label := UTF-8-DECODE(DROP-FIRST-CHAR(URL-UNQUOTE(fname)))
+             fpdata := FINGERPRINT-VALUE(LOAD-BYTES-FROM(fname))
+             SET data KEY label VALUE fpdata
+          ELSE
+             label := UTF-8-DECODE(URL-UNQUOTE(fname))
+             data := CALL decode(path + '/' + fname)
+             SET data KEY label VALUE data
+          END IF
+       END FOR
+    END IF
+    RETURN data
+ END FUNCTION
+
+Example/reference implementation
+================================
+
+Example code in Python is provided separately:
+
+https://github.com/structured-commons/tools
+
+References
+==========
+
+.. [#UTF] RFC 3629. "UTF-8, a transformation format of ISO 10646".
+   (https://tools.ietf.org/html/rfc3629)
+
+.. [#URLQ] RFC 3986, "Uniform Resource Identifier (URI): Generic Syntax".
+   (https://tools.ietf.org/html/rfc3986)
+
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:
