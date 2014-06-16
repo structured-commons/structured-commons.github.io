@@ -3,7 +3,7 @@ from pelican import signals, contents
 from git import Git, Repo, InvalidGitRepositoryError
 import os
 from datetime import datetime
-from time import mktime, altzone
+import time
 from sc import fp, fs
 
 import locale
@@ -45,15 +45,15 @@ def specs(content):
             with_extended_output=True, with_exceptions=False)
     if status != 0:
         # file is not managed by git
-        content.updated = datetime.fromtimestamp(os.stat(path).st_mtime)
+        content.updated = time.gmtime(os.stat(path).st_mtime)
         content.gitrev = '(not yet committed)'
     else:
         commits = repo.commits(path=path)
         assert len(commits) > 0
-        content.updated = datetime.fromtimestamp(mktime(commits[-1].committed_date) - altzone)
-        content.gitrev = commits[-1].id
+        content.updated = commits[0].committed_date
+        content.gitrev = commits[0].id
 
-    content.updated = content.updated.strftime('%F %T %z (%a, %d %B %Y)')
+    content.updated = time.strftime('%F %T UTC (%a, %d %B %Y)', content.updated)
 
 def register():
     signals.content_object_init.connect(specs)
