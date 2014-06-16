@@ -114,6 +114,10 @@ References
 .. [#URLQ] RFC 3986, "Uniform Resource Identifier (URI): Generic Syntax".
    (https://tools.ietf.org/html/rfc3986)
 
+Copyright
+=========
+
+This document has been placed in the public domain.
 
 
 ..
