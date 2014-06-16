@@ -3,7 +3,7 @@
 :Author: Raphael ‘kena’ Poss
 :Status: Draft
 :Type: Standards Track
-:Created: 2014-06-21
+:Created: 2014-06-16
 
 This SCEP describes the lowest level of the Structured
 Commons model and infrastructure: how document
