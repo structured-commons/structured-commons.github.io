@@ -1,0 +1,176 @@
+:SCEP: 102
+:Title: Certificates of existence
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Standards Track
+:Created: 2014-06-16
+
+Definition
+==========
+
+A **certificate of existence** (CoE) binds an object with a date stamp
+and asserts that the object existed no later than the certified date.
+
+A CoE exists outside of the object that it certifies. Each object can
+be attested by more than one CoE.
+
+CoEs are intended for display in citation contexts, for example "this
+document refers to another document D, attested by CoEs X, Y, and Z".
+
+The Structured Commons model supports multiple *certification methods*
+to generate and verify CoEs, including a variety of historical
+mechanisms already in use in academic publishing.
+
+Certification methods
+=====================
+
+New certifications methods may be defined over time, as long as they are publicly
+documented and certificates can be independently verified by users.
+
+Each certification method must provide at least the following services:
+
+- from an object or fingerprint, generate a CoE for a calendar date no
+  earlier than the date of the request;
+- from a CoE and object, verify the CoE is valid and
+  return the earliest attested date for the fingerprint;
+- represent the CoE as a textual, printable *CoE signature* that can be
+  embedded in citation contexts.
+
+All CoE signatures must match the following common format: the method
+name, followed by a colon, followed optionally by the certified date stamp with
+format YYYY-MM-DD and a colon, followed by a textual
+representation of the CoE::
+
+  signature: METHOD ':' [ DATESTAMP ':' ] CERTIFICATE
+
+This format is purposely defined to overlap with the syntax already
+used in academic works to refer to certificates of existence, cf. the
+next section.
+
+Predefined certification methods
+================================
+
+The following CoE methods are predefined:
+
+======= =============================================== ==================================
+Name    Meaning of CoE signature                        Base URL for verification
+======= =============================================== ==================================
+doi     registered Digital Object Identifier [#]_ [#]_  http://dx.doi.org/%s
+acmid   publication ID in the ACM Digital Library [#]_  http://dl.acm.org/citation.cfm?id=%s
+arxiv   ArXiv document identifier                       http://arxiv.org/abs/%s
+btc     Document digest                                 http://www.proofofexistence.com/detail/%s
+ocn     OCLC Control Number [#]_ [#]_                   http://www.worldcat.org/oclc/%s
+isbn    International Standard Book Number [#]_ [#]_    N/A
+======= =============================================== ==================================
+
+These methods correspond to historical mechanisms that are already trusted by scholars
+to deliver reliable registration services.
+
+Some example valid CoE signatures:
+
+arxiv:2014-04-30:1404.7753
+   method: arXiv, attested date April 30th, 2014, certificate "1404.7753"
+
+arxiv:1404.7753
+   method: arXiv, omitted date, certificate "1404.7753"
+
+doi:2014-06-09:10.1145/2618137.2618139
+   method: DOI, attested date June 9th, 2014, certificate "10.1145/2618137.2618139"
+
+doi:10.1145/2618137.2618139
+   method: DOI, omitted date, certificate "10.1145/2618137.2618139"
+
+acmid:2014-06-09:2618137.2618139
+   method: ACMID, attested date June 9th, 2014, certificate "2618137.2618139"
+
+acmid:2618137.2618139
+   method: ACMID, omitted date, certificate "2618137.2618139"
+
+.. note::
+   These CoE signature formats correspond to the format already used by scholars
+   to embed the DOI, ArXiv, ACM id, etc. in bibliographical citations. This
+   choice is intentional, to enable the direct capture of this existing practice
+   within the Structured Commons model.
+
+Hypertext references
+====================
+
+In a hypertext context, each CoE signature representation should be
+configured as a hyperlink to the certificate URI.
+
+For example, an ``arxiv`` CoE sig can redirect to the URI
+``http://arxiv.org/abs/`` followed by the arXiv identifier:
+`arxiv:2014-04-30:1404.7753`__
+
+.. __: http://arxiv.org/abs/1404.7753
+
+See the table above for a list of base URLs to use for the predefined
+certification methods.
+
+Very long term durability
+=========================
+
+As certification requires trusted 3rd parties, a risk exists that the
+disappearance of a certification authority will make the verification
+of a single internet-based CoE difficult, expensive or even
+impossible.
+
+This risk increases over time, and ensuring CoE verification stays possible
+is quite relevant considering the Structured Commons model envisions
+preserving knowledge over the very long term (50+ years).
+
+Historically, durable CoE verifiability was ensured by printing
+journals on paper, and archiving multiple paper copies over time and
+in different libraries over the world. Even hundred years later, we
+are able to check 18th century articles existed no later than a
+particular date by investigating and cross-checking paper
+archives. This method is effective even for works that are not
+published in journals, *as long as journals cite them*: if a work A is
+cited by journal J which is attested to exist at date D by a set of
+printed copies, then A is attested to have existed no later than D.
+
+Starting with the Internet, more and more works are published "online
+only" and never cited by printed journals, so the CoE durability
+provided by journals becomes largely ineffective.
+
+There are three strategies to guarantee the very long term
+verifiability of CoEs, even without printed journals, in increasing
+order of effectiveness:
+
+1. creating multiple CoEs using more than one certification method (decreases the risk that
+   the disappearance of one certification authority makes verification impossible);
+2. archive CoE databases in durable media (eg. paper or microfilm
+   archives that map fingerprints to known CoEs);
+3. ensure that **works are cited using both their fingerprint and known CoEs**, so
+   that the structured global web of knowledge serves as distributed
+   trusted database of CoEs.
+
+The last strategy is the most robust: if a work A is attested by CoE
+X, and B cites A using A's fingerprint and X's signature, and the web
+of knowledge attests B *via fingerprint* by citation in multiple other
+works, then it becomes impossible to modify A or fake another CoE (or
+attested date) because this would change A's fingerprint and thus B's.
+Over time, the *structured citation network* will become the trusted database
+of CoEs for past works.
+
+References
+==========
+
+.. [#] https://en.wikipedia.org/wiki/Digital_object_identifier
+.. [#] ISO/DIS 26324:2012. "Information and documentation -- Digital object identifier system".
+.. [#] http://dl.acm.org/
+.. [#] http://www.oclc.org/batchload/controlnumber.en.html
+.. [#] https://en.wikipedia.org/wiki/Online_Computer_Library_Center
+.. [#] ISO 2108:2005. "Information and documentation -- International standard book number (ISBN)".
+.. [#] https://en.wikipedia.org/wiki/International_Standard_Book_Number
+
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:

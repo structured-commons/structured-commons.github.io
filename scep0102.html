@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0102 - Certificates of&nbsp;existence </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0102 – SCEP0102 - Certificates of&nbsp;existence</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">102</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Certificates of&nbsp;existence</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">b472c0fd9d1166dcfd3a3a252ba6b5c8eda869aa</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 10:23:16  (Mon, 16 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-16</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0102.rst">scep0102.rst</a> (<tt>fp:UxooFx6O-Q7LWpHThUuhrjyNx926SML8_LVTVLDbovC6tw</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="definition">
+<h2>Definition</h2>
+<p>A <strong>certificate of existence</strong> (CoE) binds an object with a date stamp
+and asserts that the object existed no later than the certified&nbsp;date.</p>
+<p>A CoE exists outside of the object that it certifies. Each object can
+be attested by more than one&nbsp;CoE.</p>
+<p>CoEs are intended for display in citation contexts, for example &#8220;this
+document refers to another document D, attested by CoEs X, Y, and&nbsp;Z&#8221;.</p>
+<p>The Structured Commons model supports multiple <em>certification methods</em>
+to generate and verify CoEs, including a variety of historical
+mechanisms already in use in academic&nbsp;publishing.</p>
+</div>
+<div class="section" id="certification-methods">
+<h2>Certification&nbsp;methods</h2>
+<p>New certifications methods may be defined over time, as long as they are publicly
+documented and certificates can be independently verified by&nbsp;users.</p>
+<p>Each certification method must provide at least the following&nbsp;services:</p>
+<ul class="simple">
+<li>from an object or fingerprint, generate a CoE for a calendar date no
+earlier than the date of the&nbsp;request;</li>
+<li>from a CoE and object, verify the CoE is valid and
+return the earliest attested date for the&nbsp;fingerprint;</li>
+<li>represent the CoE as a textual, printable <em>CoE signature</em> that can be
+embedded in citation&nbsp;contexts.</li>
+</ul>
+<p>All CoE signatures must match the following common format: the method
+name, followed by a colon, followed optionally by the certified date stamp with
+format <span class="caps">YYYY</span>-<span class="caps">MM</span>-<span class="caps">DD</span> and a colon, followed by a textual
+representation of the&nbsp;CoE:</p>
+<pre class="literal-block">
+signature: METHOD ':' [ DATESTAMP ':' ] CERTIFICATE
+</pre>
+<p>This format is purposely defined to overlap with the syntax already
+used in academic works to refer to certificates of existence, cf. the
+next&nbsp;section.</p>
+</div>
+<div class="section" id="predefined-certification-methods">
+<h2>Predefined certification&nbsp;methods</h2>
+<p>The following CoE methods are&nbsp;predefined:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="49%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name</th>
+<th class="head">Meaning of CoE signature</th>
+<th class="head">Base <span class="caps">URL</span> for verification</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>doi</td>
+<td>registered Digital Object Identifier <a class="footnote-reference" href="#id9" id="id1">[1]</a> <a class="footnote-reference" href="#id10" id="id2">[2]</a></td>
+<td><a class="reference external" href="http://dx.doi.org/%s">http://dx.doi.org/%s</a></td>
+</tr>
+<tr><td>acmid</td>
+<td>publication <span class="caps">ID</span> in the <span class="caps">ACM</span> Digital Library <a class="footnote-reference" href="#id11" id="id3">[3]</a></td>
+<td><a class="reference external" href="http://dl.acm.org/citation.cfm?id=%s">http://dl.acm.org/citation.cfm?id=%s</a></td>
+</tr>
+<tr><td>arxiv</td>
+<td>ArXiv document identifier</td>
+<td><a class="reference external" href="http://arxiv.org/abs/%s">http://arxiv.org/abs/%s</a></td>
+</tr>
+<tr><td>btc</td>
+<td>Document digest</td>
+<td><a class="reference external" href="http://www.proofofexistence.com/detail/%s">http://www.proofofexistence.com/detail/%s</a></td>
+</tr>
+<tr><td>ocn</td>
+<td><span class="caps">OCLC</span> Control Number <a class="footnote-reference" href="#id12" id="id4">[4]</a> <a class="footnote-reference" href="#id13" id="id5">[5]</a></td>
+<td><a class="reference external" href="http://www.worldcat.org/oclc/%s">http://www.worldcat.org/oclc/%s</a></td>
+</tr>
+<tr><td>isbn</td>
+<td>International Standard Book Number <a class="footnote-reference" href="#id14" id="id6">[6]</a> <a class="footnote-reference" href="#id15" id="id7">[7]</a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>These methods correspond to historical mechanisms that are already trusted by scholars
+to deliver reliable registration&nbsp;services.</p>
+<p>Some example valid CoE&nbsp;signatures:</p>
+<dl class="docutils">
+<dt>arxiv:2014-04-30:1404.7753</dt>
+<dd>method: arXiv, attested date April 30th, 2014, certificate&nbsp;&#8220;1404.7753&#8221;</dd>
+<dt>arxiv:1404.7753</dt>
+<dd>method: arXiv, omitted date, certificate&nbsp;&#8220;1404.7753&#8221;</dd>
+<dt>doi:2014-06-09:10.1145/2618137.2618139</dt>
+<dd>method: <span class="caps">DOI</span>, attested date June 9th, 2014, certificate&nbsp;&#8220;10.1145/2618137.2618139&#8221;</dd>
+<dt>doi:10.1145/2618137.2618139</dt>
+<dd>method: <span class="caps">DOI</span>, omitted date, certificate&nbsp;&#8220;10.1145/2618137.2618139&#8221;</dd>
+<dt>acmid:2014-06-09:2618137.2618139</dt>
+<dd>method: <span class="caps">ACMID</span>, attested date June 9th, 2014, certificate&nbsp;&#8220;2618137.2618139&#8221;</dd>
+<dt>acmid:2618137.2618139</dt>
+<dd>method: <span class="caps">ACMID</span>, omitted date, certificate&nbsp;&#8220;2618137.2618139&#8221;</dd>
+</dl>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">These CoE signature formats correspond to the format already used by scholars
+to embed the <span class="caps">DOI</span>, ArXiv, <span class="caps">ACM</span> id, etc. in bibliographical citations. This
+choice is intentional, to enable the direct capture of this existing practice
+within the Structured Commons&nbsp;model.</p>
+</div>
+</div>
+<div class="section" id="hypertext-references">
+<h2>Hypertext&nbsp;references</h2>
+<p>In a hypertext context, each CoE signature representation should be
+configured as a hyperlink to the certificate&nbsp;<span class="caps">URI</span>.</p>
+<p>For example, an <tt class="docutils literal">arxiv</tt> CoE sig can redirect to the <span class="caps">URI</span>
+<tt class="docutils literal"><span class="pre">http://arxiv.org/abs/</span></tt> followed by the arXiv identifier:
+<a class="reference external" href="http://arxiv.org/abs/1404.7753">arxiv:2014-04-30:1404.7753</a></p>
+<p>See the table above for a list of base URLs to use for the predefined
+certification&nbsp;methods.</p>
+</div>
+<div class="section" id="very-long-term-durability">
+<h2>Very long term&nbsp;durability</h2>
+<p>As certification requires trusted 3rd parties, a risk exists that the
+disappearance of a certification authority will make the verification
+of a single internet-based CoE difficult, expensive or even&nbsp;impossible.</p>
+<p>This risk increases over time, and ensuring CoE verification stays possible
+is quite relevant considering the Structured Commons model envisions
+preserving knowledge over the very long term (50+&nbsp;years).</p>
+<p>Historically, durable CoE verifiability was ensured by printing
+journals on paper, and archiving multiple paper copies over time and
+in different libraries over the world. Even hundred years later, we
+are able to check 18th century articles existed no later than a
+particular date by investigating and cross-checking paper
+archives. This method is effective even for works that are not
+published in journals, <em>as long as journals cite them</em>: if a work A is
+cited by journal J which is attested to exist at date D by a set of
+printed copies, then A is attested to have existed no later than&nbsp;D.</p>
+<p>Starting with the Internet, more and more works are published &#8220;online
+only&#8221; and never cited by printed journals, so the CoE durability
+provided by journals becomes largely&nbsp;ineffective.</p>
+<p>There are three strategies to guarantee the very long term
+verifiability of CoEs, even without printed journals, in increasing
+order of&nbsp;effectiveness:</p>
+<ol class="arabic simple">
+<li>creating multiple CoEs using more than one certification method (decreases the risk that
+the disappearance of one certification authority makes verification&nbsp;impossible);</li>
+<li>archive CoE databases in durable media (eg. paper or microfilm
+archives that map fingerprints to known&nbsp;CoEs);</li>
+<li>ensure that <strong>works are cited using both their fingerprint and known CoEs</strong>, so
+that the structured global web of knowledge serves as distributed
+trusted database of&nbsp;CoEs.</li>
+</ol>
+<p>The last strategy is the most robust: if a work A is attested by CoE
+X, and B cites A using A&#8217;s fingerprint and X&#8217;s signature, and the web
+of knowledge attests B <em>via fingerprint</em> by citation in multiple other
+works, then it becomes impossible to modify A or fake another CoE (or
+attested date) because this would change A&#8217;s fingerprint and thus B&#8217;s.
+Over time, the <em>structured citation network</em> will become the trusted database
+of CoEs for past&nbsp;works.</p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Digital_object_identifier">https://en.wikipedia.org/wiki/Digital_object_identifier</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id10" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">ISO</span>/<span class="caps">DIS</span> 26324:2012. &#8220;Information and documentation &#8212; Digital object identifier system&#8221;.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id11" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://dl.acm.org/">http://dl.acm.org/</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id12" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="http://www.oclc.org/batchload/controlnumber.en.html">http://www.oclc.org/batchload/controlnumber.en.html</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id13" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Online_Computer_Library_Center">https://en.wikipedia.org/wiki/Online_Computer_Library_Center</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id14" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><span class="caps">ISO</span> 2108:2005. &#8220;Information and documentation &#8212; International standard book number (<span class="caps">ISBN</span>)&#8221;.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id15" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[7]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/International_Standard_Book_Number">https://en.wikipedia.org/wiki/International_Standard_Book_Number</a></td></tr>
+</tbody>
+</table>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

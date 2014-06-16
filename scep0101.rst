@@ -3,7 +3,7 @@
 :Author: Raphael ‘kena’ Poss
 :Status: Draft
 :Type: Standards Track
-:Created: 2014-06-21
+:Created: 2014-06-16
 
 This SCEP describes the lowest level of the Structured
 Commons model and infrastructure: how document
@@ -75,9 +75,9 @@ any object as follows:
    fingerprint is the SHA-256 checksum.
 
 .. note:: Although fingerprints can be represented as an array of
-   bytes, they "are" not objects on their own.  A fingerprint and a
-   file object containing the fingerprint's byte representation are
-   separate entities within this specification.
+   bytes, a fingerprint and a file object containing the fingerprint's
+   byte representation are separate entities within this
+   specification.
 
 .. note:: For rereference, the fingerprint of the empty file object is
    b39a4820-77f7da28-95347fde-04604c5e-d95784c6-bb748df0-f4a06bbc-767ebf53;
@@ -114,7 +114,13 @@ Implementations may choose either lowercase or upper case digits for
 hex and long; as well as adding hyphens in the middle of a hex or long
 representation to ease reading by humans.
 
-.. note::
+For example, the following three representations are equivalent::
+
+ fp:s5pIIHf32iiVNH_eBGBMXtlXhMa7dI3w9KBrvHZ-v1NRAA (compact)
+ fp::WONE-QIDX-67NC-RFJU-P7PA-IYCM-L3MV-PBGG-XN2I-34HU-UBV3-Y5T6-X5JV-CAA (long)
+ b39a4820-77f7da28-95347fde-04604c5e-d95784c6-bb748df0-f4a06bbc-767ebf53 (hex)
+
+.. caution::
    The hex, long and compact representations are not unique,
    due to a possible ambiguity of upper vs. lowercase letter digits
    for hex and long, and the padding in final position for long and
@@ -182,14 +188,23 @@ https://github.com/structured-commons/tools
 References
 ==========
 
-.. [#ASCII] https://en.wikipedia.org/wiki/ASCII
+.. [#ASCII] RFC 20. "ASCII format for network interchange".
+   (https://tools.ietf.org/html/rfc20)
+
 .. [#UNI] https://en.wikipedia.org/wiki/Unicode
-.. [#UTF] https://en.wikipedia.org/wiki/UTF-8
-.. [#SHA] https://en.wikipedia.org/wiki/SHA-2
+
+.. [#UTF] RFC 3629. "UTF-8, a transformation format of ISO 10646".
+   (https://tools.ietf.org/html/rfc3629)
+
+.. [#SHA] RFC 4634. "US Secure Hash Algorithms (SHA and SHA-based HMAC and HKDF)".
+   (https://tools.ietf.org/html/rfc6234; see also https://en.wikipedia.org/wiki/SHA-2)
+
 .. [#FLETCHER] Fletcher, J. G. "An Arithmetic Checksum for Serial
    Transmissions". 1982. IEEE Trans. Comm., COM-30(1):247–252.
    (https://en.wikipedia.org/wiki/Fletcher%27s_checksum)
-.. [#BASE] https://tools.ietf.org/html/rfc4648
+
+.. [#BASE] RFC 4648. "The Base16, Base32, and Base64 Data Encodings".
+   (https://tools.ietf.org/html/rfc4648)
 
 Copyright
 =========
