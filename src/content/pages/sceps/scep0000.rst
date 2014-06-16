@@ -44,6 +44,7 @@ Num        Title
 ======     ===================
 |100|      Structured Commons Model Overview
 |101|      Structured Commons Object Model and Fingerprints
+|102|      Certificates of existence
 ======     ===================
 
 
@@ -60,3 +61,4 @@ References
 .. |2| replace:: :raw-html:`<a href="scep0002.html">2</a>`
 .. |100| replace:: :raw-html:`<a href="scep0100.html">100</a>`
 .. |101| replace:: :raw-html:`<a href="scep0101.html">101</a>`
+.. |102| replace:: :raw-html:`<a href="scep0102.html">102</a>`
