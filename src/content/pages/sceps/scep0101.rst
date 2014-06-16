@@ -12,7 +12,7 @@ and digital objects are structured and fingerprinted.
 Object model
 ============
 
-An Aca2 *object* is either:
+A Structured Commons *object* is either:
 
 - a *file*, ie. an array of bytes (which may be empty and/or contain NUL bytes); or
 - a *dictionary* that maps *names* to either objects (inclusion) or
