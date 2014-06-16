@@ -220,3 +220,24 @@ table.docinfo th.docinfo-name {
   text-align: right;
   font-weight: bold;
 }
+
+table.docutils {
+  width: 100%;
+}
+table.docutils th {
+  font-weight: bold;
+}
+table.footnote {
+  width: auto;
+}
+div.note, div.warning, div.attention, div.caution, div.danger,
+div.error, div.hint, div.important, div.tip, div.admonition {
+  border: 1px solid #999999;
+  padding: 0 3px 2px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.admonition-title {
+  font-weight: bold;
+}
