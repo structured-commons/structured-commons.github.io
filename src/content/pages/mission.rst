@@ -21,6 +21,8 @@ services for authors and scholars:
 - to provide transparent evaluation methods for scientific works and
   researchers, including ranking and filtering of "top" publications, based on public evidence.
 
+See the specification document `SCEP 100`__ for an overview of how this is achieved.
+
 The Structured Commons publication channels *can* operate side by side
 with existing publishers (of journals & conference proceedings), but
 they also enable alternate business models that can compete
@@ -30,3 +32,4 @@ effectively with the pre-Internet publishing industry.
 .. __: https://commons.wikimedia.org/
 .. __: http://commoncrawl.org/
 .. __: http://www.webdatacommons.org/
+.. __: scep0100.html
