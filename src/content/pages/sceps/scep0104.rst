@@ -1,0 +1,87 @@
+:SCEP: 104
+:Title: Document handles and citation formats
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Process
+:Created: 2014-06-18
+
+Introduction
+============
+
+A **document handle** is formed by:
+
+- an object fingerprint;
+- zero or more CoE [#SCEP-102]_ signatures;
+- an advisory author list;
+- an advisory title.
+
+There are already various standards to print out the author list and
+document title to create a bibliographic citation in an academic work.
+With the advent of the internet, these standards have evolved to
+also include identifiers that refer to online databases; for example
+it is commonly accepted that a DOI can be present, by inserting the
+text "DOI:" followed by the DOI at the end of a citation.
+
+The Structured Commons model does not intend to change the conventions
+around the display of fields already commonly present in
+bibliographic references. For example, as explained in SCEP 102
+[#SCEP-102]_, it is possible to reuse existing DOI, arXiv and ACM
+identifier details in citations as-is, as proper Structured Common
+Certificates of existence (CoE) signatures.
+
+The main addition of this SCEP is to **extend citations with the
+Structured Commons fingerprint** for the work being cited, in addition
+to the other citation details.
+
+Benefits
+========
+
+Using object fingerprints in citations enable:
+
+- verifying that the objects referenced by a new work are not modified
+  after the new work is published;
+- building long-term confidence in the trust network of certificates of existence,
+  as explained in SCEP 102 [#SCEP-102]_, section "Very long term durability".
+
+
+Example
+=======
+
+The following two citations illustrate use of a document handle:
+
+- "short" format, with only the Structured Commons fingerprint:
+
+     R Poss, S Altmeyer, M Thompson, R Jelier. Aca 2.0: Questions and
+     Answers (v2). 2014. fp:FvYPWVbnhezNY5vdtqyyef0wpvj149A7SquozxdVe3jigg.
+
+- "long" format, with all dates and multiple CoE signatures:
+
+     R Poss, S Altmeyer, M Thompson, R Jelier. Aca 2.0: Questions
+     and Answers (v2).  May 2014.
+     fp:FvYPWVbnhezNY5vdtqyyef0wpvj149A7SquozxdVe3jigg.
+     `arxiv:2014-05-10:1404.7753v2`__.
+     `btc:2014-05-30:a9ed00bd63bdb382acc3b70198ec0861fd499c28eed1e18b5c0d933ce28af8fc`__.
+
+     .. __: http://arxiv.org/abs/1404.7753v2
+     .. __: http://www.proofofexistence.com/detail/a9ed00bd63bdb382acc3b70198ec0861fd499c28eed1e18b5c0d933ce28af8fc
+
+References
+==========
+
+.. [#SCEP-102] SCEP 102. "Certificates of existence".
+   (http://www.structured-commons.org/scep0102.html)
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:
