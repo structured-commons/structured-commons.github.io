@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0104 - Document handles and citation&nbsp;formats </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0104 – SCEP0104 - Document handles and citation&nbsp;formats</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">104</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Document handles and citation&nbsp;formats</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">f1cf1a4fcf37ee0d80af19a9e5db9b8bf47c9866</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-19 08:18:24 UTC (Thu, 19 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Process</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-18</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0104.rst">scep0104.rst</a> (<tt>fp:NDork8ID3L5uewIQmmFkDPcoNvy1kjm4ReOayn0mOz0vbg</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>A <strong>document handle</strong> is formed&nbsp;by:</p>
+<ul class="simple">
+<li>an object&nbsp;fingerprint;</li>
+<li>zero or more CoE <a class="footnote-reference" href="#scep-102" id="id1">[1]</a>&nbsp;signatures;</li>
+<li>an advisory author&nbsp;list;</li>
+<li>an advisory&nbsp;title.</li>
+</ul>
+<p>There are already various standards to print out the author list and
+document title to create a bibliographic citation in an academic work.
+With the advent of the internet, these standards have evolved to
+also include identifiers that refer to online databases; for example
+it is commonly accepted that a <span class="caps">DOI</span> can be present, by inserting the
+text &#8220;<span class="caps">DOI</span>:&#8221; followed by the <span class="caps">DOI</span> at the end of a&nbsp;citation.</p>
+<p>The Structured Commons model does not intend to change the conventions
+around the display of fields already commonly present in
+bibliographic references. For example, as explained in <span class="caps">SCEP</span> 102
+<a class="footnote-reference" href="#scep-102" id="id2">[1]</a>, it is possible to reuse existing <span class="caps">DOI</span>, arXiv and <span class="caps">ACM</span>
+identifier details in citations as-is, as proper Structured Common
+Certificates of existence (CoE)&nbsp;signatures.</p>
+<p>The main addition of this <span class="caps">SCEP</span> is to <strong>extend citations with the
+Structured Commons fingerprint</strong> for the work being cited, in addition
+to the other citation&nbsp;details.</p>
+</div>
+<div class="section" id="benefits">
+<h2>Benefits</h2>
+<p>Using object fingerprints in citations&nbsp;enable:</p>
+<ul class="simple">
+<li>verifying that the objects referenced by a new work are not modified
+after the new work is&nbsp;published;</li>
+<li>building long-term confidence in the trust network of certificates of existence,
+as explained in <span class="caps">SCEP</span> 102 <a class="footnote-reference" href="#scep-102" id="id3">[1]</a>, section &#8220;Very long term&nbsp;durability&#8221;.</li>
+</ul>
+</div>
+<div class="section" id="example">
+<h2>Example</h2>
+<p>The following two citations illustrate use of a document&nbsp;handle:</p>
+<ul>
+<li><p class="first"><span class="dquo">&#8220;</span>short&#8221; format, with only the Structured Commons&nbsp;fingerprint:</p>
+<blockquote>
+<p>R Poss, S Altmeyer, M Thompson, R Jelier. Aca 2.0: Questions and
+Answers (v2). 2014.&nbsp;fp:FvYPWVbnhezNY5vdtqyyef0wpvj149A7SquozxdVe3jigg.</p>
+</blockquote>
+</li>
+<li><p class="first"><span class="dquo">&#8220;</span>long&#8221; format, with all dates and multiple CoE&nbsp;signatures:</p>
+<blockquote>
+<p>R Poss, S Altmeyer, M Thompson, R Jelier. Aca 2.0: Questions
+and Answers (v2).  May 2014.
+fp:FvYPWVbnhezNY5vdtqyyef0wpvj149A7SquozxdVe3jigg.
+<a class="reference external" href="http://arxiv.org/abs/1404.7753v2">arxiv:2014-05-10:1404.7753v2</a>.
+<a class="reference external" href="http://www.proofofexistence.com/detail/a9ed00bd63bdb382acc3b70198ec0861fd499c28eed1e18b5c0d933ce28af8fc">btc:2014-05-30:a9ed00bd63bdb382acc3b70198ec0861fd499c28eed1e18b5c0d933ce28af8fc</a>.</p>
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="scep-102" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>)</em> <span class="caps">SCEP</span> 102. &#8220;Certificates of existence&#8221;.
+(<a class="reference external" href="http://www.structured-commons.org/scep0102.html">http://www.structured-commons.org/scep0102.html</a>)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

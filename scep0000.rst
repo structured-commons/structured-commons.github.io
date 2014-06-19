@@ -46,6 +46,7 @@ Num        Title
 |101|      Structured Commons Object Model and Fingerprints
 |102|      Certificates of existence
 |103|      Standard filesystem representation method
+|104|      Document handles and citation formats
 ======     ===================
 
 
@@ -63,4 +64,5 @@ References
 .. |100| replace:: :raw-html:`<a href="scep0100.html">100</a>`
 .. |101| replace:: :raw-html:`<a href="scep0101.html">101</a>`
 .. |102| replace:: :raw-html:`<a href="scep0102.html">102</a>`
-.. |103| replace:: :raw-html:`<a href="scep0103.html">103</a>`
+.. |103| replace:: :raw-html:`<a href="scep0103 .html">103</a>`
+.. |104| replace:: :raw-html:`<a href="scep0104.html">104</a>`
