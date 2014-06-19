@@ -1,0 +1,113 @@
+:SCEP: 105
+:Title: Standard JSON representation method
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Standards Track
+:Created: 2014-06-20
+
+The Structured Commons object model is defined semantically in SCEP
+101 [#SCEP-101]_, independently from its particular representation in a
+computer system. Conversely, there may exist multiple valid
+representations for an object.
+
+This SCEP defines the canonical representation of Structured
+Commons objects as a JSON object, with method name "**json**".
+
+Overview
+========
+
+The ``json`` representation maps objects to a JSON object [#JSON]_.
+
+Object files are represented by JSON character strings.
+
+Object dictionaries are represented by JSON associative arrays.
+
+Dictionary names that map to objects are represented by
+associative array entries that are the JSON representation
+of the enclosed object.
+
+Dictionary names that map to fingerprints are represented by a JSON
+list containing one string entry containing the compact representation
+of the fingerprint.
+
+Example
+=======
+
+For example, the following Structured Commons object::
+
+   (root)
+     |
+     +-- hello.txt (file)
+     |   hello, world!
+     |
+     +-- link (fingerprint reference)
+         (fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw)
+
+can be represented by the following JSON text:
+
+.. code:: json
+
+    {
+     "hello.txt" : "hello, world!"
+     "link" : ["fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw"]
+    }
+
+Alternate representation
+========================
+
+When an object file contains many occurrences of byte codes outside of the
+printable range, the "direct" JSON representation using Unicode escape sequences ("``\uXXXX``")
+can incur a large space overhead, up to 500% of the length of the original byte string.
+
+For applications where binary data is common, this specification provides an
+*alternate*, mutually compatible encoding for file objects: a
+JSON list containing one string containing the Base64 encoding
+of the object (using the special URL safe alphabet defined in [#BASE]_).
+
+With this alternate representation, the example above can be encoded
+as follows:
+
+.. code:: json
+
+    {
+     "hello.txt" : ["aGVsbG8sIHdvcmxkIQ=="],
+     "link" : ["fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw"]
+    }
+
+The alternate encoding is not ambiguous with fingerprint references,
+since the Base64 encoding of a file object can never start with the
+three characters "``fp:``".
+
+Example/reference implementation
+================================
+
+Example code in Python is provided separately:
+
+https://github.com/structured-commons/tools
+
+References
+==========
+
+.. [#SCEP-101] SCEP 101. "Structured Commons Object Model and Fingerprints".
+   (http://www.structured-commons.org/scep0101.html)
+
+.. [#JSON] RFC 7159. "The JavaScript Object Notation (JSON) Data Interchange Format".
+   (https://tools.ietf.org/html/rfc7159)
+
+.. [#BASE] RFC 4648. "The Base16, Base32, and Base64 Data Encodings".
+   (https://tools.ietf.org/html/rfc4648)
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:

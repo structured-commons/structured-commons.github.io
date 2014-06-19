@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0105 - Standard <span class="caps">JSON</span> representation&nbsp;method </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0105 – SCEP0105 - Standard <span class="caps">JSON</span> representation&nbsp;method</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">105</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Standard <span class="caps">JSON</span> representation&nbsp;method</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">d761e41df9005076ab9540ce64fc614b0c15bb2d</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-19 22:43:41 UTC (Thu, 19 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-20</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0105.rst">scep0105.rst</a> (<tt>fp:XGG0y0ufgpBGRxzHbY76hYuc8ysaVo5CF7YZv5RA73COLw</tt>)</td></tr>
+    </tbody></table>
+
+    <p>The Structured Commons object model is defined semantically in <span class="caps">SCEP</span>
+101 <a class="footnote-reference" href="#scep-101" id="id1">[1]</a>, independently from its particular representation in a
+computer system. Conversely, there may exist multiple valid
+representations for an&nbsp;object.</p>
+<p>This <span class="caps">SCEP</span> defines the canonical representation of Structured
+Commons objects as a <span class="caps">JSON</span> object, with method name &#8220;<strong>json</strong>&#8220;.</p>
+<div class="section" id="overview">
+<h2>Overview</h2>
+<p>The <tt class="docutils literal">json</tt> representation maps objects to a <span class="caps">JSON</span> object <a class="footnote-reference" href="#json" id="id2">[2]</a>.</p>
+<p>Object files are represented by <span class="caps">JSON</span> character&nbsp;strings.</p>
+<p>Object dictionaries are represented by <span class="caps">JSON</span> associative&nbsp;arrays.</p>
+<p>Dictionary names that map to objects are represented by
+associative array entries that are the <span class="caps">JSON</span> representation
+of the enclosed&nbsp;object.</p>
+<p>Dictionary names that map to fingerprints are represented by a <span class="caps">JSON</span>
+list containing one string entry containing the compact representation
+of the&nbsp;fingerprint.</p>
+</div>
+<div class="section" id="example">
+<h2>Example</h2>
+<p>For example, the following Structured Commons&nbsp;object:</p>
+<pre class="literal-block">
+(root)
+  |
+  +-- hello.txt (file)
+  |   hello, world!
+  |
+  +-- link (fingerprint reference)
+      (fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw)
+</pre>
+<p>can be represented by the following <span class="caps">JSON</span>&nbsp;text:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+ <span class="nt">&quot;hello.txt&quot;</span> <span class="p">:</span> <span class="s2">&quot;hello, world!&quot;</span>
+ <span class="s2">&quot;link&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre>
+</div>
+<div class="section" id="alternate-representation">
+<h2>Alternate&nbsp;representation</h2>
+<p>When an object file contains many occurrences of byte codes outside of the
+printable range, the &#8220;direct&#8221; <span class="caps">JSON</span> representation using Unicode escape sequences (&#8220;<tt class="docutils literal">\uXXXX</tt>&#8220;)
+can incur a large space overhead, up to 500% of the length of the original byte&nbsp;string.</p>
+<p>For applications where binary data is common, this specification provides an
+<em>alternate</em>, mutually compatible encoding for file objects: a
+<span class="caps">JSON</span> list containing one string containing the Base64 encoding
+of the object (using the special <span class="caps">URL</span> safe alphabet defined in <a class="footnote-reference" href="#base" id="id3">[3]</a>).</p>
+<p>With this alternate representation, the example above can be encoded
+as&nbsp;follows:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
+ <span class="nt">&quot;hello.txt&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aGVsbG8sIHdvcmxkIQ==&quot;</span><span class="p">],</span>
+ <span class="nt">&quot;link&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;fp:0cYMtlAA_T4_vG2NBmtEeB7uh26b1tpzb-0qiDGHxGrIMw&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre>
+<p>The alternate encoding is not ambiguous with fingerprint references,
+since the Base64 encoding of a file object can never start with the
+three characters &#8220;<tt class="docutils literal">fp:</tt>&#8220;.</p>
+</div>
+<div class="section" id="example-reference-implementation">
+<h2>Example/reference&nbsp;implementation</h2>
+<p>Example code in Python is provided&nbsp;separately:</p>
+<p><a class="reference external" href="https://github.com/structured-commons/tools">https://github.com/structured-commons/tools</a></p>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="scep-101" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 101. &#8220;Structured Commons Object Model and Fingerprints&#8221;.
+(<a class="reference external" href="http://www.structured-commons.org/scep0101.html">http://www.structured-commons.org/scep0101.html</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="json" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">RFC</span> 7159. &#8220;The JavaScript Object Notation (<span class="caps">JSON</span>) Data Interchange Format&#8221;.
+(<a class="reference external" href="https://tools.ietf.org/html/rfc7159">https://tools.ietf.org/html/rfc7159</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="base" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 4648. &#8220;The Base16, Base32, and Base64 Data Encodings&#8221;.
+(<a class="reference external" href="https://tools.ietf.org/html/rfc4648">https://tools.ietf.org/html/rfc4648</a>)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>
