@@ -304,6 +304,52 @@ intendedly not covered by this SCEP, in order to:
    comments in programming languages, support by popular editor
    programs, etc.
 
+Example markup languages
+========================
+
+The following table summarizes a few markup languages in common use at
+the time of this writing (2014). **This table is provided for
+informational use only**. This SCEP does not endorse nor promote any
+of these languages and associated technologies.
+
+.. class:: table
+
+=============== =================== =============  =============== ================
+Name            Status              Origins /      Strong support  Links
+                                    motivation     for print
+=============== =================== =============  =============== ================
+LaTeX_          Actively used &     Scientific     yes             `user manual <http://en.wikibooks.org/wiki/LaTeX>`__,
+                coherently          publishing                     `example online editor <http://www.sharelatex.com/>`__
+                maintained
+rST_            Actively used &     Technical      yes             `user manual <http://docutils.sourceforge.net/rst.html>`__,
+                coherently          documentation                  `example online editor <http://notex.ch/>`__,
+                maintained                                         `alternate online editor <http://rst.ninjs.org/>`__
+Texinfo_        Actively used &     Technical      yes             `documentation <https://www.gnu.org/software/texinfo/>`__
+                coherently          documentation
+                maintained
+POD_            Somewhat less       Technical      yes             `user manual <http://perldoc.perl.org/perlpod.html>`__
+                actively used,      documentation
+                coherently
+                maintained
+Markdown_       Actively used &     Web authoring                  `user manual <http://daringfireball.net/projects/markdown/>`__,
+                fragmented                                         `manifesto <http://daringfireball.net/2004/03/dive_into_markdown>`__
+                implementations
+`Org-mode`_     Actively used,      Productivity                   `user manuals <http://orgmode.org/#docs>`__
+                coherently          enhancements
+                maintained
+`Wiki markup`_  Actively used,      Knowledge                      `user manual <https://en.wikipedia.org/wiki/Help:Wiki_markup>`__,
+                fragmented          preservation                   `example online editor <https://en.wikipedia.org/wiki/Wikipedia:Sandbox>`__
+                implementations
+Textile_        Somewhat less       Web authoring                  `user manual & example online editor <http://txstyle.org/>`__
+                actively used,
+                coherently
+                maintained
+=============== =================== =============  =============== ================
+
+
+.. _Textile: http://en.wikipedia.org/wiki/Textile_%28markup_language%29
+.. _POD: http://en.wikipedia.org/wiki/Plain_Old_Documentation
+
 References
 ==========
 
