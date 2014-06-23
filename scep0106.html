@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0106 - Document formats suitable for &#8220;source&#8221;&nbsp;documents </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0106 – SCEP0106 - Document formats suitable for &#8220;source&#8221;&nbsp;documents</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">106</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Document formats suitable for &#8220;source&#8221;&nbsp;documents</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">8da1d99a54d6707277bb555c19e887e510563617</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-23 19:12:48 UTC (Mon, 23 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Informational</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-23</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0106.rst">scep0106.rst</a> (<tt>fp:oHd1tEuNH-i5eUzXAFB5-ljIg7eRE4Y4qVOmAuUC-yGphw</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>The Structured Common model <a class="footnote-reference" href="#scep-100" id="id1">[1]</a> is highly dependent on a
+consensus by authors and readers about what constitutes the &#8220;source&#8221;
+of a published document: the object fingerprint <a class="footnote-reference" href="#scep-101" id="id2">[2]</a> used for
+inter-document citations should identify the &#8220;essence&#8221; of a scientific
+work, as independent as possible from its representation in various&nbsp;formats.</p>
+<p>This <span class="caps">SCEP</span> provides <strong>guidelines and rationales</strong> for users of written
+documents, in particular scholarly authors, to <strong>choose source formats
+according to their compatibility with the Structured Commons vision</strong>
+and other&nbsp;requirements.</p>
+<div class="section" id="summary">
+<h3>Summary</h3>
+<p>The content of the following sections can be summarized as&nbsp;follows:</p>
+<ul class="simple">
+<li><strong>prefer document sources when computing fingerprints</strong> and citing
+new or existing&nbsp;works;</li>
+<li><strong>publish document sources</strong> (eg. TeX) alongside their presentation
+formats (eg. <span class="caps">HTML</span>, <span class="caps">PDF</span>, <span class="caps">EPUB</span>) and <strong>indicate clearly which source
+format is used</strong>, eg. via file name extensions or user&nbsp;instructions;</li>
+<li>do not under-estimate the importance of <strong>long-term durability</strong>, a
+requirement not commonly honored by popular word processing&nbsp;software;</li>
+<li>acknowledge and do not under-estimate the recent (2005-2015) user demand
+for <strong>markup languages that enable fast adoption, fast editing and
+fast reading in source form</strong>, eg. <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>.</li>
+</ul>
+<p>This <span class="caps">SCEP</span> is only applicable to Structured Common objects that
+primarily consist of written text, ie. <span class="caps">NOT</span> data sets, images, program
+source code, program executables, virtual machine images,&nbsp;etc.</p>
+</div>
+</div>
+<div class="section" id="source-formats-and-citation-network">
+<h2>Source formats and citation&nbsp;network</h2>
+<p>It is possible to integrate printable PDFs in the Structured
+Commons network directly; ie., compute fingerprints of <span class="caps">PDF</span> files
+directly and/or cite works via their <span class="caps">PDF</span> fingerprints.
+However, the Structured Commons model strongly encourages authors to
+<em>publish their document sources as well</em>.</p>
+<p>This requirement is already prevalent in online document libraries,
+either from established academic publishers or in open repositories
+like arXiv <a class="footnote-reference" href="#arxiv" id="id3">[3]</a>.  Moreover, once authors take the habit to publish
+document sources alongside other presentation formats, it becomes
+possible to <strong>make fingerprints independent from document
+representation</strong>.</p>
+<p>This in turn enables authors to (re-)generate alternate representations of
+a document after it has been published, without breaking the existing
+fingerprint-based citations from other&nbsp;works.</p>
+</div>
+<div class="section" id="support-for-multiple-source-formats">
+<h2>Support for multiple source&nbsp;formats</h2>
+<p>There currently exist multiple workflows and tools used by scientific
+authors to prepare documents prior to publication.  Anecdotically,
+this diversity is maintained and usually polarised by conflicting
+requirements between the authors&#8217; desire for a <span class="caps">WYSIWYG</span> editing
+interface and the field&#8217;s requirement for high-quality print
+typesetting and long-term portability of document formats; the
+conflict is epitomized by this common question from graduate students
+worldwide: <em>&#8220;should I use Word or LaTeX to write my&nbsp;thesis?&#8221;</em></p>
+<p>For various reasons, some of which detailed below, this controversy
+may be soon resolved <em>for scientific works</em> by a common shift away
+from word processors, towards standard-based and document-centric
+workflows using multiple editing tools simultaneously&#8212;including but
+not limited LaTeX, and also newer &#8220;lightweight&#8221; markup formats like
+<a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>.</p>
+<p>Nevertheless, this <span class="caps">SCEP</span> acknowledges that both technology and user
+preferences will continue to evolve over time, and thus that <em>the
+Structured Common model should not restrict users to a single source
+format or technology</em>.</p>
+</div>
+<div class="section" id="history-of-source-document-formats">
+<h2>History of source document&nbsp;formats</h2>
+<p>Historically, the following requirements have <strong>motivated major
+technology shifts</strong> by authors, ie. situations where authors willfully
+decided to adapt their workflow and working style and accept/adopt new
+tools and technology for source documents, even sometimes at the cost
+of a partial feature loss from their existing habits and&nbsp;expectations:</p>
+<table border="1" class="table docutils">
+<colgroup>
+<col width="30%" />
+<col width="10%" />
+<col width="10%" />
+<col width="40%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Requirement</th>
+<th class="head">Advent period</th>
+<th class="head">Origin</th>
+<th class="head">Historical motivation and shift</th>
+<th class="head">Casualties / compromises</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><strong>sep</strong>: Ability to specify content and layout separately,
+to facilitate collaboration and reuse</td>
+<td>1960-1990</td>
+<td>Authors</td>
+<td>As authors started using personal computers and collaborating
+with peers using digital formats, implementers were forced to
+provide more features to enable separation of form and
+content, which in turn stimulated more and more new authors to
+learn and use these features from the get-go.</td>
+<td>Reduced expectation/use of fine-grained, per-character control over typography and print.</td>
+</tr>
+<tr><td><strong>multi</strong>: High-quality and high-fidelity support for multiple reading
+environments, in particular web and print</td>
+<td>1995-2005</td>
+<td>Readers</td>
+<td>This requirement from the advent of the World Wide Web forced
+authors to adopt tools with extensive support for <em>multiple
+output formats</em>, with output quality becoming a higher priority
+requirement when selecting editor programs than user interfaces.</td>
+<td>Reduced expectation/use of <span class="caps">WYSIWYG</span> editing.</td>
+</tr>
+<tr><td><strong>long</strong>: Long-term durability, ability to continue working
+with a document long after it was created, even after the
+original editor program has been obsoleted, updated, etc.</td>
+<td>2000-2010</td>
+<td>Authors</td>
+<td>This requirement emerged in the early 2000&#8217;s as the majority of word processor users
+faced the realization that new software eventually drops compatibility with old
+documents over time. It stimulated the development and general adoption of
+<em>standard-based document languages</em> independent from the particular
+programs used to edit them.</td>
+<td>Longer time between the definition of new editing features
+and general availability in authoring and reader software.</td>
+</tr>
+<tr><td><strong>reflow</strong>: Ability for readers/viewers to recompute a
+presentation layout without access to the author&#8217;s editing
+environment</td>
+<td>2000-2010</td>
+<td>Readers</td>
+<td>This requirement from users of portable document readers and
+smart phones stimulated acceptance of <em>source delivery</em>,
+ie. of publication channels where readers/viewers have access
+to part of whole of the &#8220;source&#8221; document format and can
+recompute renderings, at will, using standards-based
+technology.</td>
+<td>Reduced expectation/use of workflows
+where authors decide the final appearance of documents.</td>
+</tr>
+<tr><td><strong>trans</strong>: Transparent/human-friendly source language that enables fast adoption, and fast reading
+and interpretation by humans without prior processing</td>
+<td>2005-2015</td>
+<td>Authors and Readers</td>
+<td>This requirement from users who mostly communicate online with peers using
+lightweight client interfaces (chat, web forms, mobile apps)
+stimulated the creation and adoption of markup languages where <em>the
+source definition of a document is also an adequate text-only
+rendering</em>, confortable to read and reuse in &#8220;simple&#8221; interfaces
+with limited or no support for formatting.</td>
+<td>Steeper learning curve when authors start seeking more
+control over rendering than provided by the markup language.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-formats-vs-requirements">
+<h2>Source formats vs.&nbsp;requirements</h2>
+<p>The following table illustrates how technology has evolved to respond
+to the requirements stated above over&nbsp;time:</p>
+<table border="1" class="table docutils">
+<colgroup>
+<col width="17%" />
+<col width="19%" />
+<col width="21%" />
+<col width="11%" />
+<col width="9%" />
+<col width="5%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head" colspan="3">Edition environments / source formats</th>
+<th class="head" colspan="5">Features vs. Requirements</th>
+</tr>
+<tr><th class="head">Group</th>
+<th class="head">Flavor</th>
+<th class="head">Examples</th>
+<th class="head">sep</th>
+<th class="head">multi</th>
+<th class="head">long</th>
+<th class="head">reflow</th>
+<th class="head">trans</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td rowspan="2">Word processors</td>
+<td>Print-oriented</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Microsoft_Word">Word</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/LibreOffice">LibreOffice</a></td>
+<td>yes <a class="footnote-reference" href="#a" id="id4">[4]</a></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr><td>Online-oriented</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Adobe_Dreamweaver">Dreamweaver</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/WordPress">Wordpress</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Google_Docs">Google
+docs</a></td>
+<td>yes <a class="footnote-reference" href="#a" id="id5">[4]</a></td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr><td rowspan="4">Markup languages</td>
+<td>Print-oriented</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Troff">Troff</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/TeX">TeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no <a class="footnote-reference" href="#b" id="id6">[5]</a></td>
+<td>no</td>
+</tr>
+<tr><td>Online-oriented</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a></td>
+<td>yes</td>
+<td>no <a class="footnote-reference" href="#c" id="id7">[6]</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr><td>Hybrid, tag-based
+markup</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">Texinfo</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/SGML"><span class="caps">SGML</span></a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/DocBook">Docbook <span class="caps">XML</span></a></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr><td>Hybrid,
+punctuation and
+layout-based markup</td>
+<td><a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Wiki_markup">Wiki markup</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Org-mode">Org-mode</a></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<p>At the time of this writing, word processors are coming out of fashion for scientific works
+in favor of markup languages, with LaTeX historically prevalent in
+mathematics, logics and computer&nbsp;science.</p>
+</div>
+<div class="section" id="latex-vs-other-markup-languages">
+<h2>LaTeX vs. other markup&nbsp;languages</h2>
+<p>LaTeX is commonly advertised to new scientific scholars as the go-to
+markup language suitable for academic publishing. LaTeX particularly
+contrasts with most word processing software with its long history of
+technical stability, reliability and typeset output quality, and these
+differences is commonly used as &#8220;selling&nbsp;point&#8221;.</p>
+<p>However, all users, including new authors, teachers of LaTeX and
+existing LaTeX users, should consider how LaTeX may not fully cater for
+recent requirements from both authors and&nbsp;readers:</p>
+<ul class="simple">
+<li><strong>client-side interpretation</strong>: LaTeX still has only limited support
+for web and e-book publishing; in particular, its underlying TeX
+engine is designed to position words on a page, not organize text in
+semantic groups suitable for re-formatting in different ways by
+different&nbsp;readers.</li>
+<li><strong>learning curve</strong>: LaTeX presents an extremely steep learning curve
+to new authors, which opposes a significant threshold to&nbsp;adoption.</li>
+<li><strong>lightweight implementation</strong>: LaTeX requires access to a working
+LaTeX typesetting infrastructure, including a relatively large
+software and data base (hundreds of megabytes), to &#8220;interpret&#8221;
+source documents to a format understandable by&nbsp;humans.</li>
+</ul>
+<p>In contrast, the new generation of &#8220;lightweight markup formats&#8221; pionereed
+by Wikipedia (<a class="reference external" href="http://en.wikipedia.org/wiki/Wiki_markup">Wiki markup</a>), Web fora (<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>) and inline
+source code documentation (<a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>) is tailored to these new requirements
+without sacrificing the other advantages of LaTeX compared to word&nbsp;processors.</p>
+<p>In short, this <span class="caps">SCEP</span> recommends scientific authors to <strong>consider
+alternate source markup languages</strong> for new works, tailored to contemporary
+user expectations, without sacrificing the Structured Commons vision:
+<strong>long-term document durability</strong>.</p>
+</div>
+<div class="section" id="choice-of-markup-languages">
+<h2>Choice of markup&nbsp;languages</h2>
+<p>This <span class="caps">SCEP</span> recommends the following <strong>prioritization of criteria</strong> when
+considering multiple candidate markup languages for a new Structured
+Commons documents, in decreasing priority&nbsp;order:</p>
+<ol class="arabic simple">
+<li><strong>standardisation</strong>: how well-specified is the markup language,
+how many different implementations exist that have
+a common interpretation of the markup language, and
+how likely will it be possible to re-implement
+tools from format specifications long after current
+implementations have been&nbsp;lost.</li>
+<li><strong>semantic transparency</strong>: how much does the markup syntax
+suggest the semantic role of annotated content&nbsp;elements.</li>
+<li><strong>readability in source form</strong>: how much can still be learn and
+understood from a document source if all knowledge about the format
+and document processing machinery has been&nbsp;lost.</li>
+</ol>
+<p>Criterion #1 promotes all standard-based workflows and formats
+(eg. <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a>, etc) over implementation-based workflows
+and formats (eg. <span class="caps">OOXML</span>, <span class="caps">OXF</span>, etc.), because program-centric
+environments have only poorly/partially standardized interchange
+formats, and it is thus unlikely that documents can be recovered from
+sources after current implementations fall out of&nbsp;use.</p>
+<p>Criterion #2 promotes pre-structured markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> compared to general markup languages like <span class="caps">XML</span>, where
+markup tags can be inscrutable without access to an externally provided
+schema, or print-oriented typesetting languages like <a class="reference external" href="http://en.wikipedia.org/wiki/Troff">Troff</a>,
+where markup tags specify layout and typography instead of&nbsp;semantics.</p>
+<p>Criterion #3 promotes &#8220;transparent&#8221; markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Org-mode">Org-mode</a>, where the source form of a document is usually also
+conveniently readable, compared to command-based or tag-based
+languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">texinfo</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> which require
+preprocessing/interpretation to become conveniently&nbsp;readable.</p>
+<p>Other criteria to further discriminate between alternatives are
+intendedly not covered by this <span class="caps">SCEP</span>, in order&nbsp;to:</p>
+<ol class="arabic simple">
+<li>acknowledge possibly diverging preferences by research field or
+user&nbsp;community.</li>
+<li>acknowledge the evolution of markup languages and technology over
+time, in particular regarding their support for &#8220;specialized
+features&#8221; (eg. inline mathematical formulas), integration as inline
+comments in programming languages, support by popular editor
+programs,&nbsp;etc.</li>
+</ol>
+</div>
+<div class="section" id="references">
+<h2>References</h2>
+<table class="docutils footnote" frame="void" id="scep-100" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 100. &#8220;Structured Commons Model Overview&#8221;
+(<a class="reference external" href="http://www.structured-commons.org/scep0100.html">http://www.structured-commons.org/scep0100.html</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="scep-101" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">SCEP</span> 101. &#8220;Structured Commons Object Model and Fingerprints&#8221;.
+(<a class="reference external" href="http://www.structured-commons.org/scep0101.html">http://www.structured-commons.org/scep0101.html</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="arxiv" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td>ArXiv.org: &#8220;Why Submit the TeX/LaTeX Source?&#8221;
+(<a class="reference external" href="http://arxiv.org/help/faq/whytex">http://arxiv.org/help/faq/whytex</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="a" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> Support for separation of content and presentation is present
+but is usually opt-in by authors.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="b" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[5]</a></td><td>Support for client-side reflowing is partially available via
+conversion to another markup language, typically <span class="caps">HTML</span>, but the
+conversion tools may not support all the markup used by
+authors.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="c" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[6]</a></td><td>Implementations focus on rendering by web browsers; alternate
+styling/presentation for print or e-book readers is possible
+but rarely or only partially supported by tools.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2>Copyright</h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

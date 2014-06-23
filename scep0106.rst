@@ -1,0 +1,345 @@
+:SCEP: 106
+:Title: Document formats suitable for "source" documents
+:Author: Raphael ‘kena’ Poss
+:Status: Draft
+:Type: Informational
+:Created: 2014-06-23
+
+Introduction
+============
+
+The Structured Common model [#SCEP-100]_ is highly dependent on a
+consensus by authors and readers about what constitutes the "source"
+of a published document: the object fingerprint [#SCEP-101]_ used for
+inter-document citations should identify the "essence" of a scientific
+work, as independent as possible from its representation in various
+formats.
+
+This SCEP provides **guidelines and rationales** for users of written
+documents, in particular scholarly authors, to **choose source formats
+according to their compatibility with the Structured Commons vision**
+and other requirements.
+
+Summary
+-------
+
+The content of the following sections can be summarized as follows:
+
+- **prefer document sources when computing fingerprints** and citing
+  new or existing works;
+- **publish document sources** (eg. TeX) alongside their presentation
+  formats (eg. HTML, PDF, EPUB) and **indicate clearly which source
+  format is used**, eg. via file name extensions or user instructions;
+- do not under-estimate the importance of **long-term durability**, a
+  requirement not commonly honored by popular word processing
+  software;
+- acknowledge and do not under-estimate the recent (2005-2015) user demand
+  for **markup languages that enable fast adoption, fast editing and
+  fast reading in source form**, eg. rST_ or Markdown_.
+
+This SCEP is only applicable to Structured Common objects that
+primarily consist of written text, ie. NOT data sets, images, program
+source code, program executables, virtual machine images, etc.
+
+Source formats and citation network
+===================================
+
+It is possible to integrate printable PDFs in the Structured
+Commons network directly; ie., compute fingerprints of PDF files
+directly and/or cite works via their PDF fingerprints.
+However, the Structured Commons model strongly encourages authors to
+*publish their document sources as well*.
+
+This requirement is already prevalent in online document libraries,
+either from established academic publishers or in open repositories
+like arXiv [#ARXIV]_.  Moreover, once authors take the habit to publish
+document sources alongside other presentation formats, it becomes
+possible to **make fingerprints independent from document
+representation**.
+
+This in turn enables authors to (re-)generate alternate representations of
+a document after it has been published, without breaking the existing
+fingerprint-based citations from other works.
+
+Support for multiple source formats
+===================================
+
+There currently exist multiple workflows and tools used by scientific
+authors to prepare documents prior to publication.  Anecdotically,
+this diversity is maintained and usually polarised by conflicting
+requirements between the authors' desire for a WYSIWYG editing
+interface and the field's requirement for high-quality print
+typesetting and long-term portability of document formats; the
+conflict is epitomized by this common question from graduate students
+worldwide: *"should I use Word or LaTeX to write my thesis?"*
+
+For various reasons, some of which detailed below, this controversy
+may be soon resolved *for scientific works* by a common shift away
+from word processors, towards standard-based and document-centric
+workflows using multiple editing tools simultaneously--including but
+not limited LaTeX, and also newer "lightweight" markup formats like
+rST_ or Markdown_.
+
+Nevertheless, this SCEP acknowledges that both technology and user
+preferences will continue to evolve over time, and thus that *the
+Structured Common model should not restrict users to a single source
+format or technology*.
+
+
+History of source document formats
+==================================
+
+Historically, the following requirements have **motivated major
+technology shifts** by authors, ie. situations where authors willfully
+decided to adapt their workflow and working style and accept/adopt new
+tools and technology for source documents, even sometimes at the cost
+of a partial feature loss from their existing habits and expectations:
+
+.. class:: table
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 10 10 40 10
+
+   * - Requirement
+     - Advent period
+     - Origin
+     - Historical motivation and shift
+     - Casualties / compromises
+
+   * - **sep**: Ability to specify content and layout separately,
+       to facilitate collaboration and reuse
+     - 1960-1990
+     - Authors
+     - As authors started using personal computers and collaborating
+       with peers using digital formats, implementers were forced to
+       provide more features to enable separation of form and
+       content, which in turn stimulated more and more new authors to
+       learn and use these features from the get-go.
+     - Reduced expectation/use of fine-grained, per-character control over typography and print.
+
+   * - **multi**: High-quality and high-fidelity support for multiple reading
+       environments, in particular web and print
+     - 1995-2005
+     - Readers
+     - This requirement from the advent of the World Wide Web forced
+       authors to adopt tools with extensive support for *multiple
+       output formats*, with output quality becoming a higher priority
+       requirement when selecting editor programs than user interfaces.
+     - Reduced expectation/use of WYSIWYG editing.
+
+   * - **long**: Long-term durability, ability to continue working
+       with a document long after it was created, even after the
+       original editor program has been obsoleted, updated, etc.
+     - 2000-2010
+     - Authors
+     - This requirement emerged in the early 2000's as the majority of word processor users
+       faced the realization that new software eventually drops compatibility with old
+       documents over time. It stimulated the development and general adoption of
+       *standard-based document languages* independent from the particular
+       programs used to edit them.
+     - Longer time between the definition of new editing features
+       and general availability in authoring and reader software.
+
+   * - **reflow**: Ability for readers/viewers to recompute a
+       presentation layout without access to the author's editing
+       environment
+     - 2000-2010
+     - Readers
+     - This requirement from users of portable document readers and
+       smart phones stimulated acceptance of *source delivery*,
+       ie. of publication channels where readers/viewers have access
+       to part of whole of the "source" document format and can
+       recompute renderings, at will, using standards-based
+       technology.
+     - Reduced expectation/use of workflows
+       where authors decide the final appearance of documents.
+
+   * - **trans**: Transparent/human-friendly source language that enables fast adoption, and fast reading
+       and interpretation by humans without prior processing
+     - 2005-2015
+     - Authors and Readers
+     - This requirement from users who mostly communicate online with peers using
+       lightweight client interfaces (chat, web forms, mobile apps)
+       stimulated the creation and adoption of markup languages where *the
+       source definition of a document is also an adequate text-only
+       rendering*, confortable to read and reuse in "simple" interfaces
+       with limited or no support for formatting.
+     - Steeper learning curve when authors start seeking more
+       control over rendering than provided by the markup language.
+
+Source formats vs. requirements
+===============================
+
+The following table illustrates how technology has evolved to respond
+to the requirements stated above over time:
+
+.. class:: table
+
++-----------------------------------------------------------------+----------------------------------------------------+
+| Edition environments / source formats                           | Features vs. Requirements                          |
++-------------------+---------------------+-----------------------+------------+----------+------+----------+----------+
+| Group             | Flavor              | Examples              |    sep     |  multi   | long |  reflow  |  trans   |
++===================+=====================+=======================+============+==========+======+==========+==========+
+| Word processors   | Print-oriented      | Word_, LibreOffice_   | yes [#a]_  | no       | no   | no       | no       |
+|                   +---------------------+-----------------------+------------+----------+------+----------+----------+
+|                   | Online-oriented     | Dreamweaver_,         | yes [#a]_  | no       | no   | yes      | no       |
+|                   |                     | Wordpress_, `Google   |            |          |      |          |          |
+|                   |                     | docs`_                |            |          |      |          |          |
++-------------------+---------------------+-----------------------+------------+----------+------+----------+----------+
+| Markup languages  | Print-oriented      | Troff_, TeX_, LaTeX_  | yes        | yes      | yes  | no [#b]_ | no       |
+|                   +---------------------+-----------------------+------------+----------+------+----------+----------+
+|                   | Online-oriented     | HTML_                 | yes        | no [#c]_ | yes  | yes      | no       |
+|                   +---------------------+-----------------------+------------+----------+------+----------+----------+
+|                   | Hybrid, tag-based   | Texinfo_, SGML_,      | yes        | yes      | yes  | yes      | no       |
+|                   | markup              | `Docbook XML`_        |            |          |      |          |          |
+|                   +---------------------+-----------------------+------------+----------+------+----------+----------+
+|                   | Hybrid,             | rST_, Markdown_,      | yes        | yes      | yes  | yes      | yes      |
+|                   | punctuation and     | `Wiki markup`_,       |            |          |      |          |          |
+|                   | layout-based markup | `Org-mode`_           |            |          |      |          |          |
++-------------------+---------------------+-----------------------+------------+----------+------+----------+----------+
+
+.. _Word: http://en.wikipedia.org/wiki/Microsoft_Word
+.. _LibreOffice: http://en.wikipedia.org/wiki/LibreOffice
+.. _Dreamweaver: http://en.wikipedia.org/wiki/Adobe_Dreamweaver
+.. _Wordpress: http://en.wikipedia.org/wiki/WordPress
+.. _Google Docs: http://en.wikipedia.org/wiki/Google_Docs
+.. _Troff: http://en.wikipedia.org/wiki/Troff
+.. _TeX: http://en.wikipedia.org/wiki/TeX
+.. _LaTeX: http://en.wikipedia.org/wiki/LaTeX
+.. _HTML: http://en.wikipedia.org/wiki/HTML
+.. _Texinfo: http://en.wikipedia.org/wiki/Texinfo
+.. _SGML: http://en.wikipedia.org/wiki/SGML
+.. _Docbook XML: http://en.wikipedia.org/wiki/DocBook
+.. _rST: http://en.wikipedia.org/wiki/ReStructuredText
+.. _Markdown: http://en.wikipedia.org/wiki/Markdown
+.. _Wiki markup: http://en.wikipedia.org/wiki/Wiki_markup
+.. _Org-mode: http://en.wikipedia.org/wiki/Org-mode
+
+At the time of this writing, word processors are coming out of fashion for scientific works
+in favor of markup languages, with LaTeX historically prevalent in
+mathematics, logics and computer science.
+
+LaTeX vs. other markup languages
+================================
+
+LaTeX is commonly advertised to new scientific scholars as the go-to
+markup language suitable for academic publishing. LaTeX particularly
+contrasts with most word processing software with its long history of
+technical stability, reliability and typeset output quality, and these
+differences is commonly used as "selling point".
+
+However, all users, including new authors, teachers of LaTeX and
+existing LaTeX users, should consider how LaTeX may not fully cater for
+recent requirements from both authors and readers:
+
+- **client-side interpretation**: LaTeX still has only limited support
+  for web and e-book publishing; in particular, its underlying TeX
+  engine is designed to position words on a page, not organize text in
+  semantic groups suitable for re-formatting in different ways by
+  different readers.
+- **learning curve**: LaTeX presents an extremely steep learning curve
+  to new authors, which opposes a significant threshold to adoption.
+- **lightweight implementation**: LaTeX requires access to a working
+  LaTeX typesetting infrastructure, including a relatively large
+  software and data base (hundreds of megabytes), to "interpret"
+  source documents to a format understandable by humans.
+
+In contrast, the new generation of "lightweight markup formats" pionereed
+by Wikipedia (`Wiki markup`_), Web fora (Markdown_) and inline
+source code documentation (rST_) is tailored to these new requirements
+without sacrificing the other advantages of LaTeX compared to word processors.
+
+In short, this SCEP recommends scientific authors to **consider
+alternate source markup languages** for new works, tailored to contemporary
+user expectations, without sacrificing the Structured Commons vision:
+**long-term document durability**.
+
+Choice of markup languages
+==========================
+
+This SCEP recommends the following **prioritization of criteria** when
+considering multiple candidate markup languages for a new Structured
+Commons documents, in decreasing priority order:
+
+1. **standardisation**: how well-specified is the markup language,
+   how many different implementations exist that have
+   a common interpretation of the markup language, and
+   how likely will it be possible to re-implement
+   tools from format specifications long after current
+   implementations have been lost.
+2. **semantic transparency**: how much does the markup syntax
+   suggest the semantic role of annotated content elements.
+3. **readability in source form**: how much can still be learn and
+   understood from a document source if all knowledge about the format
+   and document processing machinery has been lost.
+
+Criterion #1 promotes all standard-based workflows and formats
+(eg. LaTeX_, rST_, Markdown_, HTML_, etc) over implementation-based workflows
+and formats (eg. OOXML, OXF, etc.), because program-centric
+environments have only poorly/partially standardized interchange
+formats, and it is thus unlikely that documents can be recovered from
+sources after current implementations fall out of use.
+
+Criterion #2 promotes pre-structured markup languages like LaTeX_, rST_,
+Markdown_ or HTML_ compared to general markup languages like XML, where
+markup tags can be inscrutable without access to an externally provided
+schema, or print-oriented typesetting languages like Troff_,
+where markup tags specify layout and typography instead of semantics.
+
+Criterion #3 promotes "transparent" markup languages like rST_,
+Markdown_ or `Org-mode`_, where the source form of a document is usually also
+conveniently readable, compared to command-based or tag-based
+languages like LaTeX_, texinfo_ or HTML_ which require
+preprocessing/interpretation to become conveniently readable.
+
+Other criteria to further discriminate between alternatives are
+intendedly not covered by this SCEP, in order to:
+
+1. acknowledge possibly diverging preferences by research field or
+   user community.
+2. acknowledge the evolution of markup languages and technology over
+   time, in particular regarding their support for "specialized
+   features" (eg. inline mathematical formulas), integration as inline
+   comments in programming languages, support by popular editor
+   programs, etc.
+
+References
+==========
+
+.. [#SCEP-100] SCEP 100. "Structured Commons Model Overview"
+   (http://www.structured-commons.org/scep0100.html)
+
+.. [#SCEP-101] SCEP 101. "Structured Commons Object Model and Fingerprints".
+   (http://www.structured-commons.org/scep0101.html)
+
+.. [#ARXIV] ArXiv.org: "Why Submit the TeX/LaTeX Source?"
+   (http://arxiv.org/help/faq/whytex)
+
+.. [#a] Support for separation of content and presentation is present
+   but is usually opt-in by authors.
+
+.. [#b] Support for client-side reflowing is partially available via
+   conversion to another markup language, typically HTML, but the
+   conversion tools may not support all the markup used by
+   authors.
+
+.. [#c] Implementations focus on rendering by web browsers; alternate
+   styling/presentation for print or e-book readers is possible
+   but rarely or only partially supported by tools.
+
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:
