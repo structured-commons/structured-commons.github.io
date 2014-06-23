@@ -208,10 +208,19 @@ a:focus { color: #34495E; }
 ul li { margin-left: 1em; }
 .headline { font-size: 200%; margin-left: 20%; width: 60%; }
 
-table.docinfo {
+table.docinfo, contents {
   margin-left: 20%;
   width: 60%;
 }
+
+.contents {
+  margin-left: 20%;
+}
+.contents .topic-title {
+  font-weight: bold;
+  font-size: 120%;
+}
+
 table.docinfo col.docinfo-name { 
   width: 30%;
 }
@@ -241,3 +250,14 @@ div.error, div.hint, div.important, div.tip, div.admonition {
 .admonition-title {
   font-weight: bold;
 }
+
+sup {
+  vertical-align: super;
+  font-size: 60%;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 60%;
+}
+

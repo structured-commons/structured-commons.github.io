@@ -5,6 +5,9 @@
 :Type: Informational
 :Created: 2014-06-23
 
+.. contents::
+   :depth: 2
+
 Introduction
 ============
 
@@ -41,8 +44,11 @@ This SCEP is only applicable to Structured Common objects that
 primarily consist of written text, ie. NOT data sets, images, program
 source code, program executables, virtual machine images, etc.
 
+General guidelines
+==================
+
 Source formats and citation network
-===================================
+-----------------------------------
 
 It is possible to integrate printable PDFs in the Structured
 Commons network directly; ie., compute fingerprints of PDF files
@@ -62,7 +68,7 @@ a document after it has been published, without breaking the existing
 fingerprint-based citations from other works.
 
 Support for multiple source formats
-===================================
+-----------------------------------
 
 There currently exist multiple workflows and tools used by scientific
 authors to prepare documents prior to publication.  Anecdotically,
@@ -85,9 +91,62 @@ preferences will continue to evolve over time, and thus that *the
 Structured Common model should not restrict users to a single source
 format or technology*.
 
+Choice of markup languages
+--------------------------
+
+This SCEP recommends the following **prioritization of criteria** when
+considering multiple candidate markup languages for a new Structured
+Commons documents, in decreasing priority order:
+
+1. **standardisation**: how well-specified is the markup language,
+   how many different implementations exist that have
+   a common interpretation of the markup language, and
+   how likely will it be possible to re-implement
+   tools from format specifications long after current
+   implementations have been lost.
+2. **semantic transparency**: how much does the markup syntax
+   suggest the semantic role of annotated content elements.
+3. **readability in source form**: how much can still be learn and
+   understood from a document source if all knowledge about the format
+   and document processing machinery has been lost.
+
+Criterion #1 promotes all standard-based workflows and formats
+(eg. LaTeX_, rST_, Markdown_, HTML_, etc) over implementation-based workflows
+and formats (eg. OOXML, OXF, etc.), because program-centric
+environments have only poorly/partially standardized interchange
+formats, and it is thus unlikely that documents can be recovered from
+sources after current implementations fall out of use.
+
+Criterion #2 promotes pre-structured markup languages like LaTeX_, rST_,
+Markdown_ or HTML_ compared to general markup languages like XML, where
+markup tags can be inscrutable without access to an externally provided
+schema, or print-oriented typesetting languages like Troff_,
+where markup tags specify layout and typography instead of semantics.
+
+Criterion #3 promotes "transparent" markup languages like rST_,
+Markdown_ or `Org-mode`_, where the source form of a document is usually also
+conveniently readable, compared to command-based or tag-based
+languages like LaTeX_, texinfo_ or HTML_ which require
+preprocessing/interpretation to become conveniently readable.
+
+Other criteria to further discriminate between alternatives are
+intendedly not covered by this SCEP, in order to:
+
+1. acknowledge possibly diverging preferences by research field or
+   user community.
+2. acknowledge the evolution of markup languages and technology over
+   time, in particular regarding their support for "specialized
+   features" (eg. inline mathematical formulas), integration as inline
+   comments in programming languages, support by popular editor
+   programs, etc.
+
+See also `Example markup languages`_ below.
+
+Technology
+==========
 
 History of source document formats
-==================================
+----------------------------------
 
 Historically, the following requirements have **motivated major
 technology shifts** by authors, ie. situations where authors willfully
@@ -169,7 +228,7 @@ of a partial feature loss from their existing habits and expectations:
        control over rendering than provided by the markup language.
 
 Source formats vs. requirements
-===============================
+-------------------------------
 
 The following table illustrates how technology has evolved to respond
 to the requirements stated above over time:
@@ -192,7 +251,7 @@ to the requirements stated above over time:
 |                   | Online-oriented     | HTML_                 | yes        | no [#c]_ | yes  | yes      | no       |
 |                   +---------------------+-----------------------+------------+----------+------+----------+----------+
 |                   | Hybrid, tag-based   | Texinfo_, SGML_,      | yes        | yes      | yes  | yes      | no       |
-|                   | markup              | `Docbook XML`_        |            |          |      |          |          |
+|                   | markup              | `Docbook XML`_, POD_  |            |          |      |          |          |
 |                   +---------------------+-----------------------+------------+----------+------+----------+----------+
 |                   | Hybrid,             | rST_, Markdown_,      | yes        | yes      | yes  | yes      | yes      |
 |                   | punctuation and     | `Wiki markup`_,       |            |          |      |          |          |
@@ -215,13 +274,14 @@ to the requirements stated above over time:
 .. _Markdown: http://en.wikipedia.org/wiki/Markdown
 .. _Wiki markup: http://en.wikipedia.org/wiki/Wiki_markup
 .. _Org-mode: http://en.wikipedia.org/wiki/Org-mode
+.. _POD: http://en.wikipedia.org/wiki/Plain_Old_Documentation
 
 At the time of this writing, word processors are coming out of fashion for scientific works
 in favor of markup languages, with LaTeX historically prevalent in
 mathematics, logics and computer science.
 
 LaTeX vs. other markup languages
-================================
+--------------------------------
 
 LaTeX is commonly advertised to new scientific scholars as the go-to
 markup language suitable for academic publishing. LaTeX particularly
@@ -255,57 +315,8 @@ alternate source markup languages** for new works, tailored to contemporary
 user expectations, without sacrificing the Structured Commons vision:
 **long-term document durability**.
 
-Choice of markup languages
-==========================
-
-This SCEP recommends the following **prioritization of criteria** when
-considering multiple candidate markup languages for a new Structured
-Commons documents, in decreasing priority order:
-
-1. **standardisation**: how well-specified is the markup language,
-   how many different implementations exist that have
-   a common interpretation of the markup language, and
-   how likely will it be possible to re-implement
-   tools from format specifications long after current
-   implementations have been lost.
-2. **semantic transparency**: how much does the markup syntax
-   suggest the semantic role of annotated content elements.
-3. **readability in source form**: how much can still be learn and
-   understood from a document source if all knowledge about the format
-   and document processing machinery has been lost.
-
-Criterion #1 promotes all standard-based workflows and formats
-(eg. LaTeX_, rST_, Markdown_, HTML_, etc) over implementation-based workflows
-and formats (eg. OOXML, OXF, etc.), because program-centric
-environments have only poorly/partially standardized interchange
-formats, and it is thus unlikely that documents can be recovered from
-sources after current implementations fall out of use.
-
-Criterion #2 promotes pre-structured markup languages like LaTeX_, rST_,
-Markdown_ or HTML_ compared to general markup languages like XML, where
-markup tags can be inscrutable without access to an externally provided
-schema, or print-oriented typesetting languages like Troff_,
-where markup tags specify layout and typography instead of semantics.
-
-Criterion #3 promotes "transparent" markup languages like rST_,
-Markdown_ or `Org-mode`_, where the source form of a document is usually also
-conveniently readable, compared to command-based or tag-based
-languages like LaTeX_, texinfo_ or HTML_ which require
-preprocessing/interpretation to become conveniently readable.
-
-Other criteria to further discriminate between alternatives are
-intendedly not covered by this SCEP, in order to:
-
-1. acknowledge possibly diverging preferences by research field or
-   user community.
-2. acknowledge the evolution of markup languages and technology over
-   time, in particular regarding their support for "specialized
-   features" (eg. inline mathematical formulas), integration as inline
-   comments in programming languages, support by popular editor
-   programs, etc.
-
 Example markup languages
-========================
+------------------------
 
 The following table summarizes a few markup languages in common use at
 the time of this writing (2014). **This table is provided for
@@ -314,41 +325,73 @@ of these languages and associated technologies.
 
 .. class:: table
 
-=============== =================== =============  =============== ================
-Name            Status              Origins /      Strong support  Links
-                                    motivation     for print
-=============== =================== =============  =============== ================
-LaTeX_          Actively used &     Scientific     yes             `user manual <http://en.wikibooks.org/wiki/LaTeX>`__,
-                coherently          publishing                     `example online editor <http://www.sharelatex.com/>`__
+=============== =================== =============  =============== ============== ============== =======
+Name            Status              Origins /      Strong          Strong         Strong         Links
+                                    motivation     support for     support for    support for
+                                                   print           math           tables
+=============== =================== =============  =============== ============== ============== =======
+LaTeX_          Actively used &     Scientific     yes             yes            yes            `user manual <http://en.wikibooks.org/wiki/LaTeX>`__,
+                coherently          publishing                                                   `example online editor <http://www.sharelatex.com/>`__
                 maintained
-rST_            Actively used &     Technical      yes             `user manual <http://docutils.sourceforge.net/rst.html>`__,
-                coherently          documentation                  `example online editor <http://notex.ch/>`__,
-                maintained                                         `alternate online editor <http://rst.ninjs.org/>`__
-Texinfo_        Actively used &     Technical      yes             `documentation <https://www.gnu.org/software/texinfo/>`__
-                coherently          documentation
+rST_            Actively used &     Technical      yes             yes            yes            `user manual <http://docutils.sourceforge.net/rst.html>`__,
+                coherently          documentation                                                `example online editor <http://notex.ch/>`__,
+                maintained                                                                       `alternate online editor <http://rst.ninjs.org/>`__
+`Wiki markup`_  Actively used,      Knowledge      yes             yes            yes            `user manual <https://en.wikipedia.org/wiki/Help:Wiki_markup>`__,
+                coherently          preservation                                                 `example online editor <https://en.wikipedia.org/wiki/Wikipedia:Sandbox>`__
                 maintained
-POD_            Somewhat less       Technical      yes             `user manual <http://perldoc.perl.org/perlpod.html>`__
-                actively used,      documentation
-                coherently
+LilyPond_       Actively used,      Music          yes                                           `user manuals <http://lilypond.org/manuals.html>`__,
+                coherently          engraving                                                    `example online editor <http://weblily.net/web/guest/runlilypond>`__
                 maintained
-Markdown_       Actively used &     Web authoring                  `user manual <http://daringfireball.net/projects/markdown/>`__,
-                fragmented                                         `manifesto <http://daringfireball.net/2004/03/dive_into_markdown>`__
+Markdown_       Actively used &     Web authoring  [#m]_           [#m]_          [#m]_          `user manual <http://daringfireball.net/projects/markdown/>`__,
+                fragmented                                                                       `manifesto <http://daringfireball.net/2004/03/dive_into_markdown>`__
                 implementations
-`Org-mode`_     Actively used,      Productivity                   `user manuals <http://orgmode.org/#docs>`__
+`Org-mode`_     Actively used,      Productivity                                  yes            `user manuals <http://orgmode.org/#docs>`__
                 coherently          enhancements
                 maintained
-`Wiki markup`_  Actively used,      Knowledge                      `user manual <https://en.wikipedia.org/wiki/Help:Wiki_markup>`__,
-                fragmented          preservation                   `example online editor <https://en.wikipedia.org/wiki/Wikipedia:Sandbox>`__
-                implementations
-Textile_        Somewhat less       Web authoring                  `user manual & example online editor <http://txstyle.org/>`__
+Textile_        Somewhat less       Web authoring                                 yes            `user manual & example online editor <http://txstyle.org/>`__
                 actively used,
-                coherently
-                maintained
-=============== =================== =============  =============== ================
-
+                fragmented
+                implementations
+=============== =================== =============  =============== ============== ============== =======
 
 .. _Textile: http://en.wikipedia.org/wiki/Textile_%28markup_language%29
-.. _POD: http://en.wikipedia.org/wiki/Plain_Old_Documentation
+.. _LilyPond: http://en.wikipedia.org/wiki/GNU_LilyPond
+
+In the table above,
+
+- "Strong support for print" indicates native features for
+  controlling the formatting of print outputs, including paper format
+  and page layout.
+- "Strong support for math" indicates native support for
+  mathematical formula's, including superscripts (:math:`x^2`),
+  subscripts (:math:`f_0`), and general use mathematical symbols
+  (eg. infinity :math:`\infty`, pi :math:`\pi`, sum :math:`\sum`,
+  implication :math:`\Rightarrow`, algebraic sets
+  :math:`\mathbb{R}`).
+- "Strong support for tables" indicates native support for
+  tabular data, including row headers, text alignment within cells
+  and merging of adjacent cells.
+
+
+
+See also
+--------
+
+- Wikipedia's comparison of `Lightweight markup languages`__
+
+  .. __: http://en.wikipedia.org/wiki/Lightweight_markup_language
+
+- Wikipedia's `Comparison of document markup languages`__
+
+  .. __: http://en.wikipedia.org/wiki/Comparison_of_document_markup_languages
+
+- The C2 WikiWikiWeb's page on `Text Filters`__
+
+  .. __: http://c2.com/cgi/wiki?TextFilter
+
+- Pandoc__, a universal markup format converter
+
+  .. __: http://johnmacfarlane.net/pandoc/
 
 References
 ==========
@@ -374,6 +417,9 @@ References
    styling/presentation for print or e-book readers is possible
    but rarely or only partially supported by tools.
 
+.. [#m] Control over print formatting, math and tables for Markdown is
+   not provided by the main Markdown implementation; it is commonly
+   provided by third-party conversion tools to other markup formats.
 
 Copyright
 =========

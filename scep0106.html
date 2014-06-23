@@ -56,17 +56,42 @@
     <tbody valign="top">
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">106</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Document formats suitable for &#8220;source&#8221;&nbsp;documents</td></tr>
-    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">0168d1a388501410bcb1b4af49f7368079bc2a31</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-23 19:57:24 UTC (Mon, 23 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">4f18c9e50f3a5cc776ac3fe381070d63191ebafb</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-23 21:42:35 UTC (Mon, 23 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Informational</td></tr>
     <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-23</td></tr>
-    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0106.rst">scep0106.rst</a> (<tt>fp:BWjv4jDYalRv-bah5arJXQXlq9-hquertx661a3C_kv4Gg</tt>)</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0106.rst">scep0106.rst</a> (<tt>fp:I4WKx3sBkW58IPA4UnbY_B3y-RdQ9Ir4AkMrPPocxfND8Q</tt>)</td></tr>
     </tbody></table>
 
-    <div class="section" id="introduction">
-<h2>Introduction</h2>
+    <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id15">Introduction</a><ul>
+<li><a class="reference internal" href="#summary" id="id16">Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#general-guidelines" id="id17">General guidelines</a><ul>
+<li><a class="reference internal" href="#source-formats-and-citation-network" id="id18">Source formats and citation&nbsp;network</a></li>
+<li><a class="reference internal" href="#support-for-multiple-source-formats" id="id19">Support for multiple source&nbsp;formats</a></li>
+<li><a class="reference internal" href="#choice-of-markup-languages" id="id20">Choice of markup&nbsp;languages</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#technology" id="id21">Technology</a><ul>
+<li><a class="reference internal" href="#history-of-source-document-formats" id="id22">History of source document&nbsp;formats</a></li>
+<li><a class="reference internal" href="#source-formats-vs-requirements" id="id23">Source formats vs.&nbsp;requirements</a></li>
+<li><a class="reference internal" href="#latex-vs-other-markup-languages" id="id24">LaTeX vs. other markup&nbsp;languages</a></li>
+<li><a class="reference internal" href="#example-markup-languages" id="id25">Example markup&nbsp;languages</a></li>
+<li><a class="reference internal" href="#see-also" id="id26">See&nbsp;also</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references" id="id27">References</a></li>
+<li><a class="reference internal" href="#copyright" id="id28">Copyright</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id15">Introduction</a></h2>
 <p>The Structured Common model <a class="footnote-reference" href="#scep-100" id="id1">[1]</a> is highly dependent on a
 consensus by authors and readers about what constitutes the &#8220;source&#8221;
 of a published document: the object fingerprint <a class="footnote-reference" href="#scep-101" id="id2">[2]</a> used for
@@ -77,7 +102,7 @@ documents, in particular scholarly authors, to <strong>choose source formats
 according to their compatibility with the Structured Commons vision</strong>
 and other&nbsp;requirements.</p>
 <div class="section" id="summary">
-<h3>Summary</h3>
+<h3><a class="toc-backref" href="#id16">Summary</a></h3>
 <p>The content of the following sections can be summarized as&nbsp;follows:</p>
 <ul class="simple">
 <li><strong>prefer document sources when computing fingerprints</strong> and citing
@@ -96,8 +121,10 @@ primarily consist of written text, ie. <span class="caps">NOT</span> data sets, 
 source code, program executables, virtual machine images,&nbsp;etc.</p>
 </div>
 </div>
+<div class="section" id="general-guidelines">
+<h2><a class="toc-backref" href="#id17">General&nbsp;guidelines</a></h2>
 <div class="section" id="source-formats-and-citation-network">
-<h2>Source formats and citation&nbsp;network</h2>
+<h3><a class="toc-backref" href="#id18">Source formats and citation&nbsp;network</a></h3>
 <p>It is possible to integrate printable PDFs in the Structured
 Commons network directly; ie., compute fingerprints of <span class="caps">PDF</span> files
 directly and/or cite works via their <span class="caps">PDF</span> fingerprints.
@@ -114,7 +141,7 @@ a document after it has been published, without breaking the existing
 fingerprint-based citations from other&nbsp;works.</p>
 </div>
 <div class="section" id="support-for-multiple-source-formats">
-<h2>Support for multiple source&nbsp;formats</h2>
+<h3><a class="toc-backref" href="#id19">Support for multiple source&nbsp;formats</a></h3>
 <p>There currently exist multiple workflows and tools used by scientific
 authors to prepare documents prior to publication.  Anecdotically,
 this diversity is maintained and usually polarised by conflicting
@@ -134,8 +161,58 @@ preferences will continue to evolve over time, and thus that <em>the
 Structured Common model should not restrict users to a single source
 format or technology</em>.</p>
 </div>
+<div class="section" id="choice-of-markup-languages">
+<h3><a class="toc-backref" href="#id20">Choice of markup&nbsp;languages</a></h3>
+<p>This <span class="caps">SCEP</span> recommends the following <strong>prioritization of criteria</strong> when
+considering multiple candidate markup languages for a new Structured
+Commons documents, in decreasing priority&nbsp;order:</p>
+<ol class="arabic simple">
+<li><strong>standardisation</strong>: how well-specified is the markup language,
+how many different implementations exist that have
+a common interpretation of the markup language, and
+how likely will it be possible to re-implement
+tools from format specifications long after current
+implementations have been&nbsp;lost.</li>
+<li><strong>semantic transparency</strong>: how much does the markup syntax
+suggest the semantic role of annotated content&nbsp;elements.</li>
+<li><strong>readability in source form</strong>: how much can still be learn and
+understood from a document source if all knowledge about the format
+and document processing machinery has been&nbsp;lost.</li>
+</ol>
+<p>Criterion #1 promotes all standard-based workflows and formats
+(eg. <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a>, etc) over implementation-based workflows
+and formats (eg. <span class="caps">OOXML</span>, <span class="caps">OXF</span>, etc.), because program-centric
+environments have only poorly/partially standardized interchange
+formats, and it is thus unlikely that documents can be recovered from
+sources after current implementations fall out of&nbsp;use.</p>
+<p>Criterion #2 promotes pre-structured markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> compared to general markup languages like <span class="caps">XML</span>, where
+markup tags can be inscrutable without access to an externally provided
+schema, or print-oriented typesetting languages like <a class="reference external" href="http://en.wikipedia.org/wiki/Troff">Troff</a>,
+where markup tags specify layout and typography instead of&nbsp;semantics.</p>
+<p>Criterion #3 promotes &#8220;transparent&#8221; markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Org-mode">Org-mode</a>, where the source form of a document is usually also
+conveniently readable, compared to command-based or tag-based
+languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">texinfo</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> which require
+preprocessing/interpretation to become conveniently&nbsp;readable.</p>
+<p>Other criteria to further discriminate between alternatives are
+intendedly not covered by this <span class="caps">SCEP</span>, in order&nbsp;to:</p>
+<ol class="arabic simple">
+<li>acknowledge possibly diverging preferences by research field or
+user&nbsp;community.</li>
+<li>acknowledge the evolution of markup languages and technology over
+time, in particular regarding their support for &#8220;specialized
+features&#8221; (eg. inline mathematical formulas), integration as inline
+comments in programming languages, support by popular editor
+programs,&nbsp;etc.</li>
+</ol>
+<p>See also <a class="reference internal" href="#example-markup-languages">Example markup languages</a>&nbsp;below.</p>
+</div>
+</div>
+<div class="section" id="technology">
+<h2><a class="toc-backref" href="#id21">Technology</a></h2>
 <div class="section" id="history-of-source-document-formats">
-<h2>History of source document&nbsp;formats</h2>
+<h3><a class="toc-backref" href="#id22">History of source document&nbsp;formats</a></h3>
 <p>Historically, the following requirements have <strong>motivated major
 technology shifts</strong> by authors, ie. situations where authors willfully
 decided to adapt their workflow and working style and accept/adopt new
@@ -223,7 +300,7 @@ control over rendering than provided by the markup language.</td>
 </table>
 </div>
 <div class="section" id="source-formats-vs-requirements">
-<h2>Source formats vs.&nbsp;requirements</h2>
+<h3><a class="toc-backref" href="#id23">Source formats vs.&nbsp;requirements</a></h3>
 <p>The following table illustrates how technology has evolved to respond
 to the requirements stated above over&nbsp;time:</p>
 <table border="1" class="table docutils">
@@ -291,7 +368,7 @@ docs</a></td>
 <tr><td>Hybrid, tag-based
 markup</td>
 <td><a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">Texinfo</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/SGML"><span class="caps">SGML</span></a>,
-<a class="reference external" href="http://en.wikipedia.org/wiki/DocBook">Docbook <span class="caps">XML</span></a></td>
+<a class="reference external" href="http://en.wikipedia.org/wiki/DocBook">Docbook <span class="caps">XML</span></a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Plain_Old_Documentation"><span class="caps">POD</span></a></td>
 <td>yes</td>
 <td>yes</td>
 <td>yes</td>
@@ -317,7 +394,7 @@ in favor of markup languages, with LaTeX historically prevalent in
 mathematics, logics and computer&nbsp;science.</p>
 </div>
 <div class="section" id="latex-vs-other-markup-languages">
-<h2>LaTeX vs. other markup&nbsp;languages</h2>
+<h3><a class="toc-backref" href="#id24">LaTeX vs. other markup&nbsp;languages</a></h3>
 <p>LaTeX is commonly advertised to new scientific scholars as the go-to
 markup language suitable for academic publishing. LaTeX particularly
 contrasts with most word processing software with its long history of
@@ -348,73 +425,36 @@ alternate source markup languages</strong> for new works, tailored to contempora
 user expectations, without sacrificing the Structured Commons vision:
 <strong>long-term document durability</strong>.</p>
 </div>
-<div class="section" id="choice-of-markup-languages">
-<h2>Choice of markup&nbsp;languages</h2>
-<p>This <span class="caps">SCEP</span> recommends the following <strong>prioritization of criteria</strong> when
-considering multiple candidate markup languages for a new Structured
-Commons documents, in decreasing priority&nbsp;order:</p>
-<ol class="arabic simple">
-<li><strong>standardisation</strong>: how well-specified is the markup language,
-how many different implementations exist that have
-a common interpretation of the markup language, and
-how likely will it be possible to re-implement
-tools from format specifications long after current
-implementations have been&nbsp;lost.</li>
-<li><strong>semantic transparency</strong>: how much does the markup syntax
-suggest the semantic role of annotated content&nbsp;elements.</li>
-<li><strong>readability in source form</strong>: how much can still be learn and
-understood from a document source if all knowledge about the format
-and document processing machinery has been&nbsp;lost.</li>
-</ol>
-<p>Criterion #1 promotes all standard-based workflows and formats
-(eg. <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a>, etc) over implementation-based workflows
-and formats (eg. <span class="caps">OOXML</span>, <span class="caps">OXF</span>, etc.), because program-centric
-environments have only poorly/partially standardized interchange
-formats, and it is thus unlikely that documents can be recovered from
-sources after current implementations fall out of&nbsp;use.</p>
-<p>Criterion #2 promotes pre-structured markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
-<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> compared to general markup languages like <span class="caps">XML</span>, where
-markup tags can be inscrutable without access to an externally provided
-schema, or print-oriented typesetting languages like <a class="reference external" href="http://en.wikipedia.org/wiki/Troff">Troff</a>,
-where markup tags specify layout and typography instead of&nbsp;semantics.</p>
-<p>Criterion #3 promotes &#8220;transparent&#8221; markup languages like <a class="reference external" href="http://en.wikipedia.org/wiki/ReStructuredText">rST</a>,
-<a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Org-mode">Org-mode</a>, where the source form of a document is usually also
-conveniently readable, compared to command-based or tag-based
-languages like <a class="reference external" href="http://en.wikipedia.org/wiki/LaTeX">LaTeX</a>, <a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">texinfo</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/HTML"><span class="caps">HTML</span></a> which require
-preprocessing/interpretation to become conveniently&nbsp;readable.</p>
-<p>Other criteria to further discriminate between alternatives are
-intendedly not covered by this <span class="caps">SCEP</span>, in order&nbsp;to:</p>
-<ol class="arabic simple">
-<li>acknowledge possibly diverging preferences by research field or
-user&nbsp;community.</li>
-<li>acknowledge the evolution of markup languages and technology over
-time, in particular regarding their support for &#8220;specialized
-features&#8221; (eg. inline mathematical formulas), integration as inline
-comments in programming languages, support by popular editor
-programs,&nbsp;etc.</li>
-</ol>
-</div>
 <div class="section" id="example-markup-languages">
-<h2>Example markup&nbsp;languages</h2>
+<h3><a class="toc-backref" href="#id25">Example markup&nbsp;languages</a></h3>
 <p>The following table summarizes a few markup languages in common use at
 the time of this writing (2014). <strong>This table is provided for
 informational use only</strong>. This <span class="caps">SCEP</span> does not endorse nor promote any
 of these languages and associated&nbsp;technologies.</p>
 <table border="1" class="table docutils">
 <colgroup>
-<col width="11%" />
-<col width="14%" />
 <col width="9%" />
-<col width="11%" />
-<col width="55%" />
+<col width="12%" />
+<col width="8%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+<col width="45%" />
 </colgroup>
 <thead valign="bottom">
 <tr><th class="head">Name</th>
 <th class="head">Status</th>
 <th class="head">Origins /
 motivation</th>
-<th class="head">Strong support
-for print</th>
+<th class="head">Strong
+support for
+print</th>
+<th class="head">Strong
+support for
+math</th>
+<th class="head">Strong
+support for
+tables</th>
 <th class="head">Links</th>
 </tr>
 </thead>
@@ -426,6 +466,8 @@ maintained</td>
 <td>Scientific
 publishing</td>
 <td>yes</td>
+<td>yes</td>
+<td>yes</td>
 <td><a class="reference external" href="http://en.wikibooks.org/wiki/LaTeX">user manual</a>,
 <a class="reference external" href="http://www.sharelatex.com/">example online editor</a></td>
 </tr>
@@ -436,35 +478,44 @@ maintained</td>
 <td>Technical
 documentation</td>
 <td>yes</td>
+<td>yes</td>
+<td>yes</td>
 <td><a class="reference external" href="http://docutils.sourceforge.net/rst.html">user manual</a>,
 <a class="reference external" href="http://notex.ch/">example online editor</a>,
 <a class="reference external" href="http://rst.ninjs.org/">alternate online editor</a></td>
 </tr>
-<tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Texinfo">Texinfo</a></td>
-<td>Actively used <span class="amp">&amp;</span>
+<tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Wiki_markup">Wiki markup</a></td>
+<td>Actively used,
 coherently
 maintained</td>
-<td>Technical
-documentation</td>
+<td>Knowledge
+preservation</td>
 <td>yes</td>
-<td><a class="reference external" href="https://www.gnu.org/software/texinfo/">documentation</a></td>
+<td>yes</td>
+<td>yes</td>
+<td><a class="reference external" href="https://en.wikipedia.org/wiki/Help:Wiki_markup">user manual</a>,
+<a class="reference external" href="https://en.wikipedia.org/wiki/Wikipedia:Sandbox">example online editor</a></td>
 </tr>
-<tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Plain_Old_Documentation"><span class="caps">POD</span></a></td>
-<td>Somewhat less
-actively used,
+<tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/GNU_LilyPond">LilyPond</a></td>
+<td>Actively used,
 coherently
 maintained</td>
-<td>Technical
-documentation</td>
+<td>Music
+engraving</td>
 <td>yes</td>
-<td><a class="reference external" href="http://perldoc.perl.org/perlpod.html">user manual</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><a class="reference external" href="http://lilypond.org/manuals.html">user manuals</a>,
+<a class="reference external" href="http://weblily.net/web/guest/runlilypond">example online editor</a></td>
 </tr>
 <tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Markdown">Markdown</a></td>
 <td>Actively used <span class="amp">&amp;</span>
 fragmented
 implementations</td>
 <td>Web authoring</td>
-<td>&nbsp;</td>
+<td><a class="footnote-reference" href="#m" id="id8">[7]</a></td>
+<td><a class="footnote-reference" href="#m" id="id9">[7]</a></td>
+<td><a class="footnote-reference" href="#m" id="id10">[7]</a></td>
 <td><a class="reference external" href="http://daringfireball.net/projects/markdown/">user manual</a>,
 <a class="reference external" href="http://daringfireball.net/2004/03/dive_into_markdown">manifesto</a></td>
 </tr>
@@ -475,32 +526,57 @@ maintained</td>
 <td>Productivity
 enhancements</td>
 <td>&nbsp;</td>
-<td><a class="reference external" href="http://orgmode.org/#docs">user manuals</a></td>
-</tr>
-<tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Wiki_markup">Wiki markup</a></td>
-<td>Actively used,
-fragmented
-implementations</td>
-<td>Knowledge
-preservation</td>
 <td>&nbsp;</td>
-<td><a class="reference external" href="https://en.wikipedia.org/wiki/Help:Wiki_markup">user manual</a>,
-<a class="reference external" href="https://en.wikipedia.org/wiki/Wikipedia:Sandbox">example online editor</a></td>
+<td>yes</td>
+<td><a class="reference external" href="http://orgmode.org/#docs">user manuals</a></td>
 </tr>
 <tr><td><a class="reference external" href="http://en.wikipedia.org/wiki/Textile_%28markup_language%29">Textile</a></td>
 <td>Somewhat less
 actively used,
-coherently
-maintained</td>
+fragmented
+implementations</td>
 <td>Web authoring</td>
 <td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>yes</td>
 <td><a class="reference external" href="http://txstyle.org/">user manual <span class="amp">&amp;</span> example online editor</a></td>
 </tr>
 </tbody>
 </table>
+<p>In the table&nbsp;above,</p>
+<ul class="simple">
+<li><span class="dquo">&#8220;</span>Strong support for print&#8221; indicates native features for
+controlling the formatting of print outputs, including paper format
+and page&nbsp;layout.</li>
+<li><span class="dquo">&#8220;</span>Strong support for math&#8221; indicates native support for
+mathematical formula&#8217;s, including superscripts (<span class="formula"><i>x</i><sup>2</sup></span>
+),
+subscripts (<span class="formula"><i>f</i><sub>0</sub></span>
+), and general use mathematical symbols
+(eg. infinity <span class="formula">∞</span>
+, pi <span class="formula"><i>π</i></span>
+, sum <span class="formula"><span class="limits"><span class="limit"><span class="symbol">∑</span></span></span></span>
+,
+implication <span class="formula"> ⇒ </span>
+, algebraic sets
+<span class="formula">ℝ</span>&nbsp;).</li>
+<li><span class="dquo">&#8220;</span>Strong support for tables&#8221; indicates native support for
+tabular data, including row headers, text alignment within cells
+and merging of adjacent&nbsp;cells.</li>
+</ul>
+</div>
+<div class="section" id="see-also">
+<h3><a class="toc-backref" href="#id26">See&nbsp;also</a></h3>
+<ul class="simple">
+<li>Wikipedia&#8217;s comparison of <a class="reference external" href="http://en.wikipedia.org/wiki/Lightweight_markup_language">Lightweight markup&nbsp;languages</a></li>
+<li>Wikipedia&#8217;s <a class="reference external" href="http://en.wikipedia.org/wiki/Comparison_of_document_markup_languages">Comparison of document markup&nbsp;languages</a></li>
+<li>The C2 WikiWikiWeb&#8217;s page on <a class="reference external" href="http://c2.com/cgi/wiki?TextFilter">Text&nbsp;Filters</a></li>
+<li><a class="reference external" href="http://johnmacfarlane.net/pandoc/">Pandoc</a>, a universal markup format&nbsp;converter</li>
+</ul>
+</div>
 </div>
 <div class="section" id="references">
-<h2>References</h2>
+<h2><a class="toc-backref" href="#id27">References</a></h2>
 <table class="docutils footnote" frame="void" id="scep-100" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -546,9 +622,17 @@ styling/presentation for print or e-book readers is possible
 but rarely or only partially supported by tools.</td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="m" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td><em>(<a class="fn-backref" href="#id8">1</a>, <a class="fn-backref" href="#id9">2</a>, <a class="fn-backref" href="#id10">3</a>)</em> Control over print formatting, math and tables for Markdown is
+not provided by the main Markdown implementation; it is commonly
+provided by third-party conversion tools to other markup formats.</td></tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="copyright">
-<h2>Copyright</h2>
+<h2><a class="toc-backref" href="#id28">Copyright</a></h2>
 <p>This document has been placed in the public&nbsp;domain.</p>
 <!-- Local Variables:
 mode: rst
