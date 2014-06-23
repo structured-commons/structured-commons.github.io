@@ -241,3 +241,14 @@ div.error, div.hint, div.important, div.tip, div.admonition {
 .admonition-title {
   font-weight: bold;
 }
+
+sup {
+  vertical-align: super;
+  font-size: 60%;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 60%;
+}
+
