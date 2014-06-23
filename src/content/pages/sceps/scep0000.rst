@@ -25,6 +25,8 @@ history of the document is maintained in git [2]_.
 Final and Active Process SCEPs
 ------------------------------
 
+.. class:: table
+
 ======     ===================
 Num        Title
 ======     ===================
@@ -39,6 +41,8 @@ Draft SCEPs
 
 The following SCEPs are under consideration for standardization.
 
+.. class:: table
+
 ======     ===================
 Num        Title
 ======     ===================
@@ -48,9 +52,8 @@ Num        Title
 |103|      Standard filesystem representation method
 |104|      Document handles and citation formats
 |105|      Standard JSON representation method
+|106|      Document formats suitable for "source" documents
 ======     ===================
-
-
 
 
 References
@@ -68,3 +71,4 @@ References
 .. |103| replace:: :raw-html:`<a href="scep0103.html">103</a>`
 .. |104| replace:: :raw-html:`<a href="scep0104.html">104</a>`
 .. |105| replace:: :raw-html:`<a href="scep0105.html">105</a>`
+.. |106| replace:: :raw-html:`<a href="scep0106.html">106</a>`
