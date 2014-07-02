@@ -53,6 +53,7 @@ Num        Title
 |104|      Document handles and citation formats
 |105|      Standard JSON representation method
 |106|      Document formats suitable for "source" documents
+|107|      Review objects, review bindings and review authentication
 ======     ===================
 
 
@@ -72,3 +73,4 @@ References
 .. |104| replace:: :raw-html:`<a href="scep0104.html">104</a>`
 .. |105| replace:: :raw-html:`<a href="scep0105.html">105</a>`
 .. |106| replace:: :raw-html:`<a href="scep0106.html">106</a>`
+.. |107| replace:: :raw-html:`<a href="scep0107.html">107</a>`

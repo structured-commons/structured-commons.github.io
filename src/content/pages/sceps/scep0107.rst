@@ -1,5 +1,5 @@
 :SCEP: 107
-:Title: Content review and authentication for new-gen conferences and journals
+:Title: Review objects, review bindings and review authentication
 :Author: Raphael ‘kena’ Poss, Sebastian Altmeyer, Roeland Douma
 :Status: Draft
 :Type: Process
