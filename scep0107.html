@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <title>Structured Commons :: SCEP0107 - Content review and authentication for new-gen conferences and&nbsp;journals </title>
+        <meta charset="utf-8" />
+        <link href="http://www.structured-commons.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Structured Commons Full Atom Feed" />
+
+
+        <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/gumby.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://www.structured-commons.org/theme/pygment.css" />
+
+        <script src="http://www.structured-commons.org/theme/js/libs/modernizr-2.6.2.min.js"></script>
+
+
+
+
+
+
+</head>
+
+<body id="index" class="home">
+
+
+    <div class="container">
+
+        <div class="row">
+
+          <header id="banner" class="body">
+                  <h1><a href="http://www.structured-commons.org">Structured Commons <strong></strong></a></h1>
+          </header><!-- /#banner -->
+
+            <div id="navigation" class="navbar row">
+              <a href="#" gumby-trigger="#navigation &gt; ul" class="toggle"><i class="icon-menu"></i></a>
+
+              <ul class="columns">
+
+                <li><a href="http://www.structured-commons.org/index.html">About</a></li>
+                <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
+                <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
+                <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
+                <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
+
+              </ul>
+            </div>
+
+
+    <!--<h1>SCEP0107 – SCEP0107 - Content review and authentication for new-gen conferences and&nbsp;journals</h1>-->
+
+    <table class="docinfo"><col class="docinfo-name" /><col class="docinfo-content" />
+    <tbody valign="top">
+    <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">107</td></tr>
+    <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Content review and authentication for new-gen conferences and&nbsp;journals</td></tr>
+    <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">1a3ca0242910f9952f04d21955387ea345229a27</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-07-02 22:32:11 UTC (Wed, 02 July 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss, Sebastian Altmeyer, Roeland Douma</td></tr>
+    <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
+    <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Process</td></tr>
+    <tr class="field"><th class="docinfo-name">Created:</th><td class="field-body">2014-06-26</td></tr>
+    <tr class="field"><th class="docinfo-name">Source:</th><td class="field-body"><a href="scep0107.rst">scep0107.rst</a> (<tt>fp:F6_GS1BlKem7-qbST23KFN60UAgrV-hYcTDhASUKZLLn0A</tt>)</td></tr>
+    </tbody></table>
+
+    <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id8">Introduction</a><ul>
+<li><a class="reference internal" href="#background" id="id9">Background</a></li>
+<li><a class="reference internal" href="#summary" id="id10">Summary</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#peer-review-in-the-structured-commons-model" id="id11">Peer review in the Structured Commons model</a><ul>
+<li><a class="reference internal" href="#diversity-of-review-processes-and-outcomes" id="id12">Diversity of review processes and&nbsp;outcomes</a></li>
+<li><a class="reference internal" href="#forward-compatibility-and-decentralized-characterization" id="id13">Forward-compatibility and decentralized&nbsp;characterization</a></li>
+<li><a class="reference internal" href="#rationale" id="id14">Rationale</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-model" id="id15">Common model</a><ul>
+<li><a class="reference internal" href="#authentication" id="id16">Authentication</a></li>
+<li><a class="reference internal" href="#long-term-preservation" id="id17">Long-term&nbsp;preservation</a></li>
+<li><a class="reference internal" href="#query-engines-and-result-filtering" id="id18">Query engines and result&nbsp;filtering</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references" id="id19">References</a></li>
+<li><a class="reference internal" href="#copyright" id="id20">Copyright</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id8">Introduction</a></h2>
+<p>The Structured Commons network is composed of a structured network of
+documents and accompanying <em>review objects</em>.  When reviews are
+published, the content of reviews can be used to filter and sort
+search results by users (typically readers), <em>in lieu</em> of the
+traditional ranking of works based on publisher-determined and often
+inaccurate &#8220;impact factors&#8221; <a class="footnote-reference" href="#impact" id="id1">[1]</a>.</p>
+<p>This <span class="caps">SCEP</span> provides standard guidelines and recommendations
+for structuring reviews in the Structured Commons&nbsp;network.</p>
+<div class="section" id="background">
+<h3><a class="toc-backref" href="#id9">Background</a></h3>
+<p><em>Peer review</em>, the evaluation of scientific outcomes by peers, is a
+fundamental, defining aspect of modern science. It serves to
+acknowledge the work of peers, assessing methodologies, checking
+results, providing feedback, etc.  This aspect is
+so strong that the <em>evaluation</em> of a scientific work, and by
+extension the reputation and performance of its author(s), is largely
+defined by the outcome of peer review as much as the impact (true or
+perceived) of the scientific work&nbsp;itself.</p>
+</div>
+<div class="section" id="summary">
+<h3><a class="toc-backref" href="#id10">Summary</a></h3>
+<p>The content of the following sections can be summarized as&nbsp;follows:</p>
+<ul class="simple">
+<li><strong>structure the metadata</strong> of reviews whenever peer review is
+organized, according to the guidelines described in <a class="reference internal" href="#common-model">Common model</a>&nbsp;below.</li>
+<li><strong>List the object fingerprints</strong> of reviewed scientific works <em>and
+of their reviews</em> in review&nbsp;outcomes.</li>
+<li><strong>disseminate the metadata</strong> (including relationships and
+fingerprints) <strong>widely, soon after publication</strong>, to ensure redundancy
+of the structural&nbsp;links.</li>
+<li>obtain and circulate <strong>certificates of existence</strong> for review
+outcomes, to authenticate the structural&nbsp;links.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="peer-review-in-the-structured-commons-model">
+<h2><a class="toc-backref" href="#id11">Peer review in the Structured Commons&nbsp;model</a></h2>
+<p>The Structured Commons model embraces peer review, while innovating on
+the actors of the peer review process. Whereas, historically,
+<em>publishers</em> have been responsible for selecting reviewers, collecting
+reviews and selecting works for publication based on review outcomes,
+the Structured Commons model proposes&nbsp;that:</p>
+<ul class="simple">
+<li>all works are potentially published, regardless of review&nbsp;outcomes;</li>
+<li><em>review objects</em> become publishable,&nbsp;too;</li>
+<li>individual <em>reviewers</em> and <em>review committees</em> take ownership of the
+review&nbsp;process;</li>
+<li><em>readers</em>, and by extension anyone interested in the ranking of
+scientific works, uses published review objects to rank and filter
+works in search&nbsp;results.</li>
+</ul>
+<p>This vision removes the need for third parties (eg. industrial
+publishers) to organize peer review review, but the <em>organization</em> of
+peer review can remain largely&nbsp;unchanged:</p>
+<ol class="loweralpha simple">
+<li>groups of scholars self-appoint themselves with a common goal, the
+publication of a collection of works related to a common topic (the
+theme of a journal issue or conference in the traditional model),
+at a set <em>publication date</em> (issue date or conference date), and
+subject to a predetermined <em>review process</em> (open, blind,
+double-blind, etc).  In doing so, they define a <em>publication
+event</em>;</li>
+<li>the group publishes and disseminates a &#8220;call for submissions&#8221; to
+experts in their field, announcing the theme, publication date and
+review&nbsp;process;</li>
+<li>upon submissions by experts, the group members (or other
+distinguished experts that they appoint as reviewers on their
+behalf) follow the review process, to create reviews of the
+submitted&nbsp;works;</li>
+<li>upon the previously agreed publication date, the group announces
+and release the <em>review outcomes</em>.</li>
+</ol>
+<p>The motivation for publishing the review outcomes is twofold.  For the
+submitters, it provides the direct feedback of peer review. For the
+rest of the world, it creates an historical record of the opinion of
+the reviewers about the works that were submitted. This record can
+also be subsequently used to filter and present lists of works when
+other scholar search for materials relevant to their study, in
+replacement for the traditional &#8220;ranking&#8221; implicitly performed
+by impact&nbsp;factors.</p>
+<div class="section" id="diversity-of-review-processes-and-outcomes">
+<h3><a class="toc-backref" href="#id12">Diversity of review processes and&nbsp;outcomes</a></h3>
+<!-- The section above explained how to generalize the process around
+traditional academic journals and conferences, so that it can be
+followed by publisher-less organizations. The goal of that section is
+to show that it is possible to keep the same sort of review outcomes,
+when so desired, even without involving industrial publishers. -->
+<p>Scholars may, and often do, desire to exploit different
+<em>review processes</em> and thus reach qualitatively different review
+outcomes, depending on&nbsp;circumstances.</p>
+<p>To start with, existing journals and peer-reviews conferences use a
+threshold-based review process: its goal is to separate &#8220;rejected&#8221;
+from &#8220;accepted&#8221; papers, by filtering submissions using a threshold
+value on a common evaluation scale. This process already exists in
+different variants, depending on how reviewer neutrality was
+organized: a <em>blind</em> review process ensures that authors do not know the
+identity of reviewers, a <em>double-blind</em> process ensures that neither
+authors nor reviewers know each other identity,&nbsp;etc.</p>
+<p>Meanwhile, a diversity of other review processes and outcomes
+are also used, possibly simultaneously, around scientific works, for&nbsp;example:</p>
+<ul class="simple">
+<li>the outcome of a <em>ranking</em> process is the full list of submissions,
+ranked according to a common&nbsp;scale.</li>
+<li>the outcome of a <em>discussion</em> process is a mapping from all
+submissions to one or more comments about&nbsp;them.</li>
+<li>the outcome of a <em>tagging</em> process is a mapping from all submissions
+to one or more tags that identify their topic of study, area of
+expertise,&nbsp;etc.</li>
+</ul>
+<p>Depending on context (eg. the applicability of a scientific work, the
+current tradition in the community of experts, etc.), different
+scholar communities will likely choose for different types of review
+outcomes, and different ways to reach these outcomes. These
+preferences may even evolve over&nbsp;time.</p>
+<p>This is why <strong>the Structured Commons network registers the
+organization of the review process alongside all review outcomes</strong>, so
+that reviews can be interpreted and placed back in their context long
+after the particular technology or tacit know-how has been&nbsp;lost.</p>
+</div>
+<div class="section" id="forward-compatibility-and-decentralized-characterization">
+<h3><a class="toc-backref" href="#id13">Forward-compatibility and decentralized&nbsp;characterization</a></h3>
+<p><strong>The Structured Commons network captures review
+processes and outcomes after they have been used and produced</strong>, by
+<em>describing</em> processes and reviews using metadata and <em>linking</em>
+both the reviewed objects and their reviews <em>using their fingerprints</em>.</p>
+<p>The fact that review relationships are &#8220;encapsulated&#8221; using
+meta-objects in the Structured Commons network enables two
+adoption avenues&nbsp;simultaneously:</p>
+<ul>
+<li><p class="first">the integration of Structured Commons features in existing review
+platforms (eg. EasyChair) can be implemented as an <em>extension</em> of the
+platform, which is usually easier to achieve and to deploy
+than pervasive changes or changes that disrupt user&nbsp;habits;</p>
+</li>
+<li><p class="first">meanwhile, any outcome produced by systems not aware
+of the Structured Commons network can also be encapsulated
+in the Structured Commons network after they are&nbsp;produced.</p>
+<p>This second point means that review processes <em>can</em> be organized
+outside of the Structured Commons model, reviewers <em>may</em> be
+oblivious of the Structured Commons vision, and review objects <em>may</em>
+be edited and maintained in systems that do not support Structured
+Commons concepts directly, and <em>yet</em> the entire outcome of the
+review process can be described inserted in the Structured Commons
+network, <em>a posteriori</em>, and the value of reviews exploited for
+sorting and filtering works in search&nbsp;queries.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="rationale">
+<h3><a class="toc-backref" href="#id14">Rationale</a></h3>
+<p>It may be tempting to codify the registration of reviews
+in the Structured Commons network by first designing a fixed set of &#8220;standard review processes&#8221;,
+give them centrally managed &#8220;identifiers&#8221; and then mandate that
+&#8220;platforms must implement the standard processes to be recognized as
+valid Structured Commons implementations&#8221; and/or &#8220;must report the
+standard process identifier in review objects&#8221;. It may also be tempting to
+codify a single &#8220;schema&#8221; to create review objects and then mandate
+that &#8220;objects must be compatible with this schema to be recognized as
+a valid Structured Commons review&nbsp;object&#8221;.</p>
+<p>This approach would be undesirable for two main&nbsp;reasons:</p>
+<ul class="simple">
+<li>it would concentrate the responsibility to design review processes
+in the hands of a few (namely, those people in charge of the
+standardization), which runs contrary to the Structured
+Commons&nbsp;vision;</li>
+<li>it would be a barrier to adoption, as many other participants in
+scientific publishing already have their well-established best
+practices on how to organize peer&nbsp;review.</li>
+</ul>
+<p>The approach described below avoids these two&nbsp;pitfalls.</p>
+<p>The proposed approach is also storage-agnostic: the structured metadata
+of reviews can be distributed, copied, served using a variety
+of channels (including paper-and-ink, if need be), independently
+from a single&nbsp;organization.</p>
+</div>
+</div>
+<div class="section" id="common-model">
+<h2><a class="toc-backref" href="#id15">Common&nbsp;model</a></h2>
+<p>The process to capture peer review in the Structured Commons network
+is to create an object dictionary containing the following&nbsp;fields:</p>
+<ul class="simple">
+<li><strong>subject</strong>: a collection of works being&nbsp;reviewed,</li>
+<li><strong>annotation</strong>: a collection of reviews about the&nbsp;subject,</li>
+<li><strong>meta</strong>: a description of the review&nbsp;process.</li>
+</ul>
+<p>Such an object dictionary is called a <strong>review binding</strong> in the Structured Commons&nbsp;network.</p>
+<p>The <em>subject</em> field can either refer to <a class="footnote-reference" href="#rt" id="id2">[3]</a> a single work by fingerprint,
+or to a dictionary that refers to multiple works. If a dictionary
+is used, <em>the names in the subject dictionary must not be significant</em>:
+any references to members of the <em>subject</em> field in the <em>annotation</em> or <em>meta</em>
+fields must use Structured Common&nbsp;fingerprints.</p>
+<p>Names in the subject field can be constructed arbitrarily, for example
+using the advisory title and author list of the referred&nbsp;objects.</p>
+<p>The <em>annotation</em> field can either refer to <a class="footnote-reference" href="#rt" id="id3">[3]</a> a single review object,
+or to a dictionary that refers to multiple review objects.  If a
+dictionary is used, <em>the names in the reviews dictionary may be
+significant</em>, depending on the review process as indicated by the
+<em>meta</em>&nbsp;field.</p>
+<p>The <em>meta</em> field provides information about the review process
+and how to intepret the structure of the <em>annotation</em> field. It must
+contain at least the following&nbsp;fields:</p>
+<dl class="docutils">
+<dt><strong>start</strong></dt>
+<dd>The starting date (and optionally time)
+of the review process, encoded using <span class="caps">ISO</span> 8601 <a class="footnote-reference" href="#iso8601" id="id4">[4]</a> (eg.&nbsp;<span class="caps">YYYY</span>-<span class="caps">MM</span>-<span class="caps">DD</span>);</dd>
+<dt><strong>end</strong></dt>
+<dd>The ending date (and optionally time) of the review&nbsp;process.</dd>
+<dt><strong>title</strong></dt>
+<dd>The preferred title for the review binding as a whole. This is
+typically the conference or journal name with year in the
+traditional model, or &#8220;Reviews for &#8221; followed by the subject title
+and the time period, for self-published review bindings referring to
+a single&nbsp;object.</dd>
+<dt><strong>authors</strong></dt>
+<dd>An informative description of the entity (person, group or
+organization) responsible for <em>creating the review binding</em> (ie. not
+the authors of the works listed in the <em>subject</em> field, unless they
+are also reviewers or in charge of producing the review binding).
+For example, this may be the list of program committee members in a
+conference, the list of authors of the objects listed in the
+<em>annotation</em> field, the name of the software responsible for
+importing review outcomes automatically from an external source into
+the Structured Commons network,&nbsp;etc.</dd>
+<dt><strong>info</strong></dt>
+<dd>An informative description of the process used to produce
+the objects referred to via the <em>annotation</em> field,
+and how to interpret the contents of
+the <em>annotation</em> field. Other SCEPs may/will provide
+guidelines and best practices for structuring the <em>info</em>&nbsp;field.</dd>
+</dl>
+<p>Review objects (members of the <em>annotation</em> field) should, whenever
+possible and relevant, refer to the objects in the subject field using
+their Structured Commons fingerprint. These structural links
+can be subsequently used by Structured Commons query engines to
+present contextual information to users in search&nbsp;results.</p>
+<div class="section" id="authentication">
+<h3><a class="toc-backref" href="#id16">Authentication</a></h3>
+<p>To authenticate review bindings, the standard Structured Commons
+methods&nbsp;apply:</p>
+<ul class="simple">
+<li>the authors of review bindings should seek and register
+<strong>certificates of existence</strong> <a class="footnote-reference" href="#scep102" id="id5">[5]</a> for the entire review
+binding object <strong>within the announced review process interval</strong>
+(<em>start</em> and <em>end</em>&nbsp;fields);</li>
+<li>the <strong>fingerprint</strong> of review binding objects should be disseminated
+into a variety of media, themselves authentified via
+certificate of existence close to the announced review process&nbsp;interval;</li>
+<li><strong>search results</strong> for queries onto the Structured Commons network
+must present the known certificates of existence alongside
+review bindings to&nbsp;users;</li>
+<li>over time, directories of &#8220;reputable&#8221; review binding authors or
+processes will appear, together with education materials for users
+of the Structured Commons network that helps them construct relevant
+search&nbsp;queries.</li>
+</ul>
+<p>In the particular case where review bindings are created a posteriori
+on top of a collection of review objects produced outside
+of the Structured Commons network, and <em>where the existing review objects
+already contain all the information needed to construct the review
+binding object</em>, any certificate of existence that
+attests separately all review objects in the collection can be used
+as certificate of existence for the review binding&nbsp;itself.</p>
+<p>This extra possibility makes it possible to reuse and authenticate
+past review outcomes in the Structured Commons network, without the
+need for back-dated certificates of existence (as back-dated CoEs
+would violate the Structured Commons contract on&nbsp;CoEs).</p>
+</div>
+<div class="section" id="long-term-preservation">
+<h3><a class="toc-backref" href="#id17">Long-term&nbsp;preservation</a></h3>
+<p>In the traditional model, a &#8220;journal issue&#8221; or &#8220;conference
+proceedings&#8221; is a document that <em>cristallizes</em> the outcome of a
+publication event. This is achieved by <em>compiling all accepted works
+into a single book</em>, booklet or magazine, that is subsequentely
+<em>widely disseminated</em> in libraries around the world, usually using&nbsp;paper-and-ink.</p>
+<p>Even without following the traditional model, the Structured Commons
+model acknowledges that this cristallization is essential: <em>long after
+the publication event has passed</em>, in particular after its organizers
+have disbanded or have forgotten about their involvement, and the web
+sites related to the event have themselves disappeared <a class="footnote-reference" href="#lr" id="id6">[2]</a>, the
+<em>distributed repository of copies of archived collections</em> should
+serve as witness of the review outcomes; so that anyone can stay free
+to compare copies across multiple libraries and satisfy themselves
+that they list an accepted work, follow a known review process, were
+published at a known date,&nbsp;etc.</p>
+<p>This is why <strong>the creators of review binding objects should seek wide
+dissemination and long-term perservation of the review bindings,</strong>
+and technology platforms around the Structured Commons network
+should give extra attension to the long-time persistence of all review&nbsp;bindings.</p>
+</div>
+<div class="section" id="query-engines-and-result-filtering">
+<h3><a class="toc-backref" href="#id18">Query engines and result&nbsp;filtering</a></h3>
+<p>The goal of review bindings is to influence the ranking and filtering
+of search results in query engines, when users query the
+Structured Commons network for &#8220;all works referred to by
+review bindings&#8221; or &#8220;all works for which a predicate
+holds on known review&nbsp;bindings&#8221;.</p>
+<p>To ensure that the network remains impervious to malicious insertions
+of illegitimate review bindings, the following extra measures must be&nbsp;taken:</p>
+<ul class="simple">
+<li>query engines and/or users must account for/use certificates
+of existence, and give higher precedence to review bindings with
+certificates of existence falling in the announced <em>start-end</em>&nbsp;interval.</li>
+<li>query engines and/or users must give higher precedence to review
+bindings that are referred to by other objects, with certificates
+of existence closer to the <em>end</em>&nbsp;date.</li>
+<li>there must exist a trusted oracle that authentifies new review
+bindings for a limited amount of time after their publication,
+sufficiently long to accrue references from other objects
+in the Structured Commons network
+(eg. a trusted web site listing valid review binding fingerprints
+can be available for at least a year or two after the objects
+are&nbsp;published).</li>
+</ul>
+<p>The requirement in this second assumption is motivated as follows: as
+explained in <span class="caps">SCEP</span> 102 <a class="footnote-reference" href="#scep102" id="id7">[5]</a>, section &#8220;Very long term
+durability&#8221;, once a network of citations with certificates of
+existence exists, the trusted oracle can be removed and the network of
+citations can serve as substitute to authenticate&nbsp;objects.</p>
+<p>Once these two measures are taken, fake reviews are blocked
+from impacting search results&nbsp;significantly:</p>
+<ul>
+<li><p class="first">fake review bindings created after the <em>end</em> date of  &#8220;good&#8221;
+review binding cannot obtain a valid certificate of
+existence that falls in the time&nbsp;interval;</p>
+</li>
+<li><p class="first">fake review bindings created before the end date of a &#8220;good&#8221; review
+binding, with valid certificates of&nbsp;existence:</p>
+<ul class="simple">
+<li>if the fake review binding is injected in the network soon after
+the <em>end</em> date: the trusted oracle will prevent the accretion of a
+citation network, while the &#8220;good&#8221; object will accrue&nbsp;citations;</li>
+<li>if the fake review binding is injected in the network long after
+the <em>end</em> date, eg. when the trusted oracle is not available any
+more: from then on, it will be impossible for the fake object to
+accrue older citations than those that already exist for the &#8220;good&#8221;&nbsp;object.</li>
+</ul>
+<p>In both cases, the &#8220;good&#8221; object is favored in search results, because it
+has the earlier network of attested&nbsp;citations.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id19">References</a></h2>
+<table class="docutils footnote" frame="void" id="impact" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Björn Brembs, Katherine Button, and Marcus Munafò. Deep
+impact: unintended consequences of journal rank.  Frontiers in
+Human Neuroscience, 7(291), 2013. <a class="reference external" href="http://dx.doi.org/10.3389/fnhum.2013.00291"><span class="caps">DOI</span>: 10.3389/fnhum.2013.00291</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="lr" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[2]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Link_rot">https://en.wikipedia.org/wiki/Link_rot</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="rt" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> See the definition of &#8220;refer to&#8221; in <span class="caps">SCEP</span> 101.
+(<a class="reference external" href="http://www.structured-commons.org/scep0101.html">http://www.structured-commons.org/scep0101.html</a>)</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="iso8601" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><span class="caps">ISO</span> 8601:2004. &#8220;Representation of dates and
+times&#8221;. See also <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">https://en.wikipedia.org/wiki/ISO_8601</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="scep102" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td><em>(<a class="fn-backref" href="#id5">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> <span class="caps">SCEP</span> 102. &#8220;Certificates of existence&#8221;.
+(<a class="reference external" href="http://www.structured-commons.org/scep0102.html">http://www.structured-commons.org/scep0102.html</a>)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="copyright">
+<h2><a class="toc-backref" href="#id20">Copyright</a></h2>
+<p>This document has been placed in the public&nbsp;domain.</p>
+<!-- Local Variables:
+mode: rst
+indent-tabs-mode: nil
+sentence-end-double-space: t
+fill-column: 70
+coding: utf-8
+End: -->
+</div>
+
+
+       </div><!-- /.row -->
+    </div><!-- /.container -->
+
+
+       <div class="container.nopad bg">
+
+
+        <footer id="credits" class="row">
+          <div class="seven columns left-center">
+
+                   <address id="about" class="vcard body">
+                    Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                    which takes great advantage of <a href="http://python.org">Python</a>.
+                    <br />
+                    Based on the <a target="_blank" href="http://gumbyframework.com">Gumby Framework</a>
+                    </address>
+          </div>
+
+
+          <div class="seven columns">
+            <div class="row">
+              <ul class="socbtns">
+
+
+
+
+
+              </ul>
+            </div>
+          </div>
+        </footer>
+
+    </div>
+
+
+  <script src="http://www.structured-commons.org/theme/js/libs/jquery-1.9.1.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/libs/gumby.min.js"></script>
+  <script src="http://www.structured-commons.org/theme/js/plugins.js"></script>
+</body>
+</html>

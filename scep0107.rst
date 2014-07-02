@@ -1,0 +1,428 @@
+:SCEP: 107
+:Title: Content review and authentication for new-gen conferences and journals
+:Author: Raphael ‘kena’ Poss, Sebastian Altmeyer, Roeland Douma
+:Status: Draft
+:Type: Process
+:Created: 2014-06-26
+
+.. contents::
+   :depth: 2
+
+Introduction
+============
+
+The Structured Commons network is composed of a structured network of
+documents and accompanying *review objects*.  When reviews are
+published, the content of reviews can be used to filter and sort
+search results by users (typically readers), *in lieu* of the
+traditional ranking of works based on publisher-determined and often
+inaccurate "impact factors" [#IMPACT]_.
+
+This SCEP provides standard guidelines and recommendations
+for structuring reviews in the Structured Commons network.
+
+Background
+----------
+
+*Peer review*, the evaluation of scientific outcomes by peers, is a
+fundamental, defining aspect of modern science. It serves to
+acknowledge the work of peers, assessing methodologies, checking
+results, providing feedback, etc.  This aspect is
+so strong that the *evaluation* of a scientific work, and by
+extension the reputation and performance of its author(s), is largely
+defined by the outcome of peer review as much as the impact (true or
+perceived) of the scientific work itself.
+
+Summary
+-------
+
+The content of the following sections can be summarized as follows:
+
+- **structure the metadata** of reviews whenever peer review is
+  organized, according to the guidelines described in `Common model`_
+  below.
+
+- **List the object fingerprints** of reviewed scientific works *and
+  of their reviews* in review outcomes.
+
+- **disseminate the metadata** (including relationships and
+  fingerprints) **widely, soon after publication**, to ensure redundancy
+  of the structural links.
+
+- obtain and circulate **certificates of existence** for review
+  outcomes, to authenticate the structural links.
+
+
+
+Peer review in the Structured Commons model
+===========================================
+
+The Structured Commons model embraces peer review, while innovating on
+the actors of the peer review process. Whereas, historically,
+*publishers* have been responsible for selecting reviewers, collecting
+reviews and selecting works for publication based on review outcomes,
+the Structured Commons model proposes that:
+
+- all works are potentially published, regardless of review outcomes;
+- *review objects* become publishable, too;
+- individual *reviewers* and *review committees* take ownership of the
+  review process;
+- *readers*, and by extension anyone interested in the ranking of
+  scientific works, uses published review objects to rank and filter
+  works in search results.
+
+This vision removes the need for third parties (eg. industrial
+publishers) to organize peer review review, but the *organization* of
+peer review can remain largely unchanged:
+
+a. groups of scholars self-appoint themselves with a common goal, the
+   publication of a collection of works related to a common topic (the
+   theme of a journal issue or conference in the traditional model),
+   at a set *publication date* (issue date or conference date), and
+   subject to a predetermined *review process* (open, blind,
+   double-blind, etc).  In doing so, they define a *publication
+   event*;
+b. the group publishes and disseminates a "call for submissions" to
+   experts in their field, announcing the theme, publication date and
+   review process;
+c. upon submissions by experts, the group members (or other
+   distinguished experts that they appoint as reviewers on their
+   behalf) follow the review process, to create reviews of the
+   submitted works;
+d. upon the previously agreed publication date, the group announces
+   and release the *review outcomes*.
+
+The motivation for publishing the review outcomes is twofold.  For the
+submitters, it provides the direct feedback of peer review. For the
+rest of the world, it creates an historical record of the opinion of
+the reviewers about the works that were submitted. This record can
+also be subsequently used to filter and present lists of works when
+other scholar search for materials relevant to their study, in
+replacement for the traditional "ranking" implicitly performed
+by impact factors.
+
+Diversity of review processes and outcomes
+------------------------------------------
+
+..
+   The section above explained how to generalize the process around
+   traditional academic journals and conferences, so that it can be
+   followed by publisher-less organizations. The goal of that section is
+   to show that it is possible to keep the same sort of review outcomes,
+   when so desired, even without involving industrial publishers.
+
+Scholars may, and often do, desire to exploit different
+*review processes* and thus reach qualitatively different review
+outcomes, depending on circumstances.
+
+To start with, existing journals and peer-reviews conferences use a
+threshold-based review process: its goal is to separate "rejected"
+from "accepted" papers, by filtering submissions using a threshold
+value on a common evaluation scale. This process already exists in
+different variants, depending on how reviewer neutrality was
+organized: a *blind* review process ensures that authors do not know the
+identity of reviewers, a *double-blind* process ensures that neither
+authors nor reviewers know each other identity, etc.
+
+Meanwhile, a diversity of other review processes and outcomes
+are also used, possibly simultaneously, around scientific works, for example:
+
+- the outcome of a *ranking* process is the full list of submissions,
+  ranked according to a common scale.
+- the outcome of a *discussion* process is a mapping from all
+  submissions to one or more comments about them.
+- the outcome of a *tagging* process is a mapping from all submissions
+  to one or more tags that identify their topic of study, area of
+  expertise, etc.
+
+Depending on context (eg. the applicability of a scientific work, the
+current tradition in the community of experts, etc.), different
+scholar communities will likely choose for different types of review
+outcomes, and different ways to reach these outcomes. These
+preferences may even evolve over time.
+
+This is why **the Structured Commons network registers the
+organization of the review process alongside all review outcomes**, so
+that reviews can be interpreted and placed back in their context long
+after the particular technology or tacit know-how has been lost.
+
+Forward-compatibility and decentralized characterization
+--------------------------------------------------------
+
+**The Structured Commons network captures review
+processes and outcomes after they have been used and produced**, by
+*describing* processes and reviews using metadata and *linking*
+both the reviewed objects and their reviews *using their fingerprints*.
+
+The fact that review relationships are "encapsulated" using
+meta-objects in the Structured Commons network enables two
+adoption avenues simultaneously:
+
+- the integration of Structured Commons features in existing review
+  platforms (eg. EasyChair) can be implemented as an *extension* of the
+  platform, which is usually easier to achieve and to deploy
+  than pervasive changes or changes that disrupt user habits;
+
+- meanwhile, any outcome produced by systems not aware
+  of the Structured Commons network can also be encapsulated
+  in the Structured Commons network after they are produced.
+
+  This second point means that review processes *can* be organized
+  outside of the Structured Commons model, reviewers *may* be
+  oblivious of the Structured Commons vision, and review objects *may*
+  be edited and maintained in systems that do not support Structured
+  Commons concepts directly, and *yet* the entire outcome of the
+  review process can be described inserted in the Structured Commons
+  network, *a posteriori*, and the value of reviews exploited for
+  sorting and filtering works in search queries.
+
+Rationale
+---------
+
+It may be tempting to codify the registration of reviews
+in the Structured Commons network by first designing a fixed set of "standard review processes",
+give them centrally managed "identifiers" and then mandate that
+"platforms must implement the standard processes to be recognized as
+valid Structured Commons implementations" and/or "must report the
+standard process identifier in review objects". It may also be tempting to
+codify a single "schema" to create review objects and then mandate
+that "objects must be compatible with this schema to be recognized as
+a valid Structured Commons review object".
+
+This approach would be undesirable for two main reasons:
+
+- it would concentrate the responsibility to design review processes
+  in the hands of a few (namely, those people in charge of the
+  standardization), which runs contrary to the Structured
+  Commons vision;
+- it would be a barrier to adoption, as many other participants in
+  scientific publishing already have their well-established best
+  practices on how to organize peer review.
+
+The approach described below avoids these two pitfalls.
+
+The proposed approach is also storage-agnostic: the structured metadata
+of reviews can be distributed, copied, served using a variety
+of channels (including paper-and-ink, if need be), independently
+from a single organization.
+
+Common model
+============
+
+The process to capture peer review in the Structured Commons network
+is to create an object dictionary containing the following fields:
+
+- **subject**: a collection of works being reviewed,
+- **annotation**: a collection of reviews about the subject,
+- **meta**: a description of the review process.
+
+Such an object dictionary is called a **review binding** in the Structured Commons network.
+
+The *subject* field can either refer to [#RT]_ a single work by fingerprint,
+or to a dictionary that refers to multiple works. If a dictionary
+is used, *the names in the subject dictionary must not be significant*:
+any references to members of the *subject* field in the *annotation* or *meta*
+fields must use Structured Common fingerprints.
+
+Names in the subject field can be constructed arbitrarily, for example
+using the advisory title and author list of the referred objects.
+
+The *annotation* field can either refer to [#RT]_ a single review object,
+or to a dictionary that refers to multiple review objects.  If a
+dictionary is used, *the names in the reviews dictionary may be
+significant*, depending on the review process as indicated by the
+*meta* field.
+
+The *meta* field provides information about the review process
+and how to intepret the structure of the *annotation* field. It must
+contain at least the following fields:
+
+**start**
+  The starting date (and optionally time)
+  of the review process, encoded using ISO 8601 [#ISO8601]_ (eg. YYYY-MM-DD);
+
+**end**
+  The ending date (and optionally time) of the review process.
+
+**title**
+  The preferred title for the review binding as a whole. This is
+  typically the conference or journal name with year in the
+  traditional model, or "Reviews for " followed by the subject title
+  and the time period, for self-published review bindings referring to
+  a single object.
+
+**authors**
+  An informative description of the entity (person, group or
+  organization) responsible for *creating the review binding* (ie. not
+  the authors of the works listed in the *subject* field, unless they
+  are also reviewers or in charge of producing the review binding).
+  For example, this may be the list of program committee members in a
+  conference, the list of authors of the objects listed in the
+  *annotation* field, the name of the software responsible for
+  importing review outcomes automatically from an external source into
+  the Structured Commons network, etc.
+
+**info**
+  An informative description of the process used to produce
+  the objects referred to via the *annotation* field,
+  and how to interpret the contents of
+  the *annotation* field. Other SCEPs may/will provide
+  guidelines and best practices for structuring the *info*  field.
+
+Review objects (members of the *annotation* field) should, whenever
+possible and relevant, refer to the objects in the subject field using
+their Structured Commons fingerprint. These structural links
+can be subsequently used by Structured Commons query engines to
+present contextual information to users in search results.
+
+Authentication
+--------------
+
+To authenticate review bindings, the standard Structured Commons
+methods apply:
+
+- the authors of review bindings should seek and register
+  **certificates of existence** [#SCEP102]_ for the entire review
+  binding object **within the announced review process interval**
+  (*start* and *end* fields);
+- the **fingerprint** of review binding objects should be disseminated
+  into a variety of media, themselves authentified via
+  certificate of existence close to the announced review process interval;
+- **search results** for queries onto the Structured Commons network
+  must present the known certificates of existence alongside
+  review bindings to users;
+- over time, directories of "reputable" review binding authors or
+  processes will appear, together with education materials for users
+  of the Structured Commons network that helps them construct relevant
+  search queries.
+
+In the particular case where review bindings are created a posteriori
+on top of a collection of review objects produced outside
+of the Structured Commons network, and *where the existing review objects
+already contain all the information needed to construct the review
+binding object*, any certificate of existence that
+attests separately all review objects in the collection can be used
+as certificate of existence for the review binding itself.
+
+This extra possibility makes it possible to reuse and authenticate
+past review outcomes in the Structured Commons network, without the
+need for back-dated certificates of existence (as back-dated CoEs
+would violate the Structured Commons contract on CoEs).
+
+Long-term preservation
+----------------------
+
+In the traditional model, a "journal issue" or "conference
+proceedings" is a document that *cristallizes* the outcome of a
+publication event. This is achieved by *compiling all accepted works
+into a single book*, booklet or magazine, that is subsequentely
+*widely disseminated* in libraries around the world, usually using
+paper-and-ink.
+
+Even without following the traditional model, the Structured Commons
+model acknowledges that this cristallization is essential: *long after
+the publication event has passed*, in particular after its organizers
+have disbanded or have forgotten about their involvement, and the web
+sites related to the event have themselves disappeared [#LR]_, the
+*distributed repository of copies of archived collections* should
+serve as witness of the review outcomes; so that anyone can stay free
+to compare copies across multiple libraries and satisfy themselves
+that they list an accepted work, follow a known review process, were
+published at a known date, etc.
+
+This is why **the creators of review binding objects should seek wide
+dissemination and long-term perservation of the review bindings,**
+and technology platforms around the Structured Commons network
+should give extra attension to the long-time persistence of all review bindings.
+
+Query engines and result filtering
+----------------------------------
+
+The goal of review bindings is to influence the ranking and filtering
+of search results in query engines, when users query the
+Structured Commons network for "all works referred to by
+review bindings" or "all works for which a predicate
+holds on known review bindings".
+
+To ensure that the network remains impervious to malicious insertions
+of illegitimate review bindings, the following extra measures must be taken:
+
+- query engines and/or users must account for/use certificates
+  of existence, and give higher precedence to review bindings with
+  certificates of existence falling in the announced *start-end*
+  interval.
+
+- query engines and/or users must give higher precedence to review
+  bindings that are referred to by other objects, with certificates
+  of existence closer to the *end* date.
+
+- there must exist a trusted oracle that authentifies new review
+  bindings for a limited amount of time after their publication,
+  sufficiently long to accrue references from other objects
+  in the Structured Commons network
+  (eg. a trusted web site listing valid review binding fingerprints
+  can be available for at least a year or two after the objects
+  are published).
+
+The requirement in this second assumption is motivated as follows: as
+explained in SCEP 102 [#SCEP102]_, section "Very long term
+durability", once a network of citations with certificates of
+existence exists, the trusted oracle can be removed and the network of
+citations can serve as substitute to authenticate objects.
+
+Once these two measures are taken, fake reviews are blocked
+from impacting search results significantly:
+
+- fake review bindings created after the *end* date of  "good"
+  review binding cannot obtain a valid certificate of
+  existence that falls in the time interval;
+
+- fake review bindings created before the end date of a "good" review
+  binding, with valid certificates of existence:
+
+  - if the fake review binding is injected in the network soon after
+    the *end* date: the trusted oracle will prevent the accretion of a
+    citation network, while the "good" object will accrue citations;
+
+  - if the fake review binding is injected in the network long after
+    the *end* date, eg. when the trusted oracle is not available any
+    more: from then on, it will be impossible for the fake object to
+    accrue older citations than those that already exist for the "good"
+    object.
+
+  In both cases, the "good" object is favored in search results, because it
+  has the earlier network of attested citations.
+
+References
+==========
+
+.. [#IMPACT] Björn Brembs, Katherine Button, and Marcus Munafò. Deep
+   impact: unintended consequences of journal rank.  Frontiers in
+   Human Neuroscience, 7(291), 2013. `DOI: 10.3389/fnhum.2013.00291
+   <http://dx.doi.org/10.3389/fnhum.2013.00291>`_.
+
+.. [#LR] https://en.wikipedia.org/wiki/Link_rot
+
+.. [#RT] See the definition of "refer to" in SCEP 101.
+   (http://www.structured-commons.org/scep0101.html)
+
+.. [#ISO8601] ISO 8601:2004. "Representation of dates and
+   times". See also https://en.wikipedia.org/wiki/ISO_8601.
+
+.. [#SCEP102] SCEP 102. "Certificates of existence".
+   (http://www.structured-commons.org/scep0102.html)
+
+Copyright
+=========
+
+This document has been placed in the public domain.
+
+
+..
+   Local Variables:
+   mode: rst
+   indent-tabs-mode: nil
+   sentence-end-double-space: t
+   fill-column: 70
+   coding: utf-8
+   End:
