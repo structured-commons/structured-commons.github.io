@@ -48,10 +48,10 @@ def specs(content):
         content.updated = time.gmtime(os.stat(path).st_mtime)
         content.gitrev = '(not yet committed)'
     else:
-        commits = repo.commits(path=path)
-        assert len(commits) > 0
-        content.updated = commits[0].committed_date
-        content.gitrev = commits[0].id
+        commits = repo.iter_commits(paths=path)
+	commit = commits.next()
+        content.updated = datetime.fromtimestamp(commit.committed_date).timetuple()
+        content.gitrev = commit.hexsha
 
     content.updated = time.strftime('%F %T UTC (%a, %d %B %Y)', content.updated)
 
