@@ -39,9 +39,9 @@
 
               <ul class="columns">
 
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/index.html">About</a></li>
                 <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
-                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
                 <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
                 <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
@@ -57,7 +57,7 @@
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">105</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Standard <span class="caps">JSON</span> representation&nbsp;method</td></tr>
     <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">d761e41df9005076ab9540ce64fc614b0c15bb2d</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-19 22:43:41 UTC (Thu, 19 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-20 00:43:41 UTC (Fri, 20 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
@@ -70,7 +70,7 @@
 computer system. Conversely, there may exist multiple valid
 representations for an&nbsp;object.</p>
 <p>This <span class="caps">SCEP</span> defines the canonical representation of Structured
-Commons objects as a <span class="caps">JSON</span> object, with method name &#8220;<strong>json</strong>&#8220;.</p>
+Commons objects as a <span class="caps">JSON</span> object, with method name &quot;<strong>json</strong>&quot;.</p>
 <div class="section" id="overview">
 <h2>Overview</h2>
 <p>The <tt class="docutils literal">json</tt> representation maps objects to a <span class="caps">JSON</span> object <a class="footnote-reference" href="#json" id="id2">[2]</a>.</p>
@@ -106,7 +106,7 @@ of the&nbsp;fingerprint.</p>
 <div class="section" id="alternate-representation">
 <h2>Alternate&nbsp;representation</h2>
 <p>When an object file contains many occurrences of byte codes outside of the
-printable range, the &#8220;direct&#8221; <span class="caps">JSON</span> representation using Unicode escape sequences (&#8220;<tt class="docutils literal">\uXXXX</tt>&#8220;)
+printable range, the &quot;direct&quot; <span class="caps">JSON</span> representation using Unicode escape sequences (&quot;<tt class="docutils literal">\uXXXX</tt>&quot;)
 can incur a large space overhead, up to 500% of the length of the original byte&nbsp;string.</p>
 <p>For applications where binary data is common, this specification provides an
 <em>alternate</em>, mutually compatible encoding for file objects: a
@@ -122,7 +122,7 @@ as&nbsp;follows:</p>
 </pre>
 <p>The alternate encoding is not ambiguous with fingerprint references,
 since the Base64 encoding of a file object can never start with the
-three characters &#8220;<tt class="docutils literal">fp:</tt>&#8220;.</p>
+three characters &quot;<tt class="docutils literal">fp:</tt>&quot;.</p>
 </div>
 <div class="section" id="example-reference-implementation">
 <h2>Example/reference&nbsp;implementation</h2>
@@ -134,21 +134,21 @@ three characters &#8220;<tt class="docutils literal">fp:</tt>&#8220;.</p>
 <table class="docutils footnote" frame="void" id="scep-101" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 101. &#8220;Structured Commons Object Model and Fingerprints&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 101. &quot;Structured Commons Object Model and Fingerprints&quot;.
 (<a class="reference external" href="http://www.structured-commons.org/scep0101.html">http://www.structured-commons.org/scep0101.html</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="json" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">RFC</span> 7159. &#8220;The JavaScript Object Notation (<span class="caps">JSON</span>) Data Interchange Format&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">RFC</span> 7159. &quot;The JavaScript Object Notation (<span class="caps">JSON</span>) Data Interchange Format&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc7159">https://tools.ietf.org/html/rfc7159</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="base" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 4648. &#8220;The Base16, Base32, and Base64 Data Encodings&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 4648. &quot;The Base16, Base32, and Base64 Data Encodings&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc4648">https://tools.ietf.org/html/rfc4648</a>)</td></tr>
 </tbody>
 </table>

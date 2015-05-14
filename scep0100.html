@@ -39,9 +39,9 @@
 
               <ul class="columns">
 
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/index.html">About</a></li>
                 <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
-                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
                 <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
                 <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
@@ -57,7 +57,7 @@
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">100</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Structured Commons Model&nbsp;Overview</td></tr>
     <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">83b446373ea74fc652ecafe962c7e61040635a1d</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-15 18:30:48 UTC (Sun, 15 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-15 20:30:48 UTC (Sun, 15 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Informational</td></tr>
@@ -88,7 +88,7 @@ representation</em>), the network of objects references (matters of
 <li>Citations and certificates of&nbsp;existence</li>
 <li>Object access and&nbsp;distribution</li>
 </ol>
-<p>From a user&#8217;s perspective, a &#8220;published Structured Commons document&#8221; consists of these&nbsp;entities:</p>
+<p>From a user&#8217;s perspective, a &quot;published Structured Commons document&quot; consists of these&nbsp;entities:</p>
 <ul class="simple">
 <li>one document <em>object</em> and its associated <em>fingerprint</em> (level&nbsp;1);</li>
 <li>zero or more <em>certificates of existence</em> and one or more <em>document handles</em> for citations (level&nbsp;2);</li>
@@ -96,7 +96,7 @@ representation</em>), the network of objects references (matters of
 </ul>
 <dl class="docutils">
 <dt><strong>Level 1: Object model and&nbsp;fingerprints</strong></dt>
-<dd><p class="first">An <em>object</em> is the &#8220;body&#8221; of a publication, eg. a <span class="caps">PDF</span> file,
+<dd><p class="first">An <em>object</em> is the &quot;body&quot; of a publication, eg. a <span class="caps">PDF</span> file,
 directory containing TeX document sources, data set, etc.  Objects
 are <em>semantic</em> (symbolic), defined independently from where they
 are observed and how they are stored&nbsp;(representation/syntax).</p>
@@ -129,11 +129,11 @@ contacts the <em>data store network</em> (<span class="caps">DS</span>) as&nbsp;
 (small) text string that identifies a retrieval&nbsp;method;</p>
 </li>
 <li><p class="first">then&nbsp;either:</p>
-<p>3a. the user further interacts with the&nbsp;<span class="caps">DS</span>:</p>
+<p>3a. the user further interacts with the <span class="caps">DS</span>:</p>
 <blockquote>
 <ol class="lowerroman simple">
 <li>issues a request to the <span class="caps">DS</span> for the download&nbsp;handle;</li>
-<li>receives download parameters from the&nbsp;<span class="caps">DS</span>;</li>
+<li>receives download parameters from the <span class="caps">DS</span>;</li>
 <li>further proceeds as per step 3b below,&nbsp;or</li>
 <li>issues a request to the <span class="caps">DS</span> for the object data according to the download&nbsp;parameters.</li>
 </ol>
@@ -144,7 +144,7 @@ retrieve the document using the <span class="caps">SCDH</span> or download&nbsp;
 </ol>
 <p>In a first implementation, Structured Commons may reuse Bittorrent as
 distribution protocol, and reuse Bittorrent&#8217;s standard info-hash keys
-(also known as &#8220;<span class="caps">BTIH</span>&#8221;) as <span class="caps">SC</span> download handles&nbsp;(SCDHs).</p>
+(also known as &quot;<span class="caps">BTIH</span>&quot;) as <span class="caps">SC</span> download handles&nbsp;(SCDHs).</p>
 <p class="last">The mapping of object fingerprints to download handles must be
 maintained and served by the data store network. However, as
 download handles are small, it is expected that text databases
@@ -163,7 +163,7 @@ handles are not durable in the very long term</strong>:</p>
 <ul class="simple">
 <li>using an Internet <span class="caps">URL</span> as <span class="caps">SCDL</span> may break a citation when the domain
 name is transferred, the directory tree on the server is changed,
-the content management system is updated, etc. (also known as the &#8220;Link rot&#8221; problem <a class="footnote-reference" href="#lr" id="id3">[3]</a>)</li>
+the content management system is updated, etc. (also known as the &quot;Link rot&quot; problem <a class="footnote-reference" href="#lr" id="id3">[3]</a>)</li>
 <li>using a Bittorrent <span class="caps">BTIH</span> as <span class="caps">SCDL</span> may break a citation if at some point
 Structured Commons users decide to switch to another mechanism/protocol
 than&nbsp;Bittorrent.</li>
@@ -179,7 +179,7 @@ institutional organizations to track where copies of a document are
 stored and how to download them without serving copies of the
 documents themselves. This idea, taken from the Bittorrent protocol,
 is useful in the target application (academic publishing), to enable
-legal redistribution of &#8220;older&#8221; content where only direct authors and
+legal redistribution of &quot;older&quot; content where only direct authors and
 licensees have a right to redistribute&nbsp;copies.</p>
 </div>
 <div class="section" id="references">

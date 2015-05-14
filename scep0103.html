@@ -39,9 +39,9 @@
 
               <ul class="columns">
 
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/index.html">About</a></li>
                 <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
-                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
                 <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
                 <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
@@ -57,7 +57,7 @@
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">103</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Standard filesystem representation&nbsp;method</td></tr>
     <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">8b028d25775b16452084cca78d96d730904b294c</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 08:23:18 UTC (Mon, 16 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 10:23:18 UTC (Mon, 16 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
@@ -70,7 +70,7 @@
 computer system. Conversely, there may exist multiple valid
 representations for an&nbsp;object.</p>
 <p>This <span class="caps">SCEP</span> defines the canonical representation of Structured
-Commons objects in a filesystem, with method name &#8220;<strong>fs</strong>&#8220;.</p>
+Commons objects in a filesystem, with method name &quot;<strong>fs</strong>&quot;.</p>
 <div class="section" id="overview">
 <h2>Overview</h2>
 <p>The <tt class="docutils literal">fs</tt> representation maps objects to a filesystem (eg. on&nbsp;disk).</p>
@@ -79,22 +79,22 @@ Commons objects in a filesystem, with method name &#8220;<strong>fs</strong>&#82
 <p>Names in dictionaries are translated using <span class="caps">UTF</span>-8 <a class="footnote-reference" href="#utf" id="id2">[2]</a> to file/directory
 names, with an optional percent-encoding <a class="footnote-reference" href="#urlq" id="id3">[3]</a>  to support characters
 that are not acceptable in file names on a particular&nbsp;platform.</p>
-<p>For example, the name &#8220;helló / world?&#8221; can be translated
-&#8220;<tt class="docutils literal">hell%C3%B3 %2F world?</tt>&#8221; on a Unix filesystem or
-to &#8220;<tt class="docutils literal">hell%C3%B3%20%2F%20world%3F</tt>&#8221; for a directory served
-over&nbsp;<span class="caps">HTTP</span>.</p>
+<p>For example, the name &quot;helló / world?&quot; can be translated
+&quot;<tt class="docutils literal">hell%C3%B3 %2F world?</tt>&quot; on a Unix filesystem or
+to &quot;<tt class="docutils literal">hell%C3%B3%20%2F%20world%3F</tt>&quot; for a directory served
+over <span class="caps">HTTP</span>.</p>
 <p>Dictionary names that map to objects are represented by directory
 entries that point to either files or&nbsp;directories.</p>
 <p>Dictionary names that map to fingerprints are represented by a regular
 file containing the binary representation of the fingerprint, with a
-filesystem name that prepends &#8220;%00&#8221; to the dictionary name&nbsp;representation.</p>
+filesystem name that prepends &quot;%00&quot; to the dictionary name&nbsp;representation.</p>
 <div class="caution">
 <p class="first admonition-title">Caution!</p>
-<p class="last">The names &#8220;.&#8221; and &#8220;..&#8221; are valid dictionary names
+<p class="last">The names &quot;.&quot; and &quot;..&quot; are valid dictionary names
 in Structured Commons dictionaries, however they are (usually)
 not valid filesystem entry names. In general,
-names starting with a &#8220;.&#8221; should always be encoded to a
-filesystem name starting with&nbsp;&#8221;%2E&#8221;.</p>
+names starting with a &quot;.&quot; should always be encoded to a
+filesystem name starting with&nbsp;&quot;%2E&quot;.</p>
 </div>
 </div>
 <div class="section" id="encoding-algorithm">
@@ -154,21 +154,21 @@ END FUNCTION
 <table class="docutils footnote" frame="void" id="scep-101" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 101. &#8220;Structured Commons Object Model and Fingerprints&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><span class="caps">SCEP</span> 101. &quot;Structured Commons Object Model and Fingerprints&quot;.
 (<a class="reference external" href="http://www.structured-commons.org/scep0101.html">http://www.structured-commons.org/scep0101.html</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="utf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">RFC</span> 3629. &#8220;<span class="caps">UTF</span>-8, a transformation format of <span class="caps">ISO</span> 10646&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">RFC</span> 3629. &quot;<span class="caps">UTF</span>-8, a transformation format of <span class="caps">ISO</span> 10646&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc3629">https://tools.ietf.org/html/rfc3629</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="urlq" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 3986, &#8220;Uniform Resource Identifier (<span class="caps">URI</span>): Generic Syntax&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 3986, &quot;Uniform Resource Identifier (<span class="caps">URI</span>): Generic Syntax&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc3986">https://tools.ietf.org/html/rfc3986</a>)</td></tr>
 </tbody>
 </table>

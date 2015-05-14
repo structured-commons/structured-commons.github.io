@@ -39,9 +39,9 @@
 
               <ul class="columns">
 
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/index.html">About</a></li>
                 <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
-                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
                 <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
                 <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
@@ -57,7 +57,7 @@
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">102</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Certificates of&nbsp;existence</td></tr>
     <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">b472c0fd9d1166dcfd3a3a252ba6b5c8eda869aa</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 07:23:16 UTC (Mon, 16 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 09:23:16 UTC (Mon, 16 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
@@ -71,8 +71,8 @@
 and asserts that the object existed no later than the certified&nbsp;date.</p>
 <p>A CoE exists outside of the object that it certifies. Each object can
 be attested by more than one&nbsp;CoE.</p>
-<p>CoEs are intended for display in citation contexts, for example &#8220;this
-document refers to another document D, attested by CoEs X, Y, and&nbsp;Z&#8221;.</p>
+<p>CoEs are intended for display in citation contexts, for example &quot;this
+document refers to another document D, attested by CoEs X, Y, and&nbsp;Z&quot;.</p>
 <p>The Structured Commons model supports multiple <em>certification methods</em>
 to generate and verify CoEs, including a variety of historical
 mechanisms already in use in academic&nbsp;publishing.</p>
@@ -148,17 +148,17 @@ to deliver reliable registration&nbsp;services.</p>
 <p>Some example valid CoE&nbsp;signatures:</p>
 <dl class="docutils">
 <dt>arxiv:2014-04-30:1404.7753</dt>
-<dd>method: arXiv, attested date April 30th, 2014, certificate&nbsp;&#8220;1404.7753&#8221;</dd>
+<dd>method: arXiv, attested date April 30th, 2014, certificate&nbsp;&quot;1404.7753&quot;</dd>
 <dt>arxiv:1404.7753</dt>
-<dd>method: arXiv, omitted date, certificate&nbsp;&#8220;1404.7753&#8221;</dd>
+<dd>method: arXiv, omitted date, certificate&nbsp;&quot;1404.7753&quot;</dd>
 <dt>doi:2014-06-09:10.1145/2618137.2618139</dt>
-<dd>method: <span class="caps">DOI</span>, attested date June 9th, 2014, certificate&nbsp;&#8220;10.1145/2618137.2618139&#8221;</dd>
+<dd>method: <span class="caps">DOI</span>, attested date June 9th, 2014, certificate&nbsp;&quot;10.1145/2618137.2618139&quot;</dd>
 <dt>doi:10.1145/2618137.2618139</dt>
-<dd>method: <span class="caps">DOI</span>, omitted date, certificate&nbsp;&#8220;10.1145/2618137.2618139&#8221;</dd>
+<dd>method: <span class="caps">DOI</span>, omitted date, certificate&nbsp;&quot;10.1145/2618137.2618139&quot;</dd>
 <dt>acmid:2014-06-09:2618137.2618139</dt>
-<dd>method: <span class="caps">ACMID</span>, attested date June 9th, 2014, certificate&nbsp;&#8220;2618137.2618139&#8221;</dd>
+<dd>method: <span class="caps">ACMID</span>, attested date June 9th, 2014, certificate&nbsp;&quot;2618137.2618139&quot;</dd>
 <dt>acmid:2618137.2618139</dt>
-<dd>method: <span class="caps">ACMID</span>, omitted date, certificate&nbsp;&#8220;2618137.2618139&#8221;</dd>
+<dd>method: <span class="caps">ACMID</span>, omitted date, certificate&nbsp;&quot;2618137.2618139&quot;</dd>
 </dl>
 <div class="note">
 <p class="first admonition-title">Note</p>
@@ -171,7 +171,7 @@ within the Structured Commons&nbsp;model.</p>
 <div class="section" id="hypertext-references">
 <h2>Hypertext&nbsp;references</h2>
 <p>In a hypertext context, each CoE signature representation should be
-configured as a hyperlink to the certificate&nbsp;<span class="caps">URI</span>.</p>
+configured as a hyperlink to the certificate <span class="caps">URI</span>.</p>
 <p>For example, an <tt class="docutils literal">arxiv</tt> CoE sig can redirect to the <span class="caps">URI</span>
 <tt class="docutils literal"><span class="pre">http://arxiv.org/abs/</span></tt> followed by the arXiv identifier:
 <a class="reference external" href="http://arxiv.org/abs/1404.7753">arxiv:2014-04-30:1404.7753</a></p>
@@ -195,8 +195,8 @@ archives. This method is effective even for works that are not
 published in journals, <em>as long as journals cite them</em>: if a work A is
 cited by journal J which is attested to exist at date D by a set of
 printed copies, then A is attested to have existed no later than&nbsp;D.</p>
-<p>Starting with the Internet, more and more works are published &#8220;online
-only&#8221; and never cited by printed journals, so the CoE durability
+<p>Starting with the Internet, more and more works are published &quot;online
+only&quot; and never cited by printed journals, so the CoE durability
 provided by journals becomes largely&nbsp;ineffective.</p>
 <p>There are three strategies to guarantee the very long term
 verifiability of CoEs, even without printed journals, in increasing
@@ -229,7 +229,7 @@ of CoEs for past&nbsp;works.</p>
 <table class="docutils footnote" frame="void" id="id10" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">ISO</span>/<span class="caps">DIS</span> 26324:2012. &#8220;Information and documentation &#8212; Digital object identifier system&#8221;.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><span class="caps">ISO</span>/<span class="caps">DIS</span> 26324:2012. &quot;Information and documentation &#8212; Digital object identifier system&quot;.</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id11" rules="none">
@@ -253,7 +253,7 @@ of CoEs for past&nbsp;works.</p>
 <table class="docutils footnote" frame="void" id="id14" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><span class="caps">ISO</span> 2108:2005. &#8220;Information and documentation &#8212; International standard book number (<span class="caps">ISBN</span>)&#8221;.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><span class="caps">ISO</span> 2108:2005. &quot;Information and documentation &#8212; International standard book number (<span class="caps">ISBN</span>)&quot;.</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="id15" rules="none">

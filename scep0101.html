@@ -39,9 +39,9 @@
 
               <ul class="columns">
 
+                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/index.html">About</a></li>
                 <li><a href="http://www.structured-commons.org/mission.html">Mission&nbsp;statement</a></li>
-                <li><a href="http://www.structured-commons.org/online-forum.html">Forum</a></li>
                 <li><a href="http://www.structured-commons.org/org.html">Organization</a></li>
                 <li><a href="http://www.structured-commons.org/participating.html">Participating</a></li>
                 <li><a href="http://www.structured-commons.org/scep0000.html">SCEPs</a></li>
@@ -57,7 +57,7 @@
     <tr class="field"><th class="docinfo-name">SCEP:</th><td class="field-body">101</td></tr>
     <tr class="field"><th class="docinfo-name">Title:</th><td class="field-body">Structured Commons Object Model and&nbsp;Fingerprints</td></tr>
     <tr class="field"><th class="docinfo-name">Version:</th><td class="field-body">f66b1e00c3a59d2c1820e322d4a6f10670fd16a6</td></tr>
-    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 08:17:28 UTC (Mon, 16 June 2014)</td></tr>
+    <tr class="field"><th class="docinfo-name">Last modified:</th><td class="field-body">2014-06-16 10:17:28 UTC (Mon, 16 June 2014)</td></tr>
     <tr class="field"><th class="docinfo-name">Author:</th><td class="field-body">Raphael ‘kena’ Poss</td></tr>
     <tr class="field"><th class="docinfo-name">Status:</th><td class="field-body">Draft</td></tr>
     <tr class="field"><th class="docinfo-name">Type:</th><td class="field-body">Standards Track</td></tr>
@@ -82,7 +82,7 @@ fingerprints (symbolic&nbsp;reference).</li>
 <li>which must not contain characters codes in the range&nbsp;0-31.</li>
 </ul>
 <div class="section" id="contains-and-refers-to">
-<h3><span class="dquo">&#8220;</span>Contains&#8221; and &#8220;Refers&nbsp;to&#8221;</h3>
+<h3>&quot;Contains&quot; and &quot;Refers&nbsp;to&quot;</h3>
 <p>Other SCEPs and Structured Commons materials and technology can
 use the following&nbsp;terminology:</p>
 <ul>
@@ -90,15 +90,15 @@ use the following&nbsp;terminology:</p>
 following is&nbsp;true:</p>
 <ul class="simple">
 <li>A is a dictionary with B as an immediate leaf;&nbsp;or</li>
-<li>A is a dictionary and any of its leaves &#8220;contains&#8221;&nbsp;B.</li>
+<li>A is a dictionary and any of its leaves &quot;contains&quot;&nbsp;B.</li>
 </ul>
 </li>
 <li><p class="first">An object A is said to <em>refer to</em> an object B if either of the
 following is&nbsp;true:</p>
 <ul class="simple">
-<li>A &#8220;contains&#8221; B;&nbsp;or</li>
+<li>A &quot;contains&quot; B;&nbsp;or</li>
 <li>A is a dictionary with B&#8217;s fingerprint as an immediate leaf;&nbsp;or</li>
-<li>A is a dictionary and any of its object members &#8220;refers to&#8221;&nbsp;B.</li>
+<li>A is a dictionary and any of its object members &quot;refers to&quot;&nbsp;B.</li>
 </ul>
 <p>By extension, an object A is said to refer to a fingerprint F if it
 refers to an object B whose fingerprint is&nbsp;F.</p>
@@ -114,13 +114,13 @@ any object as&nbsp;follows:</p>
 <li><p class="first">serialize the object onto an array of bytes as&nbsp;follows:</p>
 <dl class="docutils">
 <dt>for a file&nbsp;object:</dt>
-<dd><p class="first last">first the byte code 115 (&#8220;s&#8221;), followed by the object length in
+<dd><p class="first last">first the byte code 115 (&quot;s&quot;), followed by the object length in
 big endian <span class="caps">ASCII</span> <a class="footnote-reference" href="#ascii" id="id2">[1]</a> decimal (codes 48-57), followed by a <span class="caps">NUL</span> byte,
 followed by the object&#8217;s byte&nbsp;data.</p>
 </dd>
 <dt>for a directory&nbsp;object:</dt>
 <dd><ul class="first last simple">
-<li>first the byte code 116 (&#8220;t&#8221;), follow by the decimal length of
+<li>first the byte code 116 (&quot;t&quot;), follow by the decimal length of
 the representation described hereafter, followed by a <span class="caps">NUL</span> byte,
 followed&nbsp;by:</li>
 <li>the byte representation of the dictionary&#8217;s contents, formed by
@@ -222,14 +222,14 @@ byte&#8217;s value to A modulo 255, then add the value of A to B modulo
 255 <a class="footnote-reference" href="#fletcher" id="id5">[5]</a>;</li>
 <li>append the value of A then B to the byte&nbsp;array;</li>
 <li>compute the Base32 (long) or Base64 (compact) encoding <a class="footnote-reference" href="#base" id="id6">[6]</a> of the
-byte array, using the &#8220;<span class="caps">URL</span> and filesystem safe alphabet&#8221; for&nbsp;Base64;</li>
+byte array, using the &quot;<span class="caps">URL</span> and filesystem safe alphabet&quot; for&nbsp;Base64;</li>
 <li>remove the Base32/64 padding character(s) (=) from the end of the&nbsp;result.</li>
 </ol>
 <p>To verify that a compact or long representation is valid, proceed as&nbsp;follows:</p>
 <ol class="arabic simple">
 <li>add the necessary Base32/64 padding character(s) at the end of the&nbsp;fingerprint;</li>
 <li>decode the byte array using the standard Base32/64 algorithm, and
-the &#8220;<span class="caps">URL</span> and filesystem safe alphabet&#8221; for&nbsp;Base64;</li>
+the &quot;<span class="caps">URL</span> and filesystem safe alphabet&quot; for&nbsp;Base64;</li>
 <li>check that the A and B sum for the first 32 bytes are equal to the
 33rd and 34th bytes&nbsp;respectively.</li>
 </ol>
@@ -267,7 +267,7 @@ available in the&nbsp;future.</p>
 <table class="docutils footnote" frame="void" id="ascii" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><span class="caps">RFC</span> 20. &#8220;<span class="caps">ASCII</span> format for network interchange&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td><span class="caps">RFC</span> 20. &quot;<span class="caps">ASCII</span> format for network interchange&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc20">https://tools.ietf.org/html/rfc20</a>)</td></tr>
 </tbody>
 </table>
@@ -280,29 +280,29 @@ available in the&nbsp;future.</p>
 <table class="docutils footnote" frame="void" id="utf" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 3629. &#8220;<span class="caps">UTF</span>-8, a transformation format of <span class="caps">ISO</span> 10646&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><span class="caps">RFC</span> 3629. &quot;<span class="caps">UTF</span>-8, a transformation format of <span class="caps">ISO</span> 10646&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc3629">https://tools.ietf.org/html/rfc3629</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="sha" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><span class="caps">RFC</span> 4634. &#8220;<span class="caps">US</span> Secure Hash Algorithms (<span class="caps">SHA</span> and <span class="caps">SHA</span>-based <span class="caps">HMAC</span> and <span class="caps">HKDF</span>)&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><span class="caps">RFC</span> 4634. &quot;<span class="caps">US</span> Secure Hash Algorithms (<span class="caps">SHA</span> and <span class="caps">SHA</span>-based <span class="caps">HMAC</span> and <span class="caps">HKDF</span>)&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc6234">https://tools.ietf.org/html/rfc6234</a>; see also <a class="reference external" href="https://en.wikipedia.org/wiki/SHA-2">https://en.wikipedia.org/wiki/<span class="caps">SHA</span>-2</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="fletcher" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Fletcher, <span class="caps">J. G.</span>&#8220;An Arithmetic Checksum for Serial
-Transmissions&#8221;. 1982. <span class="caps">IEEE</span> Trans. Comm., <span class="caps">COM</span>-30(1):247–252.
+<tr><td class="label"><a class="fn-backref" href="#id5">[5]</a></td><td>Fletcher, <span class="caps">J. G.</span>&quot;An Arithmetic Checksum for Serial
+Transmissions&quot;. 1982. <span class="caps">IEEE</span> Trans. Comm., <span class="caps">COM</span>-30(1):247–252.
 (<a class="reference external" href="https://en.wikipedia.org/wiki/Fletcher%27s_checksum">https://en.wikipedia.org/wiki/Fletcher%27s_checksum</a>)</td></tr>
 </tbody>
 </table>
 <table class="docutils footnote" frame="void" id="base" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><span class="caps">RFC</span> 4648. &#8220;The Base16, Base32, and Base64 Data Encodings&#8221;.
+<tr><td class="label"><a class="fn-backref" href="#id6">[6]</a></td><td><span class="caps">RFC</span> 4648. &quot;The Base16, Base32, and Base64 Data Encodings&quot;.
 (<a class="reference external" href="https://tools.ietf.org/html/rfc4648">https://tools.ietf.org/html/rfc4648</a>)</td></tr>
 </tbody>
 </table>
