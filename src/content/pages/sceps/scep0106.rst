@@ -256,6 +256,7 @@ to the requirements stated above over time:
 |                   | Hybrid,             | rST_, Markdown_,      | yes        | yes      | yes  | yes      | yes      |
 |                   | punctuation and     | `Wiki markup`_,       |            |          |      |          |          |
 |                   | layout-based markup | `Org-mode`_           |            |          |      |          |          |
+|                   |                     | AsciiDoc_             |            |          |      |          |          |
 +-------------------+---------------------+-----------------------+------------+----------+------+----------+----------+
 
 .. _Word: http://en.wikipedia.org/wiki/Microsoft_Word
@@ -275,6 +276,7 @@ to the requirements stated above over time:
 .. _Wiki markup: http://en.wikipedia.org/wiki/Wiki_markup
 .. _Org-mode: http://en.wikipedia.org/wiki/Org-mode
 .. _POD: http://en.wikipedia.org/wiki/Plain_Old_Documentation
+.. _AsciiDoc: http://asciidoc.org/
 
 At the time of this writing, word processors are coming out of fashion for scientific works
 in favor of markup languages, with LaTeX historically prevalent in
@@ -305,10 +307,11 @@ recent requirements from both authors and readers:
   software and data base (hundreds of megabytes), to "interpret"
   source documents to a format understandable by humans.
 
-In contrast, the new generation of "lightweight markup formats" pionereed
-by Wikipedia (`Wiki markup`_), Web fora (Markdown_) and inline
-source code documentation (rST_) is tailored to these new requirements
-without sacrificing the other advantages of LaTeX compared to word processors.
+In contrast, the new generation of "lightweight markup formats"
+pionereed by Wikipedia (`Wiki markup`_), Web fora (Markdown_) and
+inline source code documentation (rST_, AsciiDoc_) is tailored to
+these new requirements without sacrificing the other advantages of
+LaTeX compared to word processors.
 
 In short, this SCEP recommends scientific authors to **consider
 alternate source markup languages** for new works, tailored to contemporary
@@ -336,6 +339,9 @@ LaTeX_          Actively used &     Scientific     yes             yes          
 rST_            Actively used &     Technical      yes             yes            yes            `user manual <http://docutils.sourceforge.net/rst.html>`__,
                 coherently          documentation                                                `example online editor <http://notex.ch/>`__,
                 maintained                                                                       `alternate online editor <http://rst.ninjs.org/>`__
+AsciiDoc_       Actively used &     Technical      yes             yes            yes            `user manual <http://asciidoc.org/userguide.html>`__
+                coherently          documentation
+                maintained
 `Wiki markup`_  Actively used,      Knowledge      yes             yes            yes            `user manual <https://en.wikipedia.org/wiki/Help:Wiki_markup>`__,
                 coherently          preservation                                                 `example online editor <https://en.wikipedia.org/wiki/Wikipedia:Sandbox>`__
                 maintained
